@@ -1072,42 +1072,6 @@ def build_all():
     write_page("about/index.html", wrap_page("About Us | South Africa SDR", "We build outsourced South African sales teams for companies in the US, UK and Australia.", 1, about_body))
     pages.append("about/index.html")
 
-    # BLOG HUB
-    posts = [
-        ("why-south-africa-is-the-smart-sdr-play", "Why South Africa is the smart SDR play for UK teams", "Outbound", "How UK companies are quietly building pipeline with South African reps.", "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"),
-        ("outsourced-sdr-cost-guide", "What does an outsourced SDR actually cost?", "Pricing", "A straight breakdown of SDR costs: in-house vs outsourced vs offshore.", "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"),
-        ("ramp-time-offshore-sdr", "How fast can an offshore SDR ramp?", "Operations", "What three weeks to pipeline actually looks like in practice.", "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"),
-    ]
-    blog_cards = ""
-    for slug, title, cat, excerpt, img in posts:
-        blog_cards += f'<a href="{rel(1, f"/blog/{slug}/")}" class="blog-card"><div class="blog-card-img"><img src="{img}" alt="" loading="lazy" /></div><div class="blog-card-body"><span class="blog-meta">{cat}</span><h3>{title}</h3><p>{excerpt}</p><span class="card-link">Read article <span class="arrow">→</span></span></div></a>'
-    blog_body = f"""<main>
-{page_hero("Insights", "Sales &amp; SDR insights", "Practical guides on outbound, SDR strategy and offshore sales teams.", "", "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop", "Sales strategy and analytics")}
-<section class="section-cream section"><div class="container">
-{section_head("Blog", "Latest insights")}
-<div class="blog-grid reveal">{blog_cards}</div>
-</div></section>
-</main>"""
-    write_page("blog/index.html", wrap_page("Sales & SDR Insights | South Africa SDR Blog", "Practical guides on outbound, SDR strategy and offshore sales teams.", 1, blog_body))
-    pages.append("blog/index.html")
-
-    # BLOG POSTS
-    for slug, title, cat, excerpt, img in posts:
-        post_body = f"""<main>
-{page_hero(cat, title, excerpt, f'<a href="{CONTACT_CTA}" class="btn btn-primary">Book a call</a>', img, title, True)}
-<section class="section-cream section" style="padding-top:0;"><div class="container">
-<img src="{img}" alt="" loading="lazy" class="article-hero-img" />
-<div class="article-meta-bar"><span>{cat}</span><span>South Africa SDR Team</span></div>
-<div class="article-body reveal"><p>{excerpt} This is a placeholder article. Replace with full CMS content when the blog collection is live.</p>
-<h2>The short answer</h2><p>South African SDRs offer first-language English, GMT+2 timezone overlap, and 55 to 65 percent cost savings compared to Western hires. For UK, EU, and US outbound, they are one of the strongest options available.</p>
-<h2>What to consider</h2><p>Match your offshore strategy to your buyer market, ramp timeline, and budget. Book a call if you want a tailored recommendation for your team.</p>
-<p><a href="{CONTACT_CTA}" class="btn btn-primary">Book a call</a></p>
-</div></div></section>
-</main>"""
-        path = f"blog/{slug}/index.html"
-        write_page(path, wrap_page(f"{title} | South Africa SDR Blog", excerpt, 2, post_body))
-        pages.append(path)
-
     # CASE STUDIES HUB
     cases = [
         ("saas-pipeline-case-study", "B2B SaaS", "UK SaaS company books 27 meetings in month one", "A London-based SaaS startup replaced a stalled in-house hire with a South African SDR.", "27 meetings", "9.4% reply rate", "62% cost saved"),

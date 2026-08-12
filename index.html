@@ -58,10 +58,11 @@
   --font-sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: var(--font-display);
 
-  --radius-btn: 9px;
-  --radius-card: 14px;
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.12);
-  --shadow-float: 0 30px 60px rgba(1, 43, 40, 0.35);
+  --radius-btn: 12px;
+  --radius-card: 20px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 12px 34px rgba(1, 43, 40, 0.10);
+  --shadow-float: 0 34px 70px rgba(1, 43, 40, 0.34);
 
   --container: 1180px;
   --header-offset: 82px;
@@ -122,7 +123,7 @@ h3 { font-size: clamp(20px, 2vw, 23px); line-height: 1.3; }
 
 .section { padding: 96px 0; position: relative; }
 
-.section-green { background: var(--green); color: var(--cream); }
+.section-green { background: linear-gradient(158deg, #02403D 0%, #012B28 100%); color: var(--cream); }
 .section-green p { color: rgba(250, 248, 242, 0.86); }
 .section-cream { background: var(--cream); color: var(--ink); }
 .section-sand { background: var(--sand); color: var(--ink); }
@@ -584,20 +585,21 @@ a:hover .arrow { transform: translateX(4px); }
    ========================================================= */
 
 .hero {
-  background: var(--green);
+  background: linear-gradient(157deg, #3A7A72 0%, #02403D 47%, #012B28 100%);
   position: relative;
   overflow: hidden;
-  padding: calc(var(--header-offset) + 28px) 0 120px;
+  padding: calc(var(--header-offset) + 66px) 0 84px;
+  text-align: center;
 }
 
 /* soft gold glow, top right */
 .hero-glow {
   position: absolute;
-  top: -220px;
-  right: -160px;
-  width: 720px;
-  height: 720px;
-  background: radial-gradient(circle, rgba(218, 168, 102, 0.22) 0%, rgba(218, 168, 102, 0.07) 42%, transparent 68%);
+  top: -240px;
+  right: -150px;
+  width: 780px;
+  height: 780px;
+  background: radial-gradient(circle, rgba(218, 168, 102, 0.20) 0%, rgba(218, 168, 102, 0.06) 42%, transparent 68%);
   pointer-events: none;
 }
 
@@ -605,46 +607,129 @@ a:hover .arrow { transform: translateX(4px); }
 .hero-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(250, 248, 242, 0.055) 1px, transparent 1.5px);
+  background-image: radial-gradient(rgba(250, 248, 242, 0.06) 1px, transparent 1.5px);
   background-size: 26px 26px;
   pointer-events: none;
 }
 
-.hero-inner {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 64px;
-  align-items: center;
+/* ---- Community network backdrop ---- */
+.hero-network {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.hero-copy h1 { margin: 26px 0 22px; color: var(--cream); }
+.net-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.net-lines line {
+  stroke: rgba(250, 248, 242, 0.22);
+  stroke-width: 0.22;
+  vector-effect: non-scaling-stroke;
+}
+
+.net-lines line.net-line-gold { stroke: rgba(218, 168, 102, 0.4); }
+
+.net-avatar {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s, 64px);
+  height: var(--s, 64px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  border: 3px solid rgba(250, 248, 242, 0.92);
+  box-shadow: 0 14px 30px rgba(1, 25, 23, 0.42);
+  animation: net-float 8s ease-in-out infinite;
+}
+
+.net-avatar:nth-child(2n) { animation-duration: 9.5s; animation-delay: -1.6s; }
+.net-avatar:nth-child(3n) { animation-duration: 11s; animation-delay: -3.2s; }
+
+@keyframes net-float {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, calc(-50% - 12px)); }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-inner h1 { margin: 22px 0 20px; color: var(--cream); }
 
 .hero-subhead {
   font-size: 18.5px;
-  color: rgba(250, 248, 242, 0.85);
-  max-width: 540px;
+  color: rgba(250, 248, 242, 0.88);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.hero-buttons {
+/* email capture bar */
+.hero-capture {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 36px;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 500px;
+  margin: 34px auto 0;
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 8px;
+  box-shadow: 0 20px 44px rgba(1, 25, 23, 0.30);
 }
+
+.hero-capture input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  color: var(--ink);
+  padding: 11px 16px;
+}
+
+.hero-capture input::placeholder { color: rgba(30, 38, 34, 0.5); }
+
+.hero-capture .btn { flex: none; padding: 13px 26px; }
+
+.hero-secondary-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(250, 248, 242, 0.9);
+  border-bottom: 1px solid rgba(250, 248, 242, 0.35);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-secondary-link:hover { color: var(--gold); border-color: var(--gold); }
 
 .hero-stats {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   list-style: none;
-  margin-top: 52px;
+  margin-top: 46px;
   gap: 0;
 }
 
 .hero-stats li {
   display: flex;
   flex-direction: column;
-  padding: 0 32px;
+  padding: 0 30px;
   border-left: 1px solid rgba(250, 248, 242, 0.18);
 }
 
@@ -653,15 +738,32 @@ a:hover .arrow { transform: translateX(4px); }
 .hero-stats strong {
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 28px;
+  font-size: 27px;
   color: var(--gold);
   line-height: 1.2;
 }
 
 .hero-stats span {
-  font-size: 13.5px;
+  font-size: 13px;
   color: rgba(250, 248, 242, 0.65);
   margin-top: 4px;
+}
+
+/* contributions row inside hero */
+.hero-contrib {
+  position: relative;
+  z-index: 2;
+  margin-top: 66px;
+  text-align: center;
+}
+
+.hero-contrib-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(250, 248, 242, 0.5);
+  margin-bottom: 22px;
 }
 
 /* --- Floating pipeline dashboard card --- */
@@ -1364,7 +1466,7 @@ a:hover .arrow { transform: translateX(4px); }
 .cta-band {
   overflow: hidden;
   text-align: center;
-  background: #FFFFFF;
+  background: var(--cream);
 }
 
 .cta-glow {
@@ -1378,11 +1480,31 @@ a:hover .arrow { transform: translateX(4px); }
   pointer-events: none;
 }
 
-.cta-inner { position: relative; max-width: 760px; margin: 0 auto; }
+.cta-inner {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  background: linear-gradient(155deg, #3A7A72 0%, #02403D 52%, #012B28 100%);
+  border-radius: var(--radius-lg);
+  padding: 66px 48px 60px;
+  box-shadow: var(--shadow-float);
+  overflow: hidden;
+}
 
 .cta-inner h2 {
-  margin-bottom: 34px;
-  color: var(--green);
+  margin-bottom: 30px;
+  color: var(--cream);
+}
+
+.cta-inner .btn-primary {
+  background: var(--gold);
+  color: var(--btn-ink);
+  box-shadow: 0 12px 28px rgba(218, 168, 102, 0.32);
+}
+
+.cta-inner .btn-primary:hover {
+  background: var(--gold-dark);
+  color: var(--btn-ink);
 }
 
 .calendly-placeholder {
@@ -1692,6 +1814,21 @@ a.footer-contact-item:hover { color: var(--gold); }
 
 .footer-nav-grid { grid-template-columns: repeat(4, minmax(120px, 1fr)); }
 
+/* ---- Hero network + capture responsive ---- */
+@media (max-width: 1080px) {
+  .net-avatar { width: 56px; height: 56px; }
+  .net-avatar[style*="--s:74px"],
+  .net-avatar[style*="--s:72px"] { width: 62px; height: 62px; }
+}
+
+@media (max-width: 760px) {
+  .hero-network { display: none; }
+  .hero { padding: calc(var(--header-offset) + 34px) 0 64px; }
+  .hero-capture { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero-capture .btn { width: 100%; }
+  .hero-contrib { margin-top: 48px; }
+}
+
 </style>
 </head>
 <body>
@@ -1761,7 +1898,7 @@ a.footer-contact-item:hover { color: var(--gold); }
                 <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
               <div class="dropdown">
-                <a href="blog/index.html">Blog / Insights</a>
+                <a href="/blog/">Blog / Insights</a>
                 <a href="case-studies/index.html">Case Studies</a>
                 <a href="faq/index.html">FAQ</a>
                 <div class="dropdown-group-label">Compare</div>
@@ -1817,7 +1954,7 @@ a.footer-contact-item:hover { color: var(--gold); }
           <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="mm-panel">
-          <a href="blog/index.html">Blog / Insights</a>
+          <a href="/blog/">Blog / Insights</a>
           <a href="case-studies/index.html">Case Studies</a>
           <a href="faq/index.html">FAQ</a>
           <a href="compare/south-africa-vs-philippines/index.html">Compare locations</a>
@@ -1841,78 +1978,60 @@ a.footer-contact-item:hover { color: var(--gold); }
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-dots" aria-hidden="true"></div>
 
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <span class="eyebrow-pill">Western sales talent</span>
-          <h1>Pipeline, built by <em class="gold-italic">South&nbsp;African</em> SDRs</h1>
-          <p class="hero-subhead">Outbound reps who sound right, work your hours, and cost 55 to 65 percent less than a Western hire. First language English, UK and EU timezone overlap, and none of the recruitment headache.</p>
-          <div class="hero-buttons">
-            <a href="http://www.southafricasdr.com/contact" class="btn btn-primary">Book a call</a>
-            <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
-          </div>
-          <ul class="hero-stats">
-            <li><strong>3 weeks</strong><span>to a ramped rep</span></li>
-            <li><strong>62%</strong><span>average cost saving</span></li>
-            <li><strong>GMT+2</strong><span>UK and EU overlap</span></li>
-          </ul>
-        </div>
-
-        <!-- Floating live pipeline dashboard (styled element, not real data) -->
-        <div class="hero-visual" aria-hidden="true">
-          <div class="dash-card">
-            <div class="dash-head">
-              <span class="dash-label">Live pipeline</span>
-              <span class="dash-live"><span class="pulse-dot"></span>Live</span>
-            </div>
-            <div class="dash-metric">
-              <span class="dash-metric-figure">27</span>
-              <span class="dash-metric-copy">meetings booked<br>this month <b>+8 vs last</b></span>
-            </div>
-            <div class="dash-chart">
-              <span style="height:34%"></span>
-              <span style="height:48%"></span>
-              <span style="height:42%"></span>
-              <span style="height:62%"></span>
-              <span style="height:55%"></span>
-              <span style="height:74%"></span>
-              <span class="bar-gold" style="height:92%"></span>
-              <span style="height:68%"></span>
-            </div>
-            <div class="dash-list">
-              <div class="dash-row">
-                <span class="dash-avatar">JM</span>
-                <span class="dash-row-copy"><b>Discovery call booked</b><small>SaaS, London · 09:30</small></span>
-                <span class="dash-check">✓</span>
-              </div>
-              <div class="dash-row">
-                <span class="dash-avatar av-2">TK</span>
-                <span class="dash-row-copy"><b>Demo confirmed</b><small>Fintech, New York · 15:00</small></span>
-                <span class="dash-check">✓</span>
-              </div>
-            </div>
-            <div class="dash-foot">
-              <span><small>Reply rate</small><b>9.4%</b></span>
-              <span><small>Cost saved</small><b class="gold">62%</b></span>
-            </div>
-          </div>
-          <div class="dash-chip">
-            <span class="pulse-dot"></span> Meeting booked, 2 min ago
-          </div>
-        </div>
+      <!-- Community network backdrop -->
+      <div class="hero-network" aria-hidden="true">
+        <svg class="net-lines" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none">
+          <line x1="30" y1="13" x2="13" y2="27"/>
+          <line x1="13" y1="27" x2="8" y2="60"/>
+          <line x1="8" y1="60" x2="20" y2="82"/>
+          <line x1="20" y1="82" x2="62" y2="90"/>
+          <line x1="62" y1="90" x2="80" y2="81"/>
+          <line x1="80" y1="81" x2="92" y2="54"/>
+          <line x1="92" y1="54" x2="87" y2="21"/>
+          <line x1="87" y1="21" x2="30" y2="13"/>
+          <line class="net-line-gold" x1="13" y1="27" x2="87" y2="21"/>
+          <line class="net-line-gold" x1="8" y1="60" x2="92" y2="54"/>
+        </svg>
+        <span class="net-avatar" style="--x:13%;--y:27%;--s:74px;background-image:url('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
+        <span class="net-avatar" style="--x:30%;--y:13%;--s:56px;background-image:url('https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
+        <span class="net-avatar" style="--x:8%;--y:60%;--s:60px;background-image:url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
+        <span class="net-avatar" style="--x:20%;--y:82%;--s:66px;background-image:url('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
+        <span class="net-avatar" style="--x:87%;--y:21%;--s:72px;background-image:url('https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
+        <span class="net-avatar" style="--x:92%;--y:54%;--s:56px;background-image:url('https://images.pexels.com/photos/573299/pexels-photo-573299.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
+        <span class="net-avatar" style="--x:80%;--y:81%;--s:64px;background-image:url('https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
+        <span class="net-avatar" style="--x:62%;--y:90%;--s:52px;background-image:url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
       </div>
-    </section>
 
-    <!-- ========================= SECTION 2: TRUST STRIP [GREEN, darker] ========================= -->
-    <section class="trust-strip">
-      <div class="container">
-        <p class="trust-label">Trusted by growing sales teams</p>
-        <!-- Replace placeholders with real client logos, greyscale -->
-        <div class="trust-logos">
-          <span class="trust-logo">Fernbrook</span>
-          <span class="trust-logo">Latitude&amp;Co</span>
-          <span class="trust-logo">Corvus Systems</span>
-          <span class="trust-logo">Brightpath</span>
-          <span class="trust-logo">Halden Group</span>
+      <div class="container hero-inner">
+        <span class="eyebrow-pill pill-on-green">Western sales talent</span>
+        <h1>Pipeline, built by <em class="gold-italic">South&nbsp;African</em> SDRs</h1>
+        <p class="hero-subhead">Outbound reps who sound right, work your hours, and cost 55 to 65 percent less than a Western hire. First language English, UK and EU timezone overlap, and none of the recruitment headache.</p>
+
+        <form class="hero-capture" action="http://www.southafricasdr.com/contact" method="get">
+          <input type="email" name="email" placeholder="Enter your work email" aria-label="Work email" />
+          <a href="http://www.southafricasdr.com/contact" class="btn btn-primary">Book a call</a>
+        </form>
+        <a href="#how-it-works" class="hero-secondary-link">See how it works &rarr;</a>
+
+        <ul class="hero-stats">
+          <li><strong>3 weeks</strong><span>to a ramped rep</span></li>
+          <li><strong>62%</strong><span>average cost saving</span></li>
+          <li><strong>GMT+2</strong><span>UK and EU overlap</span></li>
+        </ul>
+      </div>
+
+      <!-- Contributions / trusted-by row -->
+      <div class="hero-contrib">
+        <div class="container">
+          <p class="hero-contrib-label">Trusted by growing sales teams</p>
+          <!-- Replace placeholders with real client logos, greyscale -->
+          <div class="trust-logos">
+            <span class="trust-logo">Fernbrook</span>
+            <span class="trust-logo">Latitude&amp;Co</span>
+            <span class="trust-logo">Corvus Systems</span>
+            <span class="trust-logo">Brightpath</span>
+            <span class="trust-logo">Halden Group</span>
+          </div>
         </div>
       </div>
     </section>

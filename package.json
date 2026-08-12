@@ -1,0 +1,13 @@
+{
+  "name": "south-africa-sdr",
+  "version": "1.0.0",
+  "description": "South Africa SDR — Western sales talent that actually delivers",
+  "scripts": {
+    "build": "python build_pages.py && node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "dev": "python build_pages.py && node ./node_modules/@11ty/eleventy/cmd.cjs --serve"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

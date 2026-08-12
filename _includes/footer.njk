@@ -1,0 +1,62 @@
+<footer class="blog-site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="brand" aria-label="South Africa SDR, home">
+          <img src="/images/brand/lockup-horizontal-rev.svg" alt="South Africa SDR" width="180" height="32" />
+        </a>
+        <p>Western sales talent that actually delivers.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="/services/sdr/">SDR Services</a></li>
+          <li><a href="/services/appointment-setting/">Appointment Setting</a></li>
+          <li><a href="/services/customer-service/">Customer Service</a></li>
+          <li><a href="/services/technical-support/">Technical Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Industries</h5>
+        <ul>
+          <li><a href="/industries/saas/">SaaS</a></li>
+          <li><a href="/industries/financial-services/">Financial Services</a></li>
+          <li><a href="/industries/">View all industries</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/case-studies/">Case Studies</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; {{ site.buildDate | truncate(4, "") }} South Africa SDR. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy Policy</a> &bull;
+        <a href="/terms/">Terms of Service</a> &bull;
+        <a href="/cookies/">Cookies</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("blogHamburger");
+  var menu = document.getElementById("blogMobileMenu");
+  if (!btn || !menu) return;
+  btn.addEventListener("click", function () {
+    var open = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", open ? "false" : "true");
+    menu.hidden = open;
+  });
+})();
+</script>
+</body>
+</html>
