@@ -7,7 +7,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 CONTACT_CTA = "http://www.southafricasdr.com/contact"
-LOGO = "https://cdn.prod.website-files.com/6a550e6bc10b48cf2b0d2a00/6a5514db15499cf55b0299bd_logo.png"
+LOGO = "/images/brand/lockup-horizontal.svg"
+LOGO_REV = "/images/brand/lockup-horizontal-rev.svg"
 
 with open(ROOT / "styles.css", encoding="utf-8") as f:
     BASE_CSS = f.read()
@@ -21,7 +22,7 @@ EXTRA_CSS = """
 .page-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
 .page-hero-grid.hero-copy-only { grid-template-columns: 1fr; max-width: 760px; }
 .page-hero-visual { position: relative; }
-.photo-frame { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-float); border: 3px solid rgba(251,247,240,0.12); }
+.photo-frame { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-float); border: 3px solid rgba(250,248,242,0.12); }
 .photo-frame img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
 .photo-accent { position: absolute; bottom: -16px; left: -16px; width: 80px; height: 80px; border-radius: 16px; background: var(--gold); opacity: 0.35; z-index: -1; }
 .photo-frame-offset { transform: rotate(-1.5deg); }
@@ -30,50 +31,50 @@ EXTRA_CSS = """
 .split-section.reverse .split-copy { order: 1; }
 .split-media img { width: 100%; border-radius: 16px; box-shadow: var(--shadow-soft); aspect-ratio: 4/3; object-fit: cover; }
 .deliverable-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.deliverable-card { background: #fff; border: 0.5px solid rgba(30,77,64,0.1); border-radius: var(--radius-card); padding: 28px 24px; box-shadow: 0 8px 24px rgba(22,58,48,0.05); transition: transform 0.25s, box-shadow 0.25s; }
+.deliverable-card { background: #fff; border: 0.5px solid rgba(2,64,61,0.1); border-radius: var(--radius-card); padding: 28px 24px; box-shadow: 0 8px 24px rgba(30,38,34,0.05); transition: transform 0.25s, box-shadow 0.25s; }
 .deliverable-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
-.deliverable-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(224,164,88,0.14); color: #B27B33; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.deliverable-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(218,168,102,0.14); color: #B8945A; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
 .deliverable-icon svg { width: 24px; height: 24px; }
 .deliverable-card h3 { font-size: 18px; margin-bottom: 8px; }
-.deliverable-card p { font-size: 14.5px; color: rgba(22,58,48,0.72); line-height: 1.55; }
-.visual-panel { background: linear-gradient(145deg, var(--green) 0%, #173F34 100%); border-radius: 18px; padding: 36px 32px; color: var(--cream); position: relative; overflow: hidden; }
-.visual-panel::before { content: ""; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(224,164,88,0.2) 0%, transparent 70%); pointer-events: none; }
+.deliverable-card p { font-size: 14.5px; color: rgba(30,38,34,0.72); line-height: 1.55; }
+.visual-panel { background: linear-gradient(145deg, var(--green) 0%, #012B28 100%); border-radius: 18px; padding: 36px 32px; color: var(--cream); position: relative; overflow: hidden; }
+.visual-panel::before { content: ""; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(218,168,102,0.2) 0%, transparent 70%); pointer-events: none; }
 .visual-panel h3 { color: var(--cream); font-size: 22px; margin-bottom: 16px; position: relative; }
-.visual-panel p { color: rgba(251,247,240,0.82); font-size: 15px; line-height: 1.6; position: relative; }
+.visual-panel p { color: rgba(250,248,242,0.82); font-size: 15px; line-height: 1.6; position: relative; }
 .visual-stat-row { display: flex; gap: 28px; margin-top: 28px; position: relative; }
 .visual-stat-row span { display: flex; flex-direction: column; }
 .visual-stat-row strong { font-family: var(--font-serif); font-size: 28px; color: var(--gold); }
-.visual-stat-row small { font-size: 12px; color: rgba(251,247,240,0.6); margin-top: 2px; }
+.visual-stat-row small { font-size: 12px; color: rgba(250,248,242,0.6); margin-top: 2px; }
 .faq-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
 .faq-side { position: sticky; top: calc(var(--header-offset) + 24px); }
 .faq-side-img { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-soft); margin-top: 24px; }
 .faq-side-img img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
 .faq-category { margin-bottom: 48px; }
 .faq-category-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-.faq-cat-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(224,164,88,0.14); color: #B27B33; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.faq-cat-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(218,168,102,0.14); color: #B8945A; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .faq-cat-icon svg { width: 20px; height: 20px; }
 .about-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
-.value-card { text-align: center; padding: 32px 24px; background: #fff; border-radius: var(--radius-card); border: 0.5px solid rgba(30,77,64,0.1); }
+.value-card { text-align: center; padding: 32px 24px; background: #fff; border-radius: var(--radius-card); border: 0.5px solid rgba(2,64,61,0.1); }
 .value-card .deliverable-icon { margin: 0 auto 16px; }
 .compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .compare-choice { padding: 36px 32px; border-radius: var(--radius-card); }
-.compare-choice.alt { background: #fff; border: 0.5px solid rgba(30,77,64,0.12); box-shadow: 0 8px 24px rgba(22,58,48,0.05); }
+.compare-choice.alt { background: #fff; border: 0.5px solid rgba(2,64,61,0.12); box-shadow: 0 8px 24px rgba(30,38,34,0.05); }
 .compare-choice.sa { background: var(--green); color: var(--cream); }
 .compare-choice.sa h3 { color: var(--cream); }
-.compare-choice.sa p { color: rgba(251,247,240,0.85); }
+.compare-choice.sa p { color: rgba(250,248,242,0.85); }
 .compare-choice h3 { font-size: 22px; margin-bottom: 14px; }
-.compare-choice p { font-size: 16px; line-height: 1.65; color: rgba(22,58,48,0.78); }
+.compare-choice p { font-size: 16px; line-height: 1.65; color: rgba(30,38,34,0.78); }
 .book-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; max-width: var(--container); margin: 0 auto; padding: 48px 28px 80px; text-align: left; }
 .book-visual img { border-radius: 16px; box-shadow: var(--shadow-soft); width: 100%; aspect-ratio: 3/4; object-fit: cover; }
 .article-hero-img { width: 100%; max-height: 440px; object-fit: cover; border-radius: 18px; margin-bottom: 40px; box-shadow: var(--shadow-soft); }
-.article-meta-bar { display: flex; flex-wrap: wrap; gap: 16px 32px; padding: 20px 0; border-top: 1px solid rgba(30,77,64,0.1); border-bottom: 1px solid rgba(30,77,64,0.1); margin-bottom: 36px; font-size: 14px; color: rgba(22,58,48,0.6); }
-.prose { font-size: 17px; line-height: 1.7; color: rgba(22,58,48,0.82); }
+.article-meta-bar { display: flex; flex-wrap: wrap; gap: 16px 32px; padding: 20px 0; border-top: 1px solid rgba(2,64,61,0.1); border-bottom: 1px solid rgba(2,64,61,0.1); margin-bottom: 36px; font-size: 14px; color: rgba(30,38,34,0.6); }
+.prose { font-size: 17px; line-height: 1.7; color: rgba(30,38,34,0.82); }
 .prose p { margin-bottom: 18px; }
 .prose p:last-child { margin-bottom: 0; }
 .prose h3 { margin: 28px 0 12px; font-size: 22px; }
 .prose ul { margin: 0 0 18px 20px; }
 .prose li { margin-bottom: 8px; }
-.prose-green p { color: rgba(251,247,240,0.86); }
+.prose-green p { color: rgba(250,248,242,0.86); }
 .content-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
 .content-narrow { max-width: 720px; }
 .content-wide { max-width: 900px; margin: 0 auto; }
@@ -81,56 +82,56 @@ EXTRA_CSS = """
 .check-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-size: 16px; }
 .check-list li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 16px; height: 16px; border-radius: 50%; background: rgba(63,142,118,0.2); border: 2px solid var(--green-support); }
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.feature-mini { background: #fff; border: 0.5px solid rgba(30,77,64,0.12); border-radius: var(--radius-card); padding: 28px 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+.feature-mini { background: #fff; border: 0.5px solid rgba(2,64,61,0.12); border-radius: var(--radius-card); padding: 28px 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
 .feature-mini h3 { font-size: 19px; margin-bottom: 10px; }
-.feature-mini p { font-size: 15px; color: rgba(22,58,48,0.75); }
+.feature-mini p { font-size: 15px; color: rgba(30,38,34,0.75); }
 .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; }
-.faq-item { background: #fff; border: 0.5px solid rgba(30,77,64,0.12); border-radius: 12px; overflow: hidden; }
+.faq-item { background: #fff; border: 0.5px solid rgba(2,64,61,0.12); border-radius: 12px; overflow: hidden; }
 .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--green); background: none; border: none; cursor: pointer; text-align: left; }
-.faq-q .faq-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(224,164,88,0.15); color: #B27B33; display: flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1; transition: transform 0.25s; }
+.faq-q .faq-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(218,168,102,0.15); color: #B8945A; display: flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1; transition: transform 0.25s; }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-.faq-a-inner { padding: 0 24px 20px; font-size: 16px; line-height: 1.65; color: rgba(22,58,48,0.78); }
+.faq-a-inner { padding: 0 24px 20px; font-size: 16px; line-height: 1.65; color: rgba(30,38,34,0.78); }
 .faq-item.open .faq-a { max-height: 400px; }
 .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -4px; padding: 4px; }
-.compare-table { width: 100%; min-width: 560px; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(22,58,48,0.06); }
-.compare-table th, .compare-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid rgba(30,77,64,0.08); font-size: 15px; }
+.compare-table { width: 100%; min-width: 560px; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(30,38,34,0.06); }
+.compare-table th, .compare-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid rgba(2,64,61,0.08); font-size: 15px; }
 .compare-table th { background: var(--green); color: var(--cream); font-family: var(--font-serif); font-weight: 600; font-size: 16px; }
 .compare-table tr:last-child td { border-bottom: none; }
-.compare-table td:first-child { font-weight: 500; color: var(--green); background: rgba(251,247,240,0.5); }
+.compare-table td:first-child { font-weight: 500; color: var(--green); background: rgba(250,248,242,0.5); }
 .compare-table .good { color: var(--green-support); font-weight: 600; }
-.compare-table .neutral { color: rgba(22,58,48,0.65); }
+.compare-table .neutral { color: rgba(30,38,34,0.65); }
 .cta-band-green { background: var(--green); text-align: center; padding: 80px 0; position: relative; overflow: hidden; }
 .cta-band-green h2 { color: var(--cream); margin-bottom: 28px; max-width: 640px; margin-left: auto; margin-right: auto; }
-.cta-band-green .cta-glow { position: absolute; top: -120px; right: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(224,164,88,0.18) 0%, transparent 65%); pointer-events: none; }
+.cta-band-green .cta-glow { position: absolute; top: -120px; right: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(218,168,102,0.18) 0%, transparent 65%); pointer-events: none; }
 .hub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-.hub-card { display: block; background: #fff; border: 0.5px solid rgba(30,77,64,0.12); border-radius: 16px; padding: 32px 28px; transition: transform 0.25s, box-shadow 0.25s; }
+.hub-card { display: block; background: #fff; border: 0.5px solid rgba(2,64,61,0.12); border-radius: 16px; padding: 32px 28px; transition: transform 0.25s, box-shadow 0.25s; }
 .hub-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
 .hub-card h3 { margin-bottom: 10px; }
-.hub-card p { font-size: 15px; color: rgba(22,58,48,0.72); margin-bottom: 16px; }
+.hub-card p { font-size: 15px; color: rgba(30,38,34,0.72); margin-bottom: 16px; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-.blog-card { display: flex; flex-direction: column; background: #fff; border-radius: 16px; overflow: hidden; border: 0.5px solid rgba(30,77,64,0.1); transition: transform 0.25s, box-shadow 0.25s; }
+.blog-card { display: flex; flex-direction: column; background: #fff; border-radius: 16px; overflow: hidden; border: 0.5px solid rgba(2,64,61,0.1); transition: transform 0.25s, box-shadow 0.25s; }
 .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
 .blog-card-img { aspect-ratio: 16/10; background: var(--footer-caramel); overflow: hidden; }
 .blog-card-img img { width: 100%; height: 100%; object-fit: cover; }
 .blog-card-body { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
-.blog-meta { font-size: 12px; font-weight: 500; letter-spacing: 0.4px; text-transform: uppercase; color: #B27B33; margin-bottom: 10px; }
+.blog-meta { font-size: 12px; font-weight: 500; letter-spacing: 0.4px; text-transform: uppercase; color: #B8945A; margin-bottom: 10px; }
 .blog-card h3 { font-size: 19px; margin-bottom: 10px; }
-.blog-card p { font-size: 14.5px; color: rgba(22,58,48,0.7); flex: 1; }
+.blog-card p { font-size: 14.5px; color: rgba(30,38,34,0.7); flex: 1; }
 .article-header { max-width: 720px; margin-bottom: 40px; }
 .article-body { max-width: 720px; }
 .article-body h2 { margin: 36px 0 14px; font-size: 26px; }
-.article-body p { margin-bottom: 18px; font-size: 17px; line-height: 1.7; color: rgba(22,58,48,0.82); }
+.article-body p { margin-bottom: 18px; font-size: 17px; line-height: 1.7; color: rgba(30,38,34,0.82); }
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 .form-group { margin-bottom: 18px; }
 .form-group label { display: block; font-size: 14px; font-weight: 500; color: var(--green); margin-bottom: 6px; }
 .form-group input, .form-group textarea, .form-group select {
   width: 100%; font-family: var(--font-sans); font-size: 16px; padding: 12px 14px;
-  border: 1px solid rgba(30,77,64,0.2); border-radius: 9px; background: #fff; color: var(--ink);
+  border: 1px solid rgba(2,64,61,0.2); border-radius: 9px; background: #fff; color: var(--ink);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-  outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(224,164,88,0.2);
+  outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(218,168,102,0.2);
 }
 .form-group textarea { min-height: 120px; resize: vertical; }
 .form-error { font-size: 13px; color: var(--clay); margin-top: 4px; display: none; }
@@ -138,14 +139,14 @@ EXTRA_CSS = """
 .form-group.invalid input, .form-group.invalid textarea { border-color: var(--clay); }
 .contact-info { background: var(--green); border-radius: 16px; padding: 32px 28px; color: var(--cream); }
 .contact-info h3 { color: var(--cream); margin-bottom: 20px; font-size: 20px; }
-.contact-info-item { display: flex; gap: 12px; margin-bottom: 16px; font-size: 15px; color: rgba(251,247,240,0.85); }
+.contact-info-item { display: flex; gap: 12px; margin-bottom: 16px; font-size: 15px; color: rgba(250,248,242,0.85); }
 .contact-info-item svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--gold); }
 .book-page { min-height: 100vh; background: var(--cream); }
 .book-header { padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; }
 .book-header .logo-img { height: 32px; }
 .book-main { max-width: 680px; margin: 0 auto; padding: 40px 28px 80px; text-align: center; }
 .book-main h1 { margin-bottom: 14px; }
-.book-main .hero-subhead { color: rgba(22,58,48,0.75); margin: 0 auto 32px; max-width: 520px; }
+.book-main .hero-subhead { color: rgba(30,38,34,0.75); margin: 0 auto 32px; max-width: 520px; }
 .book-ticks { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin-bottom: 40px; list-style: none; }
 .book-ticks li { font-size: 14.5px; font-weight: 500; color: var(--green); padding-left: 22px; position: relative; }
 .book-ticks li::before { content: ""; position: absolute; left: 0; top: 0.35em; width: 14px; height: 14px; background: rgba(63,142,118,0.2); border-radius: 50%; border: 2px solid var(--green-support); }
@@ -153,23 +154,23 @@ EXTRA_CSS = """
 .success-inner { max-width: 520px; }
 .success-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(63,142,118,0.15); color: var(--green-support); display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-size: 32px; }
 .success-inner h1 { margin-bottom: 14px; }
-.success-inner p { color: rgba(22,58,48,0.75); margin-bottom: 28px; }
+.success-inner p { color: rgba(30,38,34,0.75); margin-bottom: 28px; }
 .legal-content { max-width: 760px; }
 .legal-content h2 { margin: 36px 0 14px; font-size: 24px; }
 .legal-content h3 { margin: 24px 0 10px; font-size: 19px; }
-.legal-content p, .legal-content li { font-size: 16px; line-height: 1.7; color: rgba(22,58,48,0.8); }
+.legal-content p, .legal-content li { font-size: 16px; line-height: 1.7; color: rgba(30,38,34,0.8); }
 .legal-content ul { margin: 0 0 18px 24px; }
 .error-page { min-height: 80vh; display: flex; align-items: center; text-align: center; padding: 120px 28px 80px; }
 .error-code { font-family: var(--font-serif); font-size: clamp(80px, 15vw, 140px); font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 12px; }
 .error-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
 .btn-outline-green { background: transparent; border: 1px solid var(--green); color: var(--green); }
 .btn-outline-green:hover { background: var(--green); color: var(--cream); }
-.pricing-box { background: rgba(251,247,240,0.06); border: 1px solid rgba(251,247,240,0.14); border-radius: 16px; padding: 36px 32px; max-width: 640px; }
-.pricing-box p { font-size: 17px; color: rgba(251,247,240,0.86); }
+.pricing-box { background: rgba(250,248,242,0.06); border: 1px solid rgba(250,248,242,0.14); border-radius: 16px; padding: 36px 32px; max-width: 640px; }
+.pricing-box p { font-size: 17px; color: rgba(250,248,242,0.86); }
 .case-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0; }
-.case-metric { text-align: center; padding: 24px 16px; background: #fff; border-radius: 12px; border: 0.5px solid rgba(30,77,64,0.1); }
+.case-metric { text-align: center; padding: 24px 16px; background: #fff; border-radius: 12px; border: 0.5px solid rgba(2,64,61,0.1); }
 .case-metric strong { display: block; font-family: var(--font-serif); font-size: 32px; color: var(--gold); margin-bottom: 4px; }
-.case-metric span { font-size: 13px; color: rgba(22,58,48,0.6); }
+.case-metric span { font-size: 13px; color: rgba(30,38,34,0.6); }
 .nav-link.active { color: var(--green); background: #F3F4F6; }
 @media (max-width: 1080px) {
   .page-hero-grid, .split-section, .contact-layout, .feature-grid, .faq-layout, .book-layout, .compare-cards, .deliverable-grid { grid-template-columns: 1fr; }
@@ -264,7 +265,7 @@ def header_html(depth: int, minimal: bool = False) -> str:
     if minimal:
         return f"""<header class="book-header">
   <a href="{rel(depth, '/')}" class="logo" aria-label="South Africa SDR, home">
-    <img src="{LOGO}" alt="South Africa SDR" class="logo-img" width="200" height="40" />
+    <img src="{LOGO}" alt="South Africa SDR" class="logo-img" width="220" height="40" />
   </a>
   <a href="{CONTACT_CTA}" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Book a call</a>
 </header>"""
@@ -273,7 +274,7 @@ def header_html(depth: int, minimal: bool = False) -> str:
   <div class="header-shell">
     <div class="header-pill">
       <a href="{rel(depth, '/')}" class="logo" aria-label="South Africa SDR, home">
-        <img src="{LOGO}" alt="South Africa SDR — Western Sales Talent" class="logo-img" width="200" height="40" fetchpriority="high" />
+        <img src="{LOGO}" alt="South Africa SDR — Western Sales Talent" class="logo-img" width="220" height="40" fetchpriority="high" />
       </a>
       <nav class="main-nav" id="mainNav" aria-label="Main">
         <ul class="nav-list">
@@ -377,7 +378,7 @@ def footer_html(depth: int) -> str:
   <div class="container footer-container">
     <div class="footer-header">
       <a href="{rel(depth, '/')}" class="footer-logo" aria-label="South Africa SDR, home">
-        <img src="{LOGO}" alt="South Africa SDR" class="footer-logo-img" width="180" height="36" loading="lazy" />
+        <img src="{LOGO_REV}" alt="South Africa SDR" class="footer-logo-img" width="200" height="36" loading="lazy" />
       </a>
       <p class="footer-tagline">Western sales talent that actually delivers.</p>
     </div>
@@ -576,9 +577,11 @@ def calendly_placeholder() -> str:
 
 def wrap_page(title: str, description: str, depth: int, body: str, schema: str = "", noindex: bool = False, minimal_header: bool = False, extra_head: str = "") -> str:
     robots = '<meta name="robots" content="noindex, nofollow">' if noindex else ""
+    favicon = """<link rel="icon" href="/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/brand/favicon.svg">"""
     fonts = """<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400,100;0,9..144,600,100;1,9..144,400,100;1,9..144,600,100&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">"""
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">"""
     hdr = header_html(depth, minimal=minimal_header)
     ftr = "" if minimal_header else footer_html(depth)
     sch = f'<script type="application/ld+json">\n{schema}\n</script>' if schema else ""
@@ -587,9 +590,11 @@ def wrap_page(title: str, description: str, depth: int, body: str, schema: str =
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#02403D">
   <title>{title}</title>
   <meta name="description" content="{description}">
   {robots}
+  {favicon}
   {fonts}
   {extra_head}
   <style>
@@ -704,7 +709,7 @@ def why_sa_teaser(depth: int) -> str:
 <article class="card pillar-card"><div class="pillar-icon" aria-hidden="true">{ICON_SVG["chat"]}</div><h3>First language English</h3><p>Clear, neutral English that UK and US prospects find familiar.</p></article>
 <article class="card pillar-card"><div class="pillar-icon" aria-hidden="true">{ICON_SVG["clock"]}</div><h3>GMT+2 timezone</h3><p>Full UK and EU overlap, plus US East Coast mornings.</p></article>
 </div>
-<p style="margin-top:32px;text-align:center;"><a href="{rel(depth, '/why-south-africa/')}" class="text-link" style="color:var(--green);border-color:rgba(30,77,64,0.3);">Read the full case for South Africa <span class="arrow">→</span></a></p>
+<p style="margin-top:32px;text-align:center;"><a href="{rel(depth, '/why-south-africa/')}" class="text-link" style="color:var(--green);border-color:rgba(2,64,61,0.3);">Read the full case for South Africa <span class="arrow">→</span></a></p>
 </div></section>"""
 
 
@@ -758,7 +763,7 @@ def industry_page(slug, name, meta_title, meta_desc, challenge, solution, img, d
 {section_head("Our approach", f"How our SA reps solve it", on_green=True)}
 <div class="prose prose-green"><p>{solution}</p></div>
 </div>
-<div class="split-media"><img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="South African SDR on a sales call" loading="lazy" width="800" height="520" style="border: 3px solid rgba(251,247,240,0.1);" /></div>
+<div class="split-media"><img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="South African SDR on a sales call" loading="lazy" width="800" height="520" style="border: 3px solid rgba(250,248,242,0.1);" /></div>
 </div></div></section>
 <section class="section-cream section"><div class="container">
 {section_head("Results", "Proof in pipeline", "Placeholder metrics until verified client data is available.")}
@@ -843,11 +848,11 @@ def build_all():
 </div></div></section>
 <section class="section-green section"><div class="container"><div class="split-section reverse reveal">
 <div class="split-copy">{section_head("English", "The English case", on_green=True)}<div class="prose prose-green"><p>South Africa ranks first in Africa for English proficiency and sits high on the global index. English is a first language for a large, educated professional workforce. The accent reads as clear and neutral to UK and US ears, closer to home than most offshore options.</p></div></div>
-<div class="split-media"><img src="https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="Professional on a client call" loading="lazy" style="border:3px solid rgba(251,247,240,0.1);" /></div>
+<div class="split-media"><img src="https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="Professional on a client call" loading="lazy" style="border:3px solid rgba(250,248,242,0.1);" /></div>
 </div></div></section>
 <section class="section-cream section"><div class="container"><div class="split-section reveal">
 <div class="split-copy">{section_head("Timezone", "The timezone case")}<div class="prose"><p>At GMT+2, South Africa overlaps the entire UK and European working day and covers US East Coast mornings. Your rep works when your prospects work. No overnight shifts, no next day lag on replies.</p></div></div>
-<div class="why-sa-stats" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;"><div class="stat-block" style="background:#fff;border-color:rgba(30,77,64,0.1);"><span class="stat-figure" style="color:var(--gold);">GMT+2</span><span class="stat-label" style="color:rgba(22,58,48,0.6);">UK &amp; EU overlap</span></div><div class="stat-block" style="background:#fff;border-color:rgba(30,77,64,0.1);"><span class="stat-figure" style="color:var(--gold);">US AM</span><span class="stat-label" style="color:rgba(22,58,48,0.6);">East Coast coverage</span></div></div>
+<div class="why-sa-stats" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;"><div class="stat-block" style="background:#fff;border-color:rgba(2,64,61,0.1);"><span class="stat-figure" style="color:var(--gold);">GMT+2</span><span class="stat-label" style="color:rgba(30,38,34,0.6);">UK &amp; EU overlap</span></div><div class="stat-block" style="background:#fff;border-color:rgba(2,64,61,0.1);"><span class="stat-figure" style="color:var(--gold);">US AM</span><span class="stat-label" style="color:rgba(30,38,34,0.6);">East Coast coverage</span></div></div>
 </div></div></section>
 <section class="section-green section"><div class="container"><div class="split-section reveal">
 <div class="split-copy">{section_head("Culture", "The cultural fit case", on_green=True)}<div class="prose prose-green"><p>South African business culture is Western in its norms, its written English and its professional expectations. Your rep will feel like part of the team, not a distant outsourced function.</p></div></div>
@@ -855,7 +860,7 @@ def build_all():
 </div></div></section>
 <section class="section-cream section"><div class="container">
 {section_head("Honest take", "Is South Africa right for you?")}
-<div class="prose reveal"><p>South Africa is a strong fit if you sell into the UK, Europe or the US and want a Western style rep at a lower cost. If you need 24/7 coverage or very high volume at the lowest possible price, another region may suit better, and we will say so.</p><p><a href="{rel(depth, '/compare/south-africa-vs-philippines/')}" class="text-link" style="color:var(--green);border-color:rgba(30,77,64,0.3);">See our comparisons <span class="arrow">→</span></a></p></div>
+<div class="prose reveal"><p>South Africa is a strong fit if you sell into the UK, Europe or the US and want a Western style rep at a lower cost. If you need 24/7 coverage or very high volume at the lowest possible price, another region may suit better, and we will say so.</p><p><a href="{rel(depth, '/compare/south-africa-vs-philippines/')}" class="text-link" style="color:var(--green);border-color:rgba(2,64,61,0.3);">See our comparisons <span class="arrow">→</span></a></p></div>
 </div></section>
 <section class="section-cream section"><div class="container">
 {section_head("FAQ", "Common questions")}
@@ -1051,8 +1056,8 @@ def build_all():
 <div class="prose"><p>South Africa SDR helps Western sales teams scale outbound with dedicated South African reps. We handle recruitment, training, and ongoing support so you get a rep who sounds right, works your hours, and costs a fraction of a domestic hire.</p><p>Our team combines sales operations experience with deep knowledge of the South African talent market. We have placed reps across SaaS, fintech, recruitment, professional services, and more.</p><p>We believe in honest recommendations. South Africa is not always the right answer, and we will tell you when another option fits better.</p></div>
 </div>
 <div class="why-sa-stats" style="display:grid;grid-template-columns:1fr;gap:16px;">
-<div class="stat-block" style="background:#fff;border-color:rgba(30,77,64,0.1);"><span class="stat-figure" style="color:var(--gold);">55-65%</span><span class="stat-label" style="color:rgba(22,58,48,0.6);">average cost saving</span></div>
-<div class="stat-block" style="background:#fff;border-color:rgba(30,77,64,0.1);"><span class="stat-figure" style="color:var(--gold);">3 weeks</span><span class="stat-label" style="color:rgba(22,58,48,0.6);">to a ramped rep</span></div>
+<div class="stat-block" style="background:#fff;border-color:rgba(2,64,61,0.1);"><span class="stat-figure" style="color:var(--gold);">55-65%</span><span class="stat-label" style="color:rgba(30,38,34,0.6);">average cost saving</span></div>
+<div class="stat-block" style="background:#fff;border-color:rgba(2,64,61,0.1);"><span class="stat-figure" style="color:var(--gold);">3 weeks</span><span class="stat-label" style="color:rgba(30,38,34,0.6);">to a ramped rep</span></div>
 </div>
 </div>
 <div class="about-values reveal">
@@ -1116,7 +1121,7 @@ def build_all():
 <section class="section-cream section"><div class="container">
 {section_head("Proof", "Client results")}
 <div class="hub-grid reveal">{case_cards}</div>
-<p class="prose" style="margin-top:32px;font-size:14px;color:rgba(22,58,48,0.55);">Placeholder case studies. Replace with verified client data when available.</p>
+<p class="prose" style="margin-top:32px;font-size:14px;color:rgba(30,38,34,0.55);">Placeholder case studies. Replace with verified client data when available.</p>
 </div></section>
 {cta_band(1, "Want results like these?")}
 </main>"""
@@ -1131,7 +1136,7 @@ def build_all():
 <h2>The challenge</h2><p>{desc} They needed a rep who could ramp fast, work their hours, and book qualified meetings without the cost of a domestic hire.</p>
 <h2>Our approach</h2><p>We recruited and trained a dedicated South African SDR on their playbook, ICP, and messaging. The rep plugged into their CRM and sequencer within the first week.</p>
 <h2>Results</h2><p>Within the first month, the rep exceeded the pipeline output of their previous in-house hire. Placeholder data: replace with verified client metrics.</p>
-<blockquote style="border-left:3px solid var(--gold);padding-left:20px;margin:28px 0;font-style:italic;color:rgba(22,58,48,0.8);">"Our rep booked more qualified meetings in her first month than our last in-house hire managed in a quarter." <cite style="display:block;margin-top:10px;font-style:normal;font-size:14px;color:rgba(22,58,48,0.55);">VP Sales, placeholder</cite></blockquote>
+<blockquote style="border-left:3px solid var(--gold);padding-left:20px;margin:28px 0;font-style:italic;color:rgba(30,38,34,0.8);">"Our rep booked more qualified meetings in her first month than our last in-house hire managed in a quarter." <cite style="display:block;margin-top:10px;font-style:normal;font-size:14px;color:rgba(30,38,34,0.55);">VP Sales, placeholder</cite></blockquote>
 <p><a href="{CONTACT_CTA}" class="btn btn-primary">Book a call</a></p>
 </div></div></section>
 </main>"""
