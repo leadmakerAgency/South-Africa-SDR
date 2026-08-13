@@ -1,6 +1,9 @@
+// Eleventy config: hybrid static site + Git-backed blog (Sveltia CMS).
+// Marketing pages are passthrough-copied; blog/feed/sitemap are generated at build time.
 const { shouldHideInProduction } = require("./lib/post-visibility");
 
 module.exports = function (eleventyConfig) {
+  // Docs-only file — not published to _site/
   eleventyConfig.ignores.add("CMS-SETUP.md");
 
   eleventyConfig.addPassthroughCopy("blog.css");

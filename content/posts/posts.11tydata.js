@@ -1,3 +1,4 @@
+// Per-post permalink: /blog/{slug}/ — hidden when draft or future-dated in production.
 const { shouldHideInProduction } = require("../../lib/post-visibility");
 
 module.exports = {

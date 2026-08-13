@@ -6,6 +6,7 @@
     "build": "python build_pages.py && node ./node_modules/@11ty/eleventy/cmd.cjs",
     "dev": "python build_pages.py && node ./node_modules/@11ty/eleventy/cmd.cjs --serve"
   },
+  "_comment": "Step 1: Python generates marketing pages. Step 2: Eleventy builds blog + outputs to _site/",
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
