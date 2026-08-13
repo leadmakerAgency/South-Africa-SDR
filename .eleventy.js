@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin/");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("styles.css");
+  eleventyConfig.addPassthroughCopy("redesign.css");
   eleventyConfig.addPassthroughCopy("script.js");
   eleventyConfig.addPassthroughCopy("index.html");
   eleventyConfig.addPassthroughCopy("404.html");

@@ -1,0 +1,366 @@
+/* =============================================================
+   South Africa SDR · Site-wide redesign layer
+   Community / gradient design language (SDR-Revolution style)
+   Applied on top of each page's existing brand CSS.
+   Brand palette is preserved — deep green, forest, support green,
+   gold, cream. No content or markup is changed; look & feel only.
+   Load AFTER the page's inline <style> so these rules win.
+   ============================================================= */
+
+:root {
+  --radius-btn: 12px;
+  --radius-card: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --container: 1300px;
+  --shadow-soft: 0 12px 34px rgba(1, 43, 40, 0.10);
+  --shadow-card: 0 14px 40px rgba(1, 43, 40, 0.09);
+  --shadow-float: 0 34px 70px rgba(1, 43, 40, 0.34);
+  --grad-hero: linear-gradient(157deg, #3A7A72 0%, #02403D 47%, #012B28 100%);
+  --grad-band: linear-gradient(160deg, #02403D 0%, #013B37 42%, #012B28 100%);
+  --grad-panel: linear-gradient(155deg, #3A7A72 0%, #02403D 54%, #012B28 100%);
+}
+
+/* =========================================================
+   1 · NAVBAR — transparent over the hero, solid when scrolled
+   (matches the reference: logo left, links centre, solid CTA)
+   ========================================================= */
+
+/* Transparent top state over the green hero */
+body:not(.page-plain) .site-header:not(.scrolled):not(.menu-open) .header-pill {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+body:not(.page-plain) .site-header:not(.scrolled):not(.menu-open) .nav-link {
+  color: rgba(255, 255, 255, 0.90);
+}
+
+body:not(.page-plain) .site-header:not(.scrolled):not(.menu-open) .nav-link:hover,
+body:not(.page-plain) .site-header:not(.scrolled):not(.menu-open) .has-dropdown:hover > .nav-toggle,
+body:not(.page-plain) .site-header:not(.scrolled):not(.menu-open) .has-dropdown.open > .nav-toggle {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+body:not(.page-plain) .site-header:not(.scrolled):not(.menu-open) .logo-img {
+  filter: brightness(0) invert(1);
+}
+
+body:not(.page-plain) .site-header:not(.scrolled):not(.menu-open) .hamburger {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+body:not(.page-plain) .site-header:not(.scrolled):not(.menu-open) .hamburger span {
+  background: #fff;
+}
+
+/* Solid, rounded pill once scrolled (readable over light sections) */
+.site-header.scrolled .header-pill {
+  border-radius: var(--radius-pill);
+}
+
+/* Contrasting CTA button — brand gold "Join"-style pill in every state */
+.btn-header-cta {
+  background: var(--gold);
+  color: var(--btn-ink);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+.btn-header-cta:hover {
+  background: var(--gold-dark);
+  color: var(--btn-ink);
+  box-shadow: 0 6px 18px rgba(218, 168, 102, 0.4);
+}
+
+/* =========================================================
+   2 · BUTTONS
+   ========================================================= */
+
+.btn { border-radius: var(--radius-btn); font-weight: 600; }
+
+.btn-primary { box-shadow: 0 10px 24px rgba(2, 64, 61, 0.22); }
+
+/* =========================================================
+   3 · HERO — centred, vibrant gradient canvas (all pages)
+   ========================================================= */
+
+.hero,
+.page-hero.hero {
+  background: var(--grad-hero) !important;
+}
+
+/* Interior-page hero copy: left-aligned text and content */
+.page-hero .hero-copy {
+  text-align: left;
+}
+
+.page-hero .hero-subhead {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.page-hero .hero-buttons {
+  justify-content: flex-start;
+}
+
+/* Hero primary button reads as a white pill on the green gradient */
+.page-hero .hero-buttons .btn-primary {
+  background: #FFFFFF;
+  color: var(--green);
+  box-shadow: 0 10px 24px rgba(1, 43, 40, 0.22);
+}
+
+.page-hero .hero-buttons .btn-primary:hover {
+  background: var(--cream);
+  color: var(--green);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   4 · SECTION BANDS — richer brand gradient
+   ========================================================= */
+
+.section-green {
+  background: var(--grad-band) !important;
+}
+
+.cta-band-green {
+  background: var(--grad-panel) !important;
+  color: var(--cream);
+}
+
+.cta-band-green h2,
+.cta-band-green h3 { color: var(--cream) !important; }
+
+.cta-band-green p { color: rgba(250, 248, 242, 0.86); }
+
+/* =========================================================
+   5 · CARDS — rounder, softer, community-card feel
+   ========================================================= */
+
+.card,
+.service-feature,
+.industry-card,
+.pillar-card,
+.testimonial,
+.compare-card {
+  border-radius: var(--radius-card) !important;
+}
+
+.card { box-shadow: var(--shadow-card); }
+
+.service-feature,
+.industry-card {
+  box-shadow: 0 12px 34px rgba(1, 43, 40, 0.08);
+}
+
+/* Slightly rounder media corners inside cards */
+.service-feature-media { border-radius: 0; }
+.industry-card-media { border-radius: 0; }
+
+/* =========================================================
+   6 · CHIPS / EYEBROWS — friendly pill tags
+   ========================================================= */
+
+.eyebrow-pill,
+.service-tag {
+  border-radius: var(--radius-pill);
+}
+
+/* =========================================================
+   7 · FOOTER — light, airy, multi-column (reference style)
+   ========================================================= */
+
+.site-footer {
+  background: var(--cream) !important;
+  color: var(--muted) !important;
+  border-top: 1px solid var(--hairline);
+}
+
+.site-footer .footer-col h4 { color: var(--green) !important; }
+
+.site-footer .footer-tagline { color: var(--muted) !important; }
+
+.site-footer .footer-divider { background: var(--hairline) !important; }
+
+.site-footer .footer-links a { color: var(--muted) !important; }
+.site-footer .footer-links a:hover { color: var(--green) !important; }
+
+.site-footer .footer-contact-item { color: var(--muted) !important; }
+.site-footer a.footer-contact-item:hover { color: var(--green) !important; }
+
+.site-footer .footer-contact-icon {
+  background: rgba(2, 64, 61, 0.08) !important;
+  color: var(--green) !important;
+}
+
+.site-footer .footer-social-link {
+  border: 1px solid var(--hairline) !important;
+  color: var(--green) !important;
+  background: #fff !important;
+}
+
+.site-footer .footer-social-link:hover {
+  color: #fff !important;
+  background: var(--green) !important;
+  border-color: var(--green) !important;
+}
+
+.site-footer .footer-copy,
+.site-footer .footer-legal a { color: var(--muted) !important; }
+.site-footer .footer-legal a:hover { color: var(--green) !important; }
+
+/* Footer logo shows the dark lockup on the now-light footer */
+.site-footer .footer-logo-img { filter: none !important; }
+
+/* Footer icon sizing — base CSS omits dimensions, so the inline SVGs
+   default to hundreds of px. Constrain the social + contact icons. */
+.site-footer .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.site-footer .footer-social-link {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex: none;
+}
+.site-footer .footer-social-link svg { width: 18px; height: 18px; }
+
+.site-footer .footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+.site-footer .footer-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-footer .footer-contact-icon {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  flex: none;
+}
+.site-footer .footer-contact-icon svg { width: 17px; height: 17px; }
+
+/* Footer layout — base CSS only defines these inside media queries,
+   so the desktop grid/flex is missing and columns stack. Restore it. */
+.site-footer .footer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-footer .footer-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+.site-footer .footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 32px;
+  flex: 1;
+}
+.site-footer .footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.site-footer .footer-aside { display: flex; align-items: flex-start; }
+.site-footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer .footer-legal { display: flex; gap: 18px; flex-wrap: wrap; }
+
+@media (max-width: 1080px) {
+  .site-footer .footer-main { flex-direction: column; gap: 36px; }
+}
+@media (max-width: 760px) {
+  .site-footer .footer-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .site-footer .footer-nav-grid { grid-template-columns: 1fr 1fr; gap: 28px 24px; }
+  .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
+/* =========================================================
+   8 · MISC POLISH
+   ========================================================= */
+
+/* Softer, rounder inputs anywhere on the site */
+input[type="email"],
+input[type="text"],
+input[type="tel"],
+textarea,
+select {
+  border-radius: 12px;
+}
+
+/* =========================================================
+   9 · RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .btn-header-cta { border-radius: var(--radius-pill); }
+}
+
+/* =========================================================
+   10 · BLOG (separate template system — blog.css)
+   ========================================================= */
+
+.blog-hero {
+  background: var(--grad-hero) !important;
+}
+
+.blog-site-header {
+  background: linear-gradient(90deg, rgba(2, 64, 61, 0.97), rgba(1, 43, 40, 0.97)) !important;
+}
+
+.blog-site-header .btn-gold {
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+/* Light, airy blog footer to match the main site */
+.blog-site-footer {
+  background: #FAF8F2 !important;
+  color: #6B7168 !important;
+  border-top: 1px solid #E7E1D5;
+}
+
+.blog-site-footer h5 { color: #02403D !important; }
+.blog-site-footer a { color: #6B7168 !important; }
+.blog-site-footer a:hover { color: #02403D !important; }
+.blog-site-footer .foot-brand p { color: #6B7168 !important; }
+.blog-site-footer .foot-bottom,
+.blog-site-footer .foot-bottom span { color: #6B7168 !important; }
+.blog-site-footer .foot-bottom { border-top-color: #E7E1D5 !important; }
+
+/* Rounder blog cards */
+.post-card,
+.related-card,
+.featured-post {
+  border-radius: var(--radius-card) !important;
+}

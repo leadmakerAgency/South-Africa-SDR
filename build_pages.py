@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-CONTACT_CTA = "http://www.southafricasdr.com/contact"
+CONTACT_CTA = "/contact/"
 LOGO = "/images/brand/lockup-horizontal.svg"
 LOGO_REV = "/images/brand/lockup-horizontal-rev.svg"
 
@@ -378,7 +378,7 @@ def footer_html(depth: int) -> str:
   <div class="container footer-container">
     <div class="footer-header">
       <a href="{rel(depth, '/')}" class="footer-logo" aria-label="South Africa SDR, home">
-        <img src="{LOGO_REV}" alt="South Africa SDR" class="footer-logo-img" width="200" height="36" loading="lazy" />
+        <img src="{LOGO}" alt="South Africa SDR" class="footer-logo-img" width="200" height="36" loading="lazy" />
       </a>
       <p class="footer-tagline">Western sales talent that actually delivers.</p>
     </div>
@@ -575,7 +575,7 @@ def calendly_placeholder() -> str:
 </div>"""
 
 
-def wrap_page(title: str, description: str, depth: int, body: str, schema: str = "", noindex: bool = False, minimal_header: bool = False, extra_head: str = "") -> str:
+def wrap_page(title: str, description: str, depth: int, body: str, schema: str = "", noindex: bool = False, minimal_header: bool = False, extra_head: str = "", plain: bool = False) -> str:
     robots = '<meta name="robots" content="noindex, nofollow">' if noindex else ""
     favicon = """<link rel="icon" href="/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/images/brand/favicon.svg">"""
@@ -585,6 +585,10 @@ def wrap_page(title: str, description: str, depth: int, body: str, schema: str =
     hdr = header_html(depth, minimal=minimal_header)
     ftr = "" if minimal_header else footer_html(depth)
     sch = f'<script type="application/ld+json">\n{schema}\n</script>' if schema else ""
+    # Pages without a green hero (book, success, 404) keep a solid, readable navbar
+    is_plain = plain or minimal_header
+    body_cls = " ".join(c for c in ("book-page" if minimal_header else "", "page-plain" if is_plain else "") if c)
+    body_attr = f' class="{body_cls}"' if body_cls else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -601,8 +605,9 @@ def wrap_page(title: str, description: str, depth: int, body: str, schema: str =
 {BASE_CSS}
 {EXTRA_CSS}
   </style>
+  <link rel="stylesheet" href="/redesign.css">
 </head>
-<body{" class='book-page'" if minimal_header else ""}>
+<body{body_attr}>
 {hdr}
 {body}
 {ftr}
@@ -1122,7 +1127,7 @@ def build_all():
 <a href="{CONTACT_CTA}" class="btn btn-primary">Book a call</a>
 <a href="{rel(depth, '/')}" class="btn btn-outline-green" style="margin-left:12px;">Back to home</a>
 </div></main>"""
-        write_page(path, wrap_page(f"{title} | South Africa SDR", msg, depth, sbody, noindex=True))
+        write_page(path, wrap_page(f"{title} | South Africa SDR", msg, depth, sbody, noindex=True, plain=True))
         pages.append(path)
 
     # LEGAL PAGES
@@ -1154,7 +1159,7 @@ def build_all():
 <a href="{rel(0, '/faq/')}" class="btn btn-outline-green">FAQ</a>
 </div>
 </div></main>"""
-    write_page("404.html", wrap_page("Page Not Found | South Africa SDR", "The page you are looking for does not exist.", 0, err_body, noindex=True))
+    write_page("404.html", wrap_page("Page Not Found | South Africa SDR", "The page you are looking for does not exist.", 0, err_body, noindex=True, plain=True))
     pages.append("404.html")
 
     print(f"\nBuilt {len(pages)} pages.")
