@@ -122,6 +122,11 @@ h3 { font-size: clamp(20px, 2vw, 23px); line-height: 1.3; }
   color: rgba(30, 38, 34, 0.75);
 }
 
+.section-green .section-sub,
+.section-sub-on-green {
+  color: rgba(250, 248, 242, 0.78);
+}
+
 /* ---------- Eyebrow pill ---------- */
 
 .eyebrow-pill {
@@ -1300,6 +1305,145 @@ a:hover .arrow { transform: translateX(4px); }
 .t-meta b { display: block; font-size: 14.5px; color: var(--green); }
 .t-meta small { font-size: 13px; color: rgba(30, 38, 34, 0.6); }
 
+/* ---------- Testimonials auto-marquee ---------- */
+
+.testimonials-attribution {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(250, 248, 242, 0.78);
+}
+
+.testimonials-attribution a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(218, 168, 102, 0.45);
+}
+
+.testimonials-attribution a:hover {
+  color: var(--cream);
+  text-decoration-color: var(--gold);
+}
+
+.testimonials-marquee {
+  position: relative;
+  margin: 0 -28px;
+  padding: 8px 0 4px;
+}
+
+.testimonials-marquee::before,
+.testimonials-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.testimonials-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--green) 0%, rgba(2, 64, 61, 0) 100%);
+}
+
+.testimonials-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--green) 0%, rgba(2, 64, 61, 0) 100%);
+}
+
+.tc-viewport {
+  overflow: hidden;
+}
+
+.tc-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  will-change: transform;
+}
+
+.tc-track.is-animating {
+  animation: tc-marquee 70s linear infinite;
+}
+
+.testimonials-marquee:hover .tc-track.is-animating {
+  animation-play-state: paused;
+}
+
+@keyframes tc-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.tc-card {
+  flex: 0 0 300px;
+  width: 300px;
+  padding: 22px 22px 20px;
+  gap: 14px;
+  margin: 0;
+}
+
+.tc-card blockquote {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tc-card blockquote::before {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.tc-card figcaption {
+  margin-top: auto;
+  gap: 11px;
+}
+
+.t-photo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+  border: 2px solid rgba(218, 168, 102, 0.35);
+  background: var(--sand);
+}
+
+@media (max-width: 760px) {
+  .testimonials-marquee {
+    margin: 0 -20px;
+  }
+
+  .testimonials-marquee::before,
+  .testimonials-marquee::after {
+    width: 36px;
+  }
+
+  .tc-card {
+    flex: 0 0 260px;
+    width: 260px;
+    padding: 20px 18px 18px;
+  }
+
+  .tc-track {
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tc-track.is-animating {
+    animation: none;
+  }
+}
+
 /* =========================================================
    Section 9: Comparison teaser
    ========================================================= */
@@ -2059,7 +2203,25 @@ a.footer-contact-item:hover { color: var(--gold); }
 </div>
 </div>
 </div></section>
-<section class="cta-band-green section">
+<section class="section-green section testimonials-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow-pill pill-on-green">Client stories</span>
+      <h2>Trusted by LeadMaker clients</h2>
+      <p class="section-sub section-sub-on-green">Kind words from clients who work with our parent agency, LeadMaker.</p>
+    </div>
+    <p class="testimonials-attribution reveal">
+      These testimonials are from clients of
+      <a href="https://leadmaker.agency" target="_blank" rel="noopener noreferrer">LeadMaker</a>,
+      our parent agency — the team behind South Africa SDR's recruitment, training, and operations.
+    </p>
+    <div class="testimonials-marquee reveal" data-testimonials-carousel aria-label="Client testimonials">
+      <div class="tc-viewport">
+        <div class="tc-track"></div>
+      </div>
+    </div>
+  </div>
+</section><section class="cta-band-green section">
   <div class="cta-glow" aria-hidden="true"></div>
   <div class="container reveal">
     <h2>Let's build your pipeline.</h2>
@@ -2334,6 +2496,57 @@ a.footer-contact-item:hover { color: var(--gold); }
     counters.forEach(function (el) { countObserver.observe(el); });
   } else {
     counters.forEach(animateCount);
+  }
+
+  /* ---------- Testimonials auto-marquee ---------- */
+  function getInitials(name) {
+    return name
+      .split(/\s+/)
+      .slice(0, 2)
+      .map(function (part) { return part.charAt(0).toUpperCase(); })
+      .join("");
+  }
+
+  function buildTestimonialCard(item, index) {
+    var avatarClass = index % 3 === 1 ? " av-2" : index % 3 === 2 ? " av-3" : "";
+    var avatarMarkup = item.photo
+      ? '<img class="t-photo" src="' + encodeURI(item.photo) + '" alt="' + item.name + '" width="42" height="42" loading="lazy" />'
+      : '<span class="t-avatar' + avatarClass + '">' + getInitials(item.name) + "</span>";
+
+    return (
+      '<figure class="card testimonial tc-card">' +
+      "<blockquote>" + item.quote + "</blockquote>" +
+      "<figcaption>" +
+      avatarMarkup +
+      '<span class="t-meta"><b>' + item.name + "</b><small>" + item.role + "</small></span>" +
+      "</figcaption></figure>"
+    );
+  }
+
+  function initTestimonialsMarquee(marqueeRoot, items) {
+    var track = marqueeRoot.querySelector(".tc-track");
+    var cardsHtml = items.map(buildTestimonialCard).join("");
+    track.innerHTML = cardsHtml + cardsHtml;
+
+    if (!reduceMotion && items.length > 0) {
+      track.classList.add("is-animating");
+    }
+  }
+
+  var marqueeRoot = document.querySelector("[data-testimonials-carousel]");
+  if (marqueeRoot) {
+    fetch("/testimonials.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("Failed to load testimonials");
+        return res.json();
+      })
+      .then(function (items) {
+        initTestimonialsMarquee(marqueeRoot, items);
+      })
+      .catch(function () {
+        marqueeRoot.innerHTML =
+          '<p class="testimonials-attribution">Client testimonials are temporarily unavailable. Please check back soon.</p>';
+      });
   }
 })();
 

@@ -152,4 +152,55 @@
   } else {
     counters.forEach(animateCount);
   }
+
+  /* ---------- Testimonials auto-marquee ---------- */
+  function getInitials(name) {
+    return name
+      .split(/\s+/)
+      .slice(0, 2)
+      .map(function (part) { return part.charAt(0).toUpperCase(); })
+      .join("");
+  }
+
+  function buildTestimonialCard(item, index) {
+    var avatarClass = index % 3 === 1 ? " av-2" : index % 3 === 2 ? " av-3" : "";
+    var avatarMarkup = item.photo
+      ? '<img class="t-photo" src="' + encodeURI(item.photo) + '" alt="' + item.name + '" width="42" height="42" loading="lazy" />'
+      : '<span class="t-avatar' + avatarClass + '">' + getInitials(item.name) + "</span>";
+
+    return (
+      '<figure class="card testimonial tc-card">' +
+      "<blockquote>" + item.quote + "</blockquote>" +
+      "<figcaption>" +
+      avatarMarkup +
+      '<span class="t-meta"><b>' + item.name + "</b><small>" + item.role + "</small></span>" +
+      "</figcaption></figure>"
+    );
+  }
+
+  function initTestimonialsMarquee(marqueeRoot, items) {
+    var track = marqueeRoot.querySelector(".tc-track");
+    var cardsHtml = items.map(buildTestimonialCard).join("");
+    track.innerHTML = cardsHtml + cardsHtml;
+
+    if (!reduceMotion && items.length > 0) {
+      track.classList.add("is-animating");
+    }
+  }
+
+  var marqueeRoot = document.querySelector("[data-testimonials-carousel]");
+  if (marqueeRoot) {
+    fetch("/testimonials.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("Failed to load testimonials");
+        return res.json();
+      })
+      .then(function (items) {
+        initTestimonialsMarquee(marqueeRoot, items);
+      })
+      .catch(function () {
+        marqueeRoot.innerHTML =
+          '<p class="testimonials-attribution">Client testimonials are temporarily unavailable. Please check back soon.</p>';
+      });
+  }
 })();

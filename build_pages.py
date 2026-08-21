@@ -441,14 +441,40 @@ def footer_html(depth: int) -> str:
 </footer>"""
 
 
+def testimonials_section() -> str:
+    return """<section class="section-green section testimonials-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow-pill pill-on-green">Client stories</span>
+      <h2>Trusted by LeadMaker clients</h2>
+      <p class="section-sub section-sub-on-green">Kind words from clients who work with our parent agency, LeadMaker.</p>
+    </div>
+    <p class="testimonials-attribution reveal">
+      These testimonials are from clients of
+      <a href="https://leadmaker.agency" target="_blank" rel="noopener noreferrer">LeadMaker</a>,
+      our parent agency — the team behind South Africa SDR's recruitment, training, and operations.
+    </p>
+    <div class="testimonials-marquee reveal" data-testimonials-carousel aria-label="Client testimonials">
+      <div class="tc-viewport">
+        <div class="tc-track"></div>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
 def cta_band(depth: int, headline: str) -> str:
-    return f"""<section class="cta-band-green section">
+    return testimonials_section() + f"""<section class="cta-band-green section">
   <div class="cta-glow" aria-hidden="true"></div>
   <div class="container reveal">
     <h2>{headline}</h2>
     <a href="{CONTACT_CTA}" class="btn btn-primary btn-lg">Book a call</a>
   </div>
 </section>"""
+
+
+def page_closing(depth: int, headline: str = "Ready to build your pipeline with South African SDRs?") -> str:
+    return cta_band(depth, headline)
 
 
 def page_hero(eyebrow: str, h1: str, subhead: str = "", buttons: str = "", image_url: str = "", image_alt: str = "", single_col: bool = False) -> str:
@@ -1047,6 +1073,7 @@ def build_all():
 </div>
 </div>
 </div></section>
+{page_closing(1)}
 </main>"""
     write_page("contact/index.html", wrap_page("Contact Us | South Africa SDR", "Book a call or send a message. We reply within one business day.", 1, contact_body))
     pages.append("contact/index.html")
@@ -1108,6 +1135,7 @@ def build_all():
 <blockquote style="border-left:3px solid var(--gold);padding-left:20px;margin:28px 0;font-style:italic;color:rgba(30,38,34,0.8);">"Our rep booked more qualified meetings in her first month than our last in-house hire managed in a quarter." <cite style="display:block;margin-top:10px;font-style:normal;font-size:14px;color:rgba(30,38,34,0.55);">VP Sales, placeholder</cite></blockquote>
 <p><a href="{CONTACT_CTA}" class="btn btn-primary">Book a call</a></p>
 </div></div></section>
+{page_closing(2, "Want results like these?")}
 </main>"""
         path = f"case-studies/{slug}/index.html"
         write_page(path, wrap_page(f"{title} | South Africa SDR", desc, 2, cs_body))
@@ -1126,7 +1154,9 @@ def build_all():
 <p>{msg}</p>
 <a href="{CONTACT_CTA}" class="btn btn-primary">Book a call</a>
 <a href="{rel(depth, '/')}" class="btn btn-outline-green" style="margin-left:12px;">Back to home</a>
-</div></main>"""
+</div>
+{page_closing(depth, "Ready to build your pipeline?")}
+</main>"""
         write_page(path, wrap_page(f"{title} | South Africa SDR", msg, depth, sbody, noindex=True, plain=True))
         pages.append(path)
 
@@ -1137,6 +1167,7 @@ def build_all():
 <div class="legal-content">{content}</div>
 <div class="split-media"><img src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop" alt="Professional workspace" loading="lazy" style="border-radius:16px;" /></div>
 </div></div></section>
+{closing}
 </main>"""
     legal_pages = [
         ("privacy", "Privacy Policy", "<h2>Introduction</h2><p>South Africa SDR (\"we\", \"us\") respects your privacy. This policy explains how we collect, use, and protect personal information when you visit southafricasdr.com or contact us.</p><h2>Information we collect</h2><p>We collect information you provide via contact forms, call bookings, and email correspondence: name, work email, company, and message content.</p><h2>How we use your information</h2><p>We use your information to respond to enquiries, schedule calls, and provide our services. We do not sell your personal data.</p><h2>Data retention</h2><p>We retain contact data for as long as needed to fulfil the purposes above or as required by law.</p><h2>Your rights</h2><p>Under POPIA and GDPR, you may request access, correction, or deletion of your personal data. Contact hello@southafricasdr.com.</p><h2>Contact</h2><p>hello@southafricasdr.com, Cape Town, South Africa.</p>"),
@@ -1145,7 +1176,7 @@ def build_all():
     ]
     for slug, title, content in legal_pages:
         hero = page_hero("Legal", title, "", single_col=True)
-        write_page(f"{slug}/index.html", wrap_page(f"{title} | South Africa SDR", f"{title} for South Africa SDR.", 1, legal_template.format(hero=hero, content=content)))
+        write_page(f"{slug}/index.html", wrap_page(f"{title} | South Africa SDR", f"{title} for South Africa SDR.", 1, legal_template.format(hero=hero, content=content, closing=page_closing(1))))
         pages.append(f"{slug}/index.html")
 
     # 404
@@ -1158,6 +1189,7 @@ def build_all():
 <a href="{CONTACT_CTA}" class="btn btn-outline-green">Book a call</a>
 <a href="{rel(0, '/faq/')}" class="btn btn-outline-green">FAQ</a>
 </div>
+{page_closing(0)}
 </div></main>"""
     write_page("404.html", wrap_page("Page Not Found | South Africa SDR", "The page you are looking for does not exist.", 0, err_body, noindex=True, plain=True))
     pages.append("404.html")
