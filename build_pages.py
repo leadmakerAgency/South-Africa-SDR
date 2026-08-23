@@ -1049,18 +1049,10 @@ def build_all():
 
     # CONTACT
     contact_body = f"""<main>
-{page_hero("Contact", "Let's talk sales", "Book a call or send us a message. We reply within one business day.", "", "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop", "Team ready to help", True)}
-<section class="section-cream section"><div class="container contact-layout reveal">
+<section class="section-cream section" style="padding-top: calc(var(--header-offset) + 48px);"><div class="container contact-layout reveal">
 <div class="card" style="padding:32px;">
 {section_head("Message", "Send a message")}
-<form id="contactForm" data-depth="../" novalidate>
-<div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required /><span class="form-error">Please enter your name</span></div>
-<div class="form-group"><label for="email">Work email</label><input type="email" id="email" name="email" required /><span class="form-error">Please enter a valid email</span></div>
-<div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" required /><span class="form-error">Please enter your company</span></div>
-<div class="form-group"><label for="market">What you sell / target market</label><input type="text" id="market" name="market" required /><span class="form-error">Please tell us about your market</span></div>
-<div class="form-group"><label for="message">Message</label><textarea id="message" name="message" required></textarea><span class="form-error">Please enter a message</span></div>
-<button type="submit" class="btn btn-primary">Send message</button>
-</form>
+<script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>
 </div>
 <div>
 {section_head("Book", "Or book a call")}
