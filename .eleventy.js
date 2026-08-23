@@ -1,6 +1,7 @@
 // Eleventy config: hybrid static site + Git-backed blog (Sveltia CMS).
 // Marketing pages are passthrough-copied; blog/feed/sitemap are generated at build time.
 const { shouldHideInProduction } = require("./lib/post-visibility");
+const { absoluteUrl } = require("./lib/resolve-featured-image");
 
 module.exports = function (eleventyConfig) {
   // Docs-only file — not published to _site/
@@ -77,6 +78,8 @@ module.exports = function (eleventyConfig) {
     const minutes = Math.max(1, Math.round(words / 230));
     return `${minutes} min read`;
   });
+
+  eleventyConfig.addFilter("absoluteUrl", (url, siteUrl) => absoluteUrl(url, siteUrl));
 
   eleventyConfig.addFilter("relatedPosts", (posts, currentUrl, currentTags, limit) => {
     limit = limit || 3;

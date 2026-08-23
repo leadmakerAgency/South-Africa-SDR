@@ -14,7 +14,7 @@
   <meta property="og:description" content="{% if excerpt %}{{ excerpt }}{% else %}Practical guides on outbound, SDR strategy and offshore sales teams.{% endif %}" />
   <meta property="og:type" content="{% if layout == 'blog-post.njk' %}article{% else %}website{% endif %}" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-  {% if featured_image %}<meta property="og:image" content="{{ site.url }}{{ featured_image }}" />{% endif %}
+  {% if featured_image %}<meta property="og:image" content="{{ featured_image | absoluteUrl(site.url) }}" />{% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
