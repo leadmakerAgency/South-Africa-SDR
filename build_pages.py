@@ -429,12 +429,12 @@ def testimonials_section() -> str:
     return """<section class="section-green section testimonials-section">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow-pill pill-on-green">In their words</span>
-      <h2>Pipeline wins, straight from the teams we have built with</h2>
-      <p class="section-sub section-sub-on-green">Unfiltered takes on outreach, booked meetings, and sales support — shared with their blessing.</p>
+      <span class="eyebrow-pill pill-on-green">Testimonials</span>
+      <h2>Client testimonials, in their own words</h2>
+      <p class="section-sub section-sub-on-green">Complete reviews, not clipped to a single line, from the teams we have built pipeline for.</p>
     </div>
     <p class="testimonials-attribution reveal">
-      A <a href="https://leadmaker.agency" target="_blank" rel="noopener noreferrer">LeadMaker</a> company.
+      Shared from <a href="https://leadmaker.agency" target="_blank" rel="noopener noreferrer">LeadMaker</a>, our parent company and the outbound team behind South Africa SDR.
     </p>
     <div class="testimonials-marquee reveal" data-testimonials-carousel aria-label="Client testimonials">
       <div class="tc-viewport">

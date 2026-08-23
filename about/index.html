@@ -1367,6 +1367,7 @@ a:hover .arrow { transform: translateX(4px); }
 
 .tc-track {
   display: flex;
+  align-items: flex-start;
   gap: 18px;
   width: max-content;
   will-change: transform;
@@ -1386,21 +1387,21 @@ a:hover .arrow { transform: translateX(4px); }
 }
 
 .tc-card {
-  flex: 0 0 300px;
-  width: 300px;
+  flex: 0 0 320px;
+  width: 320px;
   padding: 22px 22px 20px;
   gap: 14px;
   margin: 0;
 }
 
+/* Longer reviews get a wider card so the quote stays a readable shape */
+.tc-card.tc-md { flex-basis: 380px; width: 380px; }
+.tc-card.tc-lg { flex-basis: 440px; width: 440px; }
+
 .tc-card blockquote {
   font-size: 14px;
   line-height: 1.55;
   color: var(--ink);
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .tc-card blockquote::before {
@@ -1434,10 +1435,13 @@ a:hover .arrow { transform: translateX(4px); }
   }
 
   .tc-card {
-    flex: 0 0 260px;
-    width: 260px;
+    flex: 0 0 272px;
+    width: 272px;
     padding: 20px 18px 18px;
   }
+
+  .tc-card.tc-md { flex-basis: 288px; width: 288px; }
+  .tc-card.tc-lg { flex-basis: 300px; width: 300px; }
 
   .tc-track {
     gap: 14px;
@@ -2156,12 +2160,12 @@ a.footer-contact-item:hover { color: var(--gold); }
 <section class="section-green section testimonials-section">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow-pill pill-on-green">In their words</span>
-      <h2>Pipeline wins, straight from the teams we have built with</h2>
-      <p class="section-sub section-sub-on-green">Unfiltered takes on outreach, booked meetings, and sales support — shared with their blessing.</p>
+      <span class="eyebrow-pill pill-on-green">Testimonials</span>
+      <h2>Client testimonials, in their own words</h2>
+      <p class="section-sub section-sub-on-green">Complete reviews, not clipped to a single line, from the teams we have built pipeline for.</p>
     </div>
     <p class="testimonials-attribution reveal">
-      A <a href="https://leadmaker.agency" target="_blank" rel="noopener noreferrer">LeadMaker</a> company.
+      Shared from <a href="https://leadmaker.agency" target="_blank" rel="noopener noreferrer">LeadMaker</a>, our parent company and the outbound team behind South Africa SDR.
     </p>
     <div class="testimonials-marquee reveal" data-testimonials-carousel aria-label="Client testimonials">
       <div class="tc-viewport">
@@ -2417,6 +2421,13 @@ a.footer-contact-item:hover { color: var(--gold); }
       .join("");
   }
 
+  /* Quotes run full length, so the card widens with the review rather than clipping it. */
+  function getSizeClass(quote) {
+    if (quote.length > 300) return " tc-lg";
+    if (quote.length > 150) return " tc-md";
+    return "";
+  }
+
   function buildTestimonialCard(item, index) {
     var avatarClass = index % 3 === 1 ? " av-2" : index % 3 === 2 ? " av-3" : "";
     var avatarMarkup = item.photo
@@ -2424,7 +2435,7 @@ a.footer-contact-item:hover { color: var(--gold); }
       : '<span class="t-avatar' + avatarClass + '">' + getInitials(item.name) + "</span>";
 
     return (
-      '<figure class="card testimonial tc-card">' +
+      '<figure class="card testimonial tc-card' + getSizeClass(item.quote) + '">' +
       "<blockquote>" + item.quote + "</blockquote>" +
       "<figcaption>" +
       avatarMarkup +
