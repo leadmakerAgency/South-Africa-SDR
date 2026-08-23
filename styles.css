@@ -1291,10 +1291,16 @@ a:hover .arrow { transform: translateX(4px); }
 
 /* ---------- Testimonials auto-marquee ---------- */
 
+.testimonials-section .section-head {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .testimonials-attribution {
   max-width: 680px;
-  margin: 0 auto 28px;
-  text-align: center;
+  margin: 0 0 28px;
+  text-align: left;
   font-size: 13px;
   line-height: 1.5;
   color: rgba(250, 248, 242, 0.55);

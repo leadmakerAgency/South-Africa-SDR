@@ -296,20 +296,8 @@ def header_html(depth: int, minimal: bool = False) -> str:
             </button>
             <div class="dropdown dropdown-wide">
               <div class="dropdown-cols">
-                <a href="{rel(depth, '/industries/saas/')}">SaaS</a>
-                <a href="{rel(depth, '/industries/financial-services/')}">Financial Services</a>
-                <a href="{rel(depth, '/industries/real-estate/')}">Real Estate</a>
-                <a href="{rel(depth, '/industries/insurance/')}">Insurance</a>
-                <a href="{rel(depth, '/industries/healthcare/')}">Healthcare</a>
-                <a href="{rel(depth, '/industries/recruitment/')}">Recruitment</a>
-                <a href="{rel(depth, '/industries/professional-services/')}">Professional Services</a>
-                <a href="{rel(depth, '/industries/technology-it/')}">Technology &amp; IT</a>
-                <a href="{rel(depth, '/industries/marketing-agencies/')}">Marketing Agencies</a>
-                <a href="{rel(depth, '/industries/logistics/')}">Logistics</a>
-                <a href="{rel(depth, '/industries/manufacturing/')}">Manufacturing</a>
-                <a href="{rel(depth, '/industries/cybersecurity/')}">Cybersecurity</a>
+                {industry_dropdown_links(depth)}
               </div>
-              <a class="dropdown-all" href="{rel(depth, '/industries/')}">View all industries</a>
             </div>
           </li>
           <li><a href="{rel(depth, '/about/')}" class="nav-link">About</a></li>
@@ -351,9 +339,7 @@ def header_html(depth: int, minimal: bool = False) -> str:
         </div>
         <button class="mm-link mm-accordion" aria-expanded="false">Industries <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
         <div class="mm-panel">
-          <a href="{rel(depth, '/industries/saas/')}">SaaS</a>
-          <a href="{rel(depth, '/industries/financial-services/')}">Financial Services</a>
-          <a href="{rel(depth, '/industries/')}">View all industries</a>
+          {industry_mobile_links(depth)}
         </div>
         <a class="mm-link" href="{rel(depth, '/about/')}">About</a>
         <button class="mm-link mm-accordion" aria-expanded="false">Resources <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
@@ -397,9 +383,7 @@ def footer_html(depth: int) -> str:
         <div class="footer-col">
           <h4>Industries</h4>
           <ul class="footer-links">
-            <li><a href="{rel(depth, '/industries/saas/')}">SaaS</a></li>
-            <li><a href="{rel(depth, '/industries/financial-services/')}">Financial Services</a></li>
-            <li><a href="{rel(depth, '/industries/')}">View all industries</a></li>
+            {industry_footer_links(depth)}
           </ul>
         </div>
         <div class="footer-col">
@@ -445,12 +429,12 @@ def testimonials_section() -> str:
     return """<section class="section-green section testimonials-section">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow-pill pill-on-green">What clients say</span>
-      <h2>Feedback from teams we have worked with</h2>
-      <p class="section-sub section-sub-on-green">A selection of quotes on outreach, pipeline, and sales support — shared with permission.</p>
+      <span class="eyebrow-pill pill-on-green">In their words</span>
+      <h2>Pipeline wins, straight from the teams we have built with</h2>
+      <p class="section-sub section-sub-on-green">Unfiltered takes on outreach, booked meetings, and sales support — shared with their blessing.</p>
     </div>
     <p class="testimonials-attribution reveal">
-      South Africa SDR is operated by <a href="https://leadmaker.agency" target="_blank" rel="noopener noreferrer">LeadMaker</a>.
+      A <a href="https://leadmaker.agency" target="_blank" rel="noopener noreferrer">LeadMaker</a> company.
     </p>
     <div class="testimonials-marquee reveal" data-testimonials-carousel aria-label="Client testimonials">
       <div class="tc-viewport">
@@ -702,6 +686,32 @@ INDUSTRIES = [
      "Our SDRs are trained on your product positioning, compliance frameworks (SOC 2, ISO 27001, GDPR), and the CISO personas you target. They book qualified discovery calls with security leaders who have real budget and urgency.",
      "https://images.pexels.com/photos/5380678/pexels-photo-5380678.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop"),
 ]
+
+
+def _industry_label(name: str) -> str:
+    return name.replace("&", "&amp;")
+
+
+def industry_dropdown_links(depth: int) -> str:
+    return "\n                ".join(
+        f'<a href="{rel(depth, f"/industries/{slug}/")}">{_industry_label(name)}</a>'
+        for slug, name, *_ in INDUSTRIES
+    )
+
+
+def industry_mobile_links(depth: int) -> str:
+    return "\n          ".join(
+        f'<a href="{rel(depth, f"/industries/{slug}/")}">{_industry_label(name)}</a>'
+        for slug, name, *_ in INDUSTRIES
+    )
+
+
+def industry_footer_links(depth: int) -> str:
+    return "\n            ".join(
+        f'<li><a href="{rel(depth, f"/industries/{slug}/")}">{_industry_label(name)}</a></li>'
+        for slug, name, *_ in INDUSTRIES
+    )
+
 
 COMPARISONS = [
     ("south-africa-vs-philippines", "Philippines", "the Philippines",
@@ -1065,7 +1075,7 @@ def build_all():
 </div></section>
 {page_closing(1)}
 </main>"""
-    write_page("contact/index.html", wrap_page("Contact Us | South Africa SDR", "Book a call or send a message. We reply within one business day.", 1, contact_body))
+    write_page("contact/index.html", wrap_page("Contact Us | South Africa SDR", "Book a call or send a message. We reply within one business day.", 1, contact_body, plain=True))
     pages.append("contact/index.html")
 
     # ABOUT
