@@ -2,7 +2,7 @@
 title: Top 5 SDR Companies in South Africa
 slug: ''
 date: 2026-08-25
-draft: true
+draft: false
 excerpt: Discover the top 5 SDR companies in South Africa. Learn how sales development reps boost pipeline growth, generate qualified B2B leads, and elevate revenue for scaling businesses in 2026.
 featured_image: /media/pexels-sora-shimazaki-5668492.jpg
 hero_emoji: 📈
