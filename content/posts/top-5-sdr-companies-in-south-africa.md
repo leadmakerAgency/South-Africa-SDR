@@ -4,7 +4,7 @@ slug: ''
 date: 2026-08-25
 draft: false
 excerpt: Discover the top 5 SDR companies in South Africa. Learn how sales development reps boost pipeline growth, generate qualified B2B leads, and elevate revenue for scaling businesses in 2026.
-featured_image: /media/pexels-sora-shimazaki-5668492.jpg
+featured_image: /media/pexels-mikhail-nilov-8101931.jpg
 hero_emoji: 📈
 tags: []
 ---
@@ -34,7 +34,7 @@ For organizations seeking rapid market deployment, enterprise-grade reporting, a
 
 ## **2. LeadHome B2B Solutions**
 
-LeadHome B2B Solutions –[ https://www.southafricasdr.com/](https://www.southafricasdr.com/)
+LeadHome B2B Solutions –[ ](https://www.b2b-leadsolutions.com/)[https://www.leadhomes.xyz/](https://www.leadhomes.xyz/)
 
 LeadHome B2B Solutions operates as a dedicated regional sales enablement firm specializing in mid-market tech and local enterprise sales expansion. Operating primarily out of Johannesburg, the agency delivers structured cold outreach campaigns and targeted appointment-setting services.
 
