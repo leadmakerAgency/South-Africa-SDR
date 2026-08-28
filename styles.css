@@ -1324,34 +1324,27 @@ a:hover .arrow { transform: translateX(4px); }
   padding: 8px 0 4px;
 }
 
-.testimonials-marquee::before,
-.testimonials-marquee::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 72px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.testimonials-marquee::before {
-  left: 0;
-  background: linear-gradient(to right, var(--green) 0%, rgba(2, 64, 61, 0) 100%);
-}
-
-.testimonials-marquee::after {
-  right: 0;
-  background: linear-gradient(to left, var(--green) 0%, rgba(2, 64, 61, 0) 100%);
-}
-
 .tc-viewport {
   overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 72px,
+    #000 calc(100% - 72px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 72px,
+    #000 calc(100% - 72px),
+    transparent 100%
+  );
 }
 
 .tc-track {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 18px;
   width: max-content;
   will-change: transform;
@@ -1373,19 +1366,32 @@ a:hover .arrow { transform: translateX(4px); }
 .tc-card {
   flex: 0 0 320px;
   width: 320px;
+  height: 280px;
   padding: 22px 22px 20px;
   gap: 14px;
   margin: 0;
+  overflow: hidden;
 }
 
-/* Longer reviews get a wider card so the quote stays a readable shape */
-.tc-card.tc-md { flex-basis: 380px; width: 380px; }
-.tc-card.tc-lg { flex-basis: 440px; width: 440px; }
-
 .tc-card blockquote {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
   font-size: 14px;
   line-height: 1.55;
   color: var(--ink);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(2, 64, 61, 0.25) transparent;
+}
+
+.tc-card blockquote::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tc-card blockquote::-webkit-scrollbar-thumb {
+  background: rgba(2, 64, 61, 0.25);
+  border-radius: 4px;
 }
 
 .tc-card blockquote::before {
@@ -1394,6 +1400,7 @@ a:hover .arrow { transform: translateX(4px); }
 }
 
 .tc-card figcaption {
+  flex-shrink: 0;
   margin-top: auto;
   gap: 11px;
 }
@@ -1413,19 +1420,29 @@ a:hover .arrow { transform: translateX(4px); }
     margin: 0 -20px;
   }
 
-  .testimonials-marquee::before,
-  .testimonials-marquee::after {
-    width: 36px;
+  .tc-viewport {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 40px,
+      #000 calc(100% - 40px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 40px,
+      #000 calc(100% - 40px),
+      transparent 100%
+    );
   }
 
   .tc-card {
     flex: 0 0 272px;
     width: 272px;
+    height: 260px;
     padding: 20px 18px 18px;
   }
-
-  .tc-card.tc-md { flex-basis: 288px; width: 288px; }
-  .tc-card.tc-lg { flex-basis: 300px; width: 300px; }
 
   .tc-track {
     gap: 14px;

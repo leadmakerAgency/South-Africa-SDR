@@ -7,12 +7,11 @@
     <span class="post-hero-emoji">{{ hero_emoji }}</span>
     {% endif %}
 
-    {% if tags and tags | length %}
+    {% set visibleTags = tags | displayTags %}
+    {% if visibleTags and visibleTags | length %}
     <div class="post-tags">
-      {% for tag in tags %}
-        {% if tag != "posts" %}
+      {% for tag in visibleTags %}
         <span class="post-tag">{{ tag }}</span>
-        {% endif %}
       {% endfor %}
     </div>
     {% endif %}

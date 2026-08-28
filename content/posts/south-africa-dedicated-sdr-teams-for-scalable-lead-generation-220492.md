@@ -6,9 +6,6 @@ date: "2026-08-28T14:02:29.852Z"
 excerpt: "Hook If your pipeline looks healthy one month and starved the next, the problem is rarely luck. For companies that rely on consistent outbound motion, the difference between sporadic growth and predictable revenue often comes down to the qu"
 featured_image: "/media/image-south-africa-dedicated-sdr-teams-for-scalable-lead-generation.png"
 hero_emoji: ""
-tags:
-  - "airbnb"
-  - "cambridge"
 permalink: "/blog/south-africa-dedicated-sdr-teams-for-scalable-lead-generation/"
 ---
 

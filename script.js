@@ -162,13 +162,6 @@
       .join("");
   }
 
-  /* Quotes run full length, so the card widens with the review rather than clipping it. */
-  function getSizeClass(quote) {
-    if (quote.length > 300) return " tc-lg";
-    if (quote.length > 150) return " tc-md";
-    return "";
-  }
-
   function buildTestimonialCard(item, index) {
     var avatarClass = index % 3 === 1 ? " av-2" : index % 3 === 2 ? " av-3" : "";
     var avatarMarkup = item.photo
@@ -176,7 +169,7 @@
       : '<span class="t-avatar' + avatarClass + '">' + getInitials(item.name) + "</span>";
 
     return (
-      '<figure class="card testimonial tc-card' + getSizeClass(item.quote) + '">' +
+      '<figure class="card testimonial tc-card">' +
       "<blockquote>" + item.quote + "</blockquote>" +
       "<figcaption>" +
       avatarMarkup +

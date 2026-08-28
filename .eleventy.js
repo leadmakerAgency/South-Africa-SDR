@@ -2,6 +2,7 @@
 // Marketing pages are passthrough-copied; blog/feed/sitemap are generated at build time.
 const { shouldHideInProduction } = require("./lib/post-visibility");
 const { absoluteUrl } = require("./lib/resolve-featured-image");
+const { sanitizeTags } = require("./lib/post-tags");
 
 module.exports = function (eleventyConfig) {
   // Docs-only file — not published to _site/
@@ -81,13 +82,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("absoluteUrl", (url, siteUrl) => absoluteUrl(url, siteUrl));
 
+  eleventyConfig.addFilter("displayTags", (tags) => sanitizeTags(tags));
+
   eleventyConfig.addFilter("relatedPosts", (posts, currentUrl, currentTags, limit) => {
     limit = limit || 3;
-    const tags = (currentTags || []).map((t) => t.toLowerCase());
+    const tags = sanitizeTags(currentTags).map((t) => t.toLowerCase());
     const candidates = posts.filter((p) => p.url !== currentUrl);
     if (tags.length === 0) return candidates.slice(0, limit);
     const scored = candidates.map((p) => {
-      const pTags = (p.data.tags || []).map((t) => t.toLowerCase());
+      const pTags = sanitizeTags(p.data.tags).map((t) => t.toLowerCase());
       const overlap = tags.filter((t) => pTags.includes(t)).length;
       return { post: p, score: overlap };
     });

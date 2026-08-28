@@ -11,7 +11,7 @@ module.exports = {
       if (shouldHideInProduction({ date: data.date, draft: data.draft })) {
         return false;
       }
-      const raw = data.slug || data.title || "";
+      const raw = data.slug || data.page?.fileSlug || data.title || "";
       const slug = raw
         .toString()
         .toLowerCase()

@@ -6,9 +6,6 @@ date: "2026-08-26T14:02:40.331Z"
 excerpt: "Hook: You can spend six figures hiring and training in-house SDRs, then watch them churn through unqualified lists while your pipeline flatlines, or you can hand the task to experienced teams in South Africa and see meetings booked, qualifi"
 featured_image: "/media/image-south-africa-sdr-outsourcing-cost-effective-lead-gen-services.png"
 hero_emoji: ""
-tags:
-  - "airbnb"
-  - "cambridge"
 permalink: "/blog/south-africa-sdr-outsourcing-cost-effective-lead-gen-services/"
 ---
 

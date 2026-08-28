@@ -6,9 +6,6 @@ date: "2026-08-23T20:13:54.737Z"
 excerpt: "Hook: When your pipeline stalls, hiring the right sales development representatives can feel like flipping a switch that turns cold leads into predictable meetings and real revenue. Done poorly, an SDR hire becomes costly churn. Done right,"
 featured_image: "/media/image-south-africa-sdr-guide-hiring-salaries-best-practices.png"
 hero_emoji: ""
-tags:
-  - "airbnb"
-  - "cambridge"
 permalink: "/blog/south-africa-sdr-guide-hiring-salaries-best-practices/"
 ---
 

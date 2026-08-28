@@ -6,9 +6,6 @@ date: "2026-08-25T14:02:38.955Z"
 excerpt: "Hook Too many companies treat outbound sales as a box to tick, then blame poor results on the market. The real problem is often the partner: an SDR team that cannot map to your ideal customer profile, misreads the market, or delivers meetin"
 featured_image: "/media/image-south-africa-sdr-agency-how-to-choose-the-right-partner.png"
 hero_emoji: ""
-tags:
-  - "airbnb"
-  - "cambridge"
 permalink: "/blog/south-africa-sdr-agency-how-to-choose-the-right-partner/"
 ---
 
