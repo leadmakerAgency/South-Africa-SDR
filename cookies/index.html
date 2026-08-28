@@ -1543,6 +1543,116 @@ a:hover .arrow { transform: translateX(4px); }
   margin: 0;
   max-width: none;
   width: 100%;
+  padding: 36px 40px 40px;
+}
+
+.cognito-form-embed {
+  margin: 40px auto 0;
+  max-width: 440px;
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow-float);
+  overflow: hidden;
+  text-align: left;
+  padding: 32px 36px 36px;
+  border: 1px solid rgba(2, 64, 61, 0.08);
+  box-sizing: border-box;
+}
+
+.cognito-form-embed .cognito,
+.cognito-form-embed .c-forms-form {
+  max-width: 100%;
+}
+
+.cognito-form-embed .c-forms-form-main {
+  padding: 0;
+}
+
+.cognito-form-embed .c-section {
+  margin-bottom: 24px;
+}
+
+.cognito-form-embed .c-field {
+  margin-bottom: 20px;
+}
+
+.cognito-form-embed .c-label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--green);
+  font-size: 14px;
+}
+
+.cognito-form-embed .c-html {
+  margin-bottom: 6px;
+}
+
+.cognito-form-embed input[type="text"],
+.cognito-form-embed input[type="email"],
+.cognito-form-embed input[type="tel"],
+.cognito-form-embed input[type="number"],
+.cognito-form-embed textarea,
+.cognito-form-embed select {
+  border-radius: 9px;
+  border-color: rgba(2, 64, 61, 0.18);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cognito-form-embed input:focus,
+.cognito-form-embed textarea:focus,
+.cognito-form-embed select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(218, 168, 102, 0.18);
+  outline: none;
+}
+
+.cognito-form-embed .c-question {
+  margin-bottom: 10px;
+}
+
+.cognito-form-embed .c-choice {
+  margin-bottom: 8px;
+}
+
+.cognito-form-embed button[type="submit"],
+.cognito-form-embed .c-button {
+  margin-top: 8px;
+  border-radius: 9px;
+  font-weight: 600;
+  padding: 14px 28px;
+}
+
+.cognito-form-embed--on-green {
+  background: var(--cream);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  border-color: rgba(2, 64, 61, 0.06);
+}
+
+.cognito-form-embed--wide {
+  max-width: 100%;
+}
+
+.book-layout--form,
+.contact-layout--form {
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  align-items: start;
+}
+
+.book-layout .cognito-form-embed {
+  margin-top: 0;
+  max-width: 100%;
+  padding: 36px 40px 40px;
+}
+
+.contact-form-card .cognito-form-embed {
+  margin-top: 0;
+  max-width: 100%;
+  padding: 8px 4px 4px;
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 .cta-aside-inner {
@@ -1615,44 +1725,6 @@ a:hover .arrow { transform: translateX(4px); }
   color: var(--green);
 }
 
-.cognito-form-embed {
-  margin: 40px auto 0;
-  max-width: 440px;
-  width: 100%;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: var(--shadow-float);
-  overflow: hidden;
-  text-align: left;
-}
-
-.cognito-form-embed--on-green {
-  background: var(--cream);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
-}
-
-.cognito-form-embed--wide {
-  max-width: 100%;
-}
-
-.book-layout--form,
-.contact-layout--form {
-  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-  align-items: start;
-}
-
-.book-layout .cognito-form-embed,
-.contact-form-card .cognito-form-embed {
-  margin-top: 0;
-  max-width: 100%;
-}
-
-.contact-form-card .cognito-form-embed {
-  box-shadow: none;
-  background: transparent;
-  border-radius: 0;
-}
-
 .form-aside-inner {
   position: sticky;
   top: calc(var(--header-offset) + 32px);
@@ -1687,6 +1759,12 @@ a:hover .arrow { transform: translateX(4px); }
   .cta-aside-inner,
   .form-aside-inner {
     position: static;
+  }
+
+  .cognito-form-embed,
+  .cta-form-col .cognito-form-embed,
+  .book-layout .cognito-form-embed {
+    padding: 28px 24px 32px;
   }
 }
 
@@ -2204,7 +2282,7 @@ a.footer-contact-item:hover { color: var(--gold); }
   </div>
 </section>
 <section class="section-cream section"><div class="container"><div class="split-section reveal">
-<div class="legal-content"><h2>What are cookies</h2><p>Cookies are small text files stored on your device when you visit a website.</p><h2>How we use cookies</h2><p>We use essential cookies for site functionality. With your consent, we may use analytics and advertising cookies (GA4, Meta Pixel, LinkedIn) to understand traffic and improve marketing.</p><h2>Managing cookies</h2><p>You can control cookies through your browser settings. A cookie consent banner will allow you to accept or reject non-essential cookies.</p><h2>Contact</h2><p>Questions? Email hello@southafricasdr.com.</p></div>
+<div class="legal-content"><h2>What are cookies</h2><p>Cookies are small text files stored on your device when you visit a website.</p><h2>How we use cookies</h2><p>We use essential cookies for site functionality. With your consent, we may use analytics and advertising cookies (GA4, Meta Pixel, LinkedIn) to understand traffic and improve marketing.</p><h2>Managing cookies</h2><p>You can control cookies through your browser settings. A cookie consent banner will allow you to accept or reject non-essential cookies.</p><h2>Contact</h2><p>Questions? Call us at +44 7397 601087.</p></div>
 <div class="split-media"><img src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop" alt="Professional workspace" loading="lazy" style="border-radius:16px;" /></div>
 </div></div></section>
 <section class="section-green section testimonials-section">
