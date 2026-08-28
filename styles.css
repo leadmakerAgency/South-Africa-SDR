@@ -1499,8 +1499,8 @@ a:hover .arrow { transform: translateX(4px); }
    ========================================================= */
 
 .cta-band {
-  overflow: hidden;
-  text-align: center;
+  overflow: visible;
+  text-align: left;
   background: #FFFFFF;
 }
 
@@ -1513,6 +1513,83 @@ a:hover .arrow { transform: translateX(4px); }
   height: 480px;
   background: radial-gradient(ellipse, rgba(218, 168, 102, 0.1) 0%, transparent 65%);
   pointer-events: none;
+}
+
+.cta-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  gap: 56px;
+  align-items: start;
+  position: relative;
+}
+
+.cta-form-col .cognito-form-embed {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.cta-aside-inner {
+  position: sticky;
+  top: calc(var(--header-offset) + 32px);
+  background: linear-gradient(155deg, #3A7A72 0%, #02403D 52%, #012B28 100%);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  box-shadow: var(--shadow-float);
+}
+
+.cta-aside-inner .eyebrow-pill {
+  margin-bottom: 18px;
+}
+
+.cta-aside-inner h2 {
+  margin-bottom: 16px;
+  color: var(--cream);
+  font-size: clamp(1.65rem, 2.4vw, 2.15rem);
+  line-height: 1.2;
+}
+
+.cta-aside-lead {
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(250, 248, 242, 0.82);
+}
+
+.cta-ticks {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.cta-ticks li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(250, 248, 242, 0.88);
+}
+
+.cta-ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(63, 142, 118, 0.25);
+  border: 2px solid rgba(218, 168, 102, 0.65);
+}
+
+.cta-aside-note {
+  margin: 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(250, 248, 242, 0.14);
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(250, 248, 242, 0.62);
 }
 
 .cta-inner { position: relative; max-width: 760px; margin: 0 auto; }
@@ -1542,21 +1619,59 @@ a:hover .arrow { transform: translateX(4px); }
   max-width: 100%;
 }
 
-.cta-inner .cognito-form-embed {
-  margin-top: 32px;
+.book-layout--form,
+.contact-layout--form {
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  align-items: start;
 }
 
-.book-layout .cognito-form-embed {
-  margin-top: 8px;
+.book-layout .cognito-form-embed,
+.contact-form-card .cognito-form-embed {
+  margin-top: 0;
   max-width: 100%;
 }
 
 .contact-form-card .cognito-form-embed {
-  margin-top: 8px;
-  max-width: 100%;
   box-shadow: none;
   background: transparent;
   border-radius: 0;
+}
+
+.form-aside-inner {
+  position: sticky;
+  top: calc(var(--header-offset) + 32px);
+}
+
+.form-aside-inner h1,
+.form-aside-inner h2 {
+  margin-bottom: 14px;
+}
+
+.form-aside-lead {
+  margin-bottom: 24px;
+  color: rgba(30, 38, 34, 0.75);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+@media (max-width: 960px) {
+  .cta-split,
+  .book-layout--form,
+  .contact-layout--form {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .cta-aside,
+  .book-aside,
+  .contact-aside {
+    order: -1;
+  }
+
+  .cta-aside-inner,
+  .form-aside-inner {
+    position: static;
+  }
 }
 
 /* Footer — forest brand band */

@@ -1042,17 +1042,21 @@ def build_all():
 
     # BOOK
     book_body = f"""<main>
-<div class="book-layout">
-<div>
-<h1>Book a 20 minute call</h1>
-<p class="hero-subhead">Tell us about your sales goals and we will show you exactly how a South African SDR would work for you. No pressure, no hard sell.</p>
-<ul class="book-ticks"><li>See real cost and pipeline numbers</li><li>Understand the process</li><li>Leave with a clear next step</li></ul>
+<div class="book-layout book-layout--form">
+<div class="book-form-col">
 {cognito_form_embed(wide=True)}
 </div>
+<aside class="book-aside">
+<div class="form-aside-inner">
+<h1>Book a 20 minute call</h1>
+<p class="form-aside-lead">Tell us about your sales goals and we will show you exactly how a South African SDR would work for you. No pressure, no hard sell.</p>
+<ul class="book-ticks" style="justify-content:flex-start;margin-bottom:28px;"><li>See real cost and pipeline numbers</li><li>Understand the process</li><li>Leave with a clear next step</li></ul>
 <div class="book-visual">
 <img src="https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Consultation call" loading="lazy" />
 <div class="trust-strip" style="margin-top:24px;border-radius:12px;"><div class="container" style="padding:24px;"><p class="trust-label">Trusted by growing sales teams</p><div class="trust-logos"><span class="trust-logo">Fernbrook</span><span class="trust-logo">Latitude&amp;Co</span></div></div></div>
 </div>
+</div>
+</aside>
 </div>
 </main>"""
     write_page("book/index.html", wrap_page("Book a Call | South Africa SDR", "Book a 20 minute call to see exactly how a South African SDR would work for your team.", 1, book_body, plain=True, book_page=True))
@@ -1060,10 +1064,14 @@ def build_all():
 
     # CONTACT
     contact_body = f"""<main>
-<section class="section-cream section" style="padding-top: calc(var(--header-offset) + 48px);"><div class="container contact-layout reveal">
-<div>
+<section class="section-cream section" style="padding-top: calc(var(--header-offset) + 48px);"><div class="container contact-layout contact-layout--form reveal">
+<div class="contact-form-col card contact-form-card" style="padding:32px;">
+{cognito_form_embed(wide=True)}
+</div>
+<aside class="contact-aside">
+<div class="form-aside-inner">
 {section_head("Contact", "Book a call or send a message")}
-<p class="prose" style="margin-bottom:24px;">Tell us about your sales goals and we will show you how a South African SDR fits your team. We reply within one business day.</p>
+<p class="form-aside-lead">Tell us about your sales goals and we will show you how a South African SDR fits your team. We reply within one business day.</p>
 <ul class="book-ticks" style="justify-content:flex-start;margin-bottom:32px;"><li>See real cost and pipeline numbers</li><li>Understand the process</li><li>Leave with a clear next step</li></ul>
 <div class="contact-info">
 <h3>Direct contact</h3>
@@ -1072,10 +1080,7 @@ def build_all():
 <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="11" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg><span>Cape Town, South Africa (GMT+2)</span></div>
 </div>
 </div>
-<div class="card contact-form-card" style="padding:32px;">
-{section_head("Book", "Get started")}
-{cognito_form_embed(wide=True)}
-</div>
+</aside>
 </div></section>
 {page_closing(1)}
 </main>"""

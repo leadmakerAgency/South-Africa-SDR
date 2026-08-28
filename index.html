@@ -712,6 +712,31 @@ a:hover .arrow { transform: translateX(4px); }
 
 .hero-capture .btn { flex: none; padding: 13px 26px; }
 
+.hero-capture .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.hero-form-message {
+  max-width: 500px;
+  margin: 12px auto 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.hero-form-message:empty {
+  display: none;
+}
+
+.hero-form-message[data-fs-success] {
+  color: var(--gold);
+}
+
+.hero-form-message[data-fs-error] {
+  color: #f5c4c4;
+}
+
 .hero-secondary-link {
   display: inline-block;
   margin-top: 18px;
@@ -772,7 +797,70 @@ a:hover .arrow { transform: translateX(4px); }
   letter-spacing: 1.8px;
   text-transform: uppercase;
   color: rgba(250, 248, 242, 0.5);
-  margin-bottom: 22px;
+  margin-bottom: 28px;
+}
+
+/* Logo slider — trusted brands */
+.logo-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-slider-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logo-slider 35s linear infinite;
+}
+
+.logo-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 72px;
+  margin: 0 28px;
+  flex-shrink: 0;
+}
+
+.logo-slide img {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  max-height: 56px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) sepia(0.25) saturate(0.4) hue-rotate(5deg);
+  opacity: 0.45;
+  transition: opacity 0.25s ease;
+}
+
+.logo-slide img:hover { opacity: 0.72; }
+
+@keyframes logo-slider {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.logo-slider-wrapper::before,
+.logo-slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.logo-slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--forest) 0%, rgba(1, 43, 40, 0) 100%);
+}
+
+.logo-slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--forest) 0%, rgba(1, 43, 40, 0) 100%);
 }
 
 /* --- Floating pipeline dashboard card --- */
@@ -996,7 +1084,7 @@ a:hover .arrow { transform: translateX(4px); }
   gap: 20px 64px;
 }
 
-/* Placeholder wordmarks, replace with greyscale client logo images */
+/* Legacy placeholder wordmarks — unused on home hero */
 .trust-logo {
   font-family: var(--font-serif);
   font-weight: 600;
@@ -1639,8 +1727,8 @@ a:hover .arrow { transform: translateX(4px); }
    ========================================================= */
 
 .cta-band {
-  overflow: hidden;
-  text-align: center;
+  overflow: visible;
+  text-align: left;
   background: var(--cream);
 }
 
@@ -1655,31 +1743,85 @@ a:hover .arrow { transform: translateX(4px); }
   pointer-events: none;
 }
 
-.cta-inner {
+.cta-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  gap: 56px;
+  align-items: start;
   position: relative;
-  max-width: 520px;
-  margin: 0 auto;
-  background: linear-gradient(155deg, #3A7A72 0%, #02403D 52%, #012B28 100%);
-  border-radius: var(--radius-lg);
-  padding: 66px 40px 48px;
+}
+
+.cta-form-col .cognito-form-embed {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
   box-shadow: var(--shadow-float);
   overflow: hidden;
 }
 
-.cta-inner h2 {
-  margin-bottom: 30px;
+.cta-aside-inner {
+  position: sticky;
+  top: calc(var(--header-offset) + 32px);
+  background: linear-gradient(155deg, #3A7A72 0%, #02403D 52%, #012B28 100%);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  box-shadow: var(--shadow-float);
+}
+
+.cta-aside-inner .eyebrow-pill {
+  margin-bottom: 18px;
+}
+
+.cta-aside-inner h2 {
+  margin-bottom: 16px;
   color: var(--cream);
+  font-size: clamp(1.65rem, 2.4vw, 2.15rem);
+  line-height: 1.2;
 }
 
-.cta-inner .btn-primary {
-  background: var(--gold);
-  color: var(--btn-ink);
-  box-shadow: 0 12px 28px rgba(218, 168, 102, 0.32);
+.cta-aside-lead {
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(250, 248, 242, 0.82);
 }
 
-.cta-inner .btn-primary:hover {
-  background: var(--gold-dark);
-  color: var(--btn-ink);
+.cta-ticks {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.cta-ticks li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(250, 248, 242, 0.88);
+}
+
+.cta-ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(63, 142, 118, 0.25);
+  border: 2px solid rgba(218, 168, 102, 0.65);
+}
+
+.cta-aside-note {
+  margin: 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(250, 248, 242, 0.14);
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(250, 248, 242, 0.62);
 }
 
 .cognito-form-embed {
@@ -1698,8 +1840,60 @@ a:hover .arrow { transform: translateX(4px); }
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
 }
 
-.cta-inner .cognito-form-embed {
-  margin-top: 32px;
+.cognito-form-embed--wide {
+  max-width: 100%;
+}
+
+.book-layout .cognito-form-embed,
+.contact-form-card .cognito-form-embed {
+  margin-top: 0;
+  max-width: 100%;
+  box-shadow: var(--shadow-float);
+  background: #fff;
+  border-radius: 16px;
+}
+
+.contact-form-card .cognito-form-embed {
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+.form-aside-inner {
+  position: sticky;
+  top: calc(var(--header-offset) + 32px);
+}
+
+.form-aside-inner h1,
+.form-aside-inner h2 {
+  margin-bottom: 14px;
+}
+
+.form-aside-lead {
+  margin-bottom: 24px;
+  color: rgba(30, 38, 34, 0.75);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+@media (max-width: 960px) {
+  .cta-split,
+  .book-layout--form,
+  .contact-layout--form {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .cta-aside,
+  .book-aside,
+  .contact-aside {
+    order: -1;
+  }
+
+  .cta-aside-inner,
+  .form-aside-inner {
+    position: static;
+  }
 }
 
 /* Footer — forest brand band */
@@ -1930,6 +2124,15 @@ a.footer-contact-item:hover { color: var(--gold); }
   .hero-capture { flex-direction: column; align-items: stretch; gap: 10px; }
   .hero-capture .btn { width: 100%; }
   .hero-contrib { margin-top: 48px; }
+  .logo-slide { width: 130px; height: 60px; margin: 0 16px; }
+  .logo-slide img { max-width: 120px; max-height: 48px; }
+  .logo-slider-track { animation-duration: 28s; }
+  .logo-slider-wrapper::before,
+  .logo-slider-wrapper::after { width: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-slider-track { animation: none; }
 }
 
 </style>
@@ -2095,8 +2298,7 @@ a.footer-contact-item:hover { color: var(--gold); }
           <line x1="30" y1="13" x2="13" y2="27"/>
           <line x1="13" y1="27" x2="8" y2="60"/>
           <line x1="8" y1="60" x2="18" y2="70"/>
-          <line x1="18" y1="70" x2="55" y2="74"/>
-          <line x1="55" y1="74" x2="84" y2="70"/>
+          <line x1="18" y1="70" x2="84" y2="70"/>
           <line x1="84" y1="70" x2="92" y2="54"/>
           <line x1="92" y1="54" x2="87" y2="21"/>
           <line x1="87" y1="21" x2="30" y2="13"/>
@@ -2110,7 +2312,6 @@ a.footer-contact-item:hover { color: var(--gold); }
         <span class="net-avatar" style="--x:87%;--y:21%;--s:72px;background-image:url('https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
         <span class="net-avatar" style="--x:92%;--y:54%;--s:56px;background-image:url('https://images.pexels.com/photos/573299/pexels-photo-573299.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
         <span class="net-avatar" style="--x:84%;--y:70%;--s:64px;background-image:url('https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
-        <span class="net-avatar" style="--x:55%;--y:74%;--s:52px;background-image:url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&fit=crop')"></span>
       </div>
 
       <div class="container hero-inner">
@@ -2118,10 +2319,22 @@ a.footer-contact-item:hover { color: var(--gold); }
         <h1>Pipeline, built by <em class="gold-italic">South&nbsp;African</em> SDRs</h1>
         <p class="hero-subhead">Outbound reps who sound right, work your hours, and cost 55 to 65 percent less than a Western hire. First language English, UK and EU timezone overlap, and none of the recruitment headache.</p>
 
-        <form class="hero-capture" action="/contact/" method="get">
-          <input type="email" name="email" placeholder="Enter your work email" aria-label="Work email" />
-          <a href="/contact/" class="btn btn-primary">Book a call</a>
+        <form id="hero-email-form" class="hero-capture">
+          <input type="hidden" name="source" value="hero" />
+          <input
+            type="email"
+            id="hero-email"
+            name="email"
+            placeholder="Enter your work email"
+            aria-label="Work email"
+            autocomplete="email"
+            required
+            data-fs-field
+          />
+          <button type="submit" class="btn btn-primary" data-fs-submit-btn>Book a call</button>
         </form>
+        <p class="hero-form-message" data-fs-success aria-live="polite"></p>
+        <p class="hero-form-message" data-fs-error aria-live="polite"></p>
         <a href="#how-it-works" class="hero-secondary-link">See how it works &rarr;</a>
 
         <ul class="hero-stats">
@@ -2135,13 +2348,24 @@ a.footer-contact-item:hover { color: var(--gold); }
       <div class="hero-contrib">
         <div class="container">
           <p class="hero-contrib-label">Trusted by growing sales teams</p>
-          <!-- Replace placeholders with real client logos, greyscale -->
-          <div class="trust-logos">
-            <span class="trust-logo">Fernbrook</span>
-            <span class="trust-logo">Latitude&amp;Co</span>
-            <span class="trust-logo">Corvus Systems</span>
-            <span class="trust-logo">Brightpath</span>
-            <span class="trust-logo">Halden Group</span>
+        </div>
+        <div class="logo-slider-wrapper" aria-label="Client logos">
+          <div class="logo-slider-track">
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffded1a4cbfa817ba6a86_logo%20(7).png" loading="lazy" alt="Agency MVP logo" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdec33dde14e0bcc9f2d_logo%20(12).png" loading="lazy" alt="Allstate logo" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdebfa4423e96decfabd_logo%20(2).png" loading="lazy" alt="Quility logo" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb41162d7fb579d0d8_logo%20(8).png" loading="lazy" alt="Alibaba Group logo" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb8cba24814f8743e7_logo%20(3).png" loading="lazy" alt="SEMEQ logo" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb90a9e027335c2626_logo%20(9).png" loading="lazy" alt="USHEALTH Group logo" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb735174d57a93703e_logo%20(10).png" loading="lazy" alt="Keller Williams logo" width="150" height="56"></div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffded1a4cbfa817ba6a86_logo%20(7).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdec33dde14e0bcc9f2d_logo%20(12).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdebfa4423e96decfabd_logo%20(2).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb41162d7fb579d0d8_logo%20(8).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb8cba24814f8743e7_logo%20(3).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb90a9e027335c2626_logo%20(9).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
+            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb735174d57a93703e_logo%20(10).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
           </div>
         </div>
       </div>
@@ -2528,11 +2752,25 @@ a.footer-contact-item:hover { color: var(--gold); }
     <!-- ========================= SECTION 11: CLOSING CTA BAND ========================= -->
     <section class="section cta-band">
       <div class="cta-glow" aria-hidden="true"></div>
-      <div class="container cta-inner reveal">
-        <h2>Ready to see what a South African SDR could do for your pipeline?</h2>
-        <div class="cognito-form-embed cognito-form-embed--on-green">
-          <script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>
+      <div class="container cta-split reveal">
+        <div class="cta-form-col">
+          <div class="cognito-form-embed cognito-form-embed--wide">
+            <script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>
+          </div>
         </div>
+        <aside class="cta-aside">
+          <div class="cta-aside-inner">
+            <span class="eyebrow-pill pill-on-green">Book a call</span>
+            <h2>Ready to see what a South African SDR could do for your pipeline?</h2>
+            <p class="cta-aside-lead">Tell us about your market, team size, and goals. We will walk through cost, ramp time, and whether South Africa is the right fit.</p>
+            <ul class="cta-ticks">
+              <li>See real cost and pipeline numbers</li>
+              <li>Understand the onboarding process</li>
+              <li>Leave with a clear next step</li>
+            </ul>
+            <p class="cta-aside-note">No pressure, no hard sell. We reply within one business day.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -2848,5 +3086,10 @@ a.footer-contact-item:hover { color: var(--gold); }
 })();
 
 </script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree("initForm", { formElement: "#hero-email-form", formId: "mqpkkjna" });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
