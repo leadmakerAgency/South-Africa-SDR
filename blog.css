@@ -153,7 +153,7 @@ body {
 
 .blog-hero {
   background: var(--green);
-  padding: 72px 28px 56px;
+  padding: calc(var(--header-offset, 82px) + 28px) 28px 56px;
   text-align: center;
 }
 
@@ -363,7 +363,7 @@ body {
 
 .post-hero {
   background: var(--green);
-  padding: 64px 28px 48px;
+  padding: calc(var(--header-offset, 82px) + 20px) 28px 48px;
   text-align: center;
 }
 

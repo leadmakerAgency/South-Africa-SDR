@@ -1522,96 +1522,41 @@ a:hover .arrow { transform: translateX(4px); }
   color: var(--green);
 }
 
-.calendly-placeholder {
-  margin: 56px auto 0;
-  max-width: 560px;
-  background: var(--cream);
+.cognito-form-embed {
+  margin: 40px auto 0;
+  max-width: 440px;
+  width: 100%;
+  background: #fff;
   border-radius: 16px;
   box-shadow: var(--shadow-float);
   overflow: hidden;
   text-align: left;
 }
 
-.cal-head {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  background: #F3EBDD;
-  padding: 14px 20px;
+.cognito-form-embed--on-green {
+  background: var(--cream);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
 }
 
-.cal-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(2, 64, 61, 0.18);
+.cognito-form-embed--wide {
+  max-width: 100%;
 }
 
-.cal-title {
-  margin-left: 12px;
-  font-size: 13.5px;
-  font-weight: 500;
-  color: rgba(30, 38, 34, 0.7);
+.cta-inner .cognito-form-embed {
+  margin-top: 32px;
 }
 
-.cal-body { padding: 26px 28px 24px; }
-
-.cal-days {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  text-align: center;
-  margin-bottom: 20px;
+.book-layout .cognito-form-embed {
+  margin-top: 8px;
+  max-width: 100%;
 }
 
-.cal-days span {
-  font-size: 12px;
-  color: rgba(30, 38, 34, 0.55);
-  border: 1px solid rgba(2, 64, 61, 0.12);
-  border-radius: 10px;
-  padding: 10px 4px;
-  line-height: 1.5;
-}
-
-.cal-days b {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  color: var(--green);
-}
-
-.cal-days .cal-active {
-  background: var(--green);
-  border-color: var(--green);
-  color: rgba(250, 248, 242, 0.75);
-}
-
-.cal-days .cal-active b { color: var(--gold); }
-
-.cal-slots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.cal-slots span {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--green);
-  border: 1px solid rgba(2, 64, 61, 0.2);
-  border-radius: 8px;
-  padding: 8px 18px;
-}
-
-.cal-slots .slot-active {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--btn-ink);
-}
-
-.cal-note {
-  font-size: 12.5px;
-  color: rgba(30, 38, 34, 0.5);
+.contact-form-card .cognito-form-embed {
+  margin-top: 8px;
+  max-width: 100%;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
 }
 
 /* Footer — forest brand band */

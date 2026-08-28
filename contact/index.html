@@ -1538,96 +1538,41 @@ a:hover .arrow { transform: translateX(4px); }
   color: var(--green);
 }
 
-.calendly-placeholder {
-  margin: 56px auto 0;
-  max-width: 560px;
-  background: var(--cream);
+.cognito-form-embed {
+  margin: 40px auto 0;
+  max-width: 440px;
+  width: 100%;
+  background: #fff;
   border-radius: 16px;
   box-shadow: var(--shadow-float);
   overflow: hidden;
   text-align: left;
 }
 
-.cal-head {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  background: #F3EBDD;
-  padding: 14px 20px;
+.cognito-form-embed--on-green {
+  background: var(--cream);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
 }
 
-.cal-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(2, 64, 61, 0.18);
+.cognito-form-embed--wide {
+  max-width: 100%;
 }
 
-.cal-title {
-  margin-left: 12px;
-  font-size: 13.5px;
-  font-weight: 500;
-  color: rgba(30, 38, 34, 0.7);
+.cta-inner .cognito-form-embed {
+  margin-top: 32px;
 }
 
-.cal-body { padding: 26px 28px 24px; }
-
-.cal-days {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  text-align: center;
-  margin-bottom: 20px;
+.book-layout .cognito-form-embed {
+  margin-top: 8px;
+  max-width: 100%;
 }
 
-.cal-days span {
-  font-size: 12px;
-  color: rgba(30, 38, 34, 0.55);
-  border: 1px solid rgba(2, 64, 61, 0.12);
-  border-radius: 10px;
-  padding: 10px 4px;
-  line-height: 1.5;
-}
-
-.cal-days b {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  color: var(--green);
-}
-
-.cal-days .cal-active {
-  background: var(--green);
-  border-color: var(--green);
-  color: rgba(250, 248, 242, 0.75);
-}
-
-.cal-days .cal-active b { color: var(--gold); }
-
-.cal-slots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.cal-slots span {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--green);
-  border: 1px solid rgba(2, 64, 61, 0.2);
-  border-radius: 8px;
-  padding: 8px 18px;
-}
-
-.cal-slots .slot-active {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--btn-ink);
-}
-
-.cal-note {
-  font-size: 12.5px;
-  color: rgba(30, 38, 34, 0.5);
+.contact-form-card .cognito-form-embed {
+  margin-top: 8px;
+  max-width: 100%;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
 }
 
 /* Footer — forest brand band */
@@ -2131,33 +2076,29 @@ a.footer-contact-item:hover { color: var(--gold); }
 </header>
 <main>
 <section class="section-cream section" style="padding-top: calc(var(--header-offset) + 48px);"><div class="container contact-layout reveal">
-<div class="card" style="padding:32px;">
-<div class="section-head reveal">
-      <span class="eyebrow-pill">Message</span>
-      <h2>Send a message</h2>
-      
-    </div>
-<script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>
-</div>
 <div>
 <div class="section-head reveal">
-      <span class="eyebrow-pill">Book</span>
-      <h2>Or book a call</h2>
+      <span class="eyebrow-pill">Contact</span>
+      <h2>Book a call or send a message</h2>
       
     </div>
-<div class="calendly-placeholder" role="presentation">
-  <div class="cal-head"><span class="cal-dot"></span><span class="cal-dot"></span><span class="cal-dot"></span><span class="cal-title">Pick a time, 20 minutes</span></div>
-  <div class="cal-body">
-    <div class="cal-days"><span>Mon<br><b>13</b></span><span class="cal-active">Tue<br><b>14</b></span><span>Wed<br><b>15</b></span><span>Thu<br><b>16</b></span><span>Fri<br><b>17</b></span></div>
-    <div class="cal-slots"><span>09:00</span><span class="slot-active">10:30</span><span>13:00</span><span>15:30</span></div>
-    <p class="cal-note">Calendly embed loads here on the live site.</p>
-  </div>
-</div>
-<div class="contact-info" style="margin-top:28px;">
+<p class="prose" style="margin-bottom:24px;">Tell us about your sales goals and we will show you how a South African SDR fits your team. We reply within one business day.</p>
+<ul class="book-ticks" style="justify-content:flex-start;margin-bottom:32px;"><li>See real cost and pipeline numbers</li><li>Understand the process</li><li>Leave with a clear next step</li></ul>
+<div class="contact-info">
 <h3>Direct contact</h3>
 <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6"/></svg><a href="mailto:hello@southafricasdr.com" style="color:inherit;">hello@southafricasdr.com</a></div>
 <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 4h3l1.2 4.2-2 1.2a13 13 0 0 0 5.1 5.1l1.2-2 4.2 1.2v3a2 2 0 0 1-2 2C10.4 18.7 5.3 13.6 5.3 6.5A2 2 0 0 1 6.5 4Z" stroke="currentColor" stroke-width="1.6"/></svg><a href="tel:+27123456789" style="color:inherit;">+27 12 345 6789</a></div>
 <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="11" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg><span>Cape Town, South Africa (GMT+2)</span></div>
+</div>
+</div>
+<div class="card contact-form-card" style="padding:32px;">
+<div class="section-head reveal">
+      <span class="eyebrow-pill">Book</span>
+      <h2>Get started</h2>
+      
+    </div>
+<div class="cognito-form-embed cognito-form-embed--wide">
+<script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>
 </div>
 </div>
 </div></section>

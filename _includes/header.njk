@@ -18,39 +18,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/blog.css" />
   <link rel="stylesheet" href="/redesign.css" />
   <link rel="alternate" type="application/atom+xml" title="South Africa SDR Blog" href="/feed.xml" />
 </head>
 <body>
 
-<header class="blog-site-header">
-  <div class="wrap">
-    <a class="brand" href="/" aria-label="South Africa SDR, home">
-      <img src="/images/brand/lockup-horizontal-rev.svg" alt="South Africa SDR" width="205" height="32" />
-    </a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="/why-south-africa/">Why South Africa</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/industries/">Industries</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/blog/" {% if blogActive %}class="active"{% endif %}>Blog</a></li>
-        <li><a href="/case-studies/">Case Studies</a></li>
-      </ul>
-    </nav>
-    <a class="btn-gold" href="/contact/">Book a call</a>
-    <button class="blog-hamburger" id="blogHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="blogMobileMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="blog-mobile-menu" id="blogMobileMenu" hidden>
-    <a href="/why-south-africa/">Why South Africa</a>
-    <a href="/services/">Services</a>
-    <a href="/industries/">Industries</a>
-    <a href="/about/">About</a>
-    <a href="/blog/" {% if blogActive %}class="active"{% endif %}>Blog</a>
-    <a href="/case-studies/">Case Studies</a>
-    <a href="/contact/" class="btn-gold">Book a call</a>
-  </div>
-</header>
+{% include "site-header.njk" %}

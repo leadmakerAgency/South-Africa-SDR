@@ -572,18 +572,21 @@ def faq_schema(items: list) -> str:
     return json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": entities}, indent=2)
 
 
-def calendly_placeholder() -> str:
-    return """<div class="calendly-placeholder" role="presentation">
-  <div class="cal-head"><span class="cal-dot"></span><span class="cal-dot"></span><span class="cal-dot"></span><span class="cal-title">Pick a time, 20 minutes</span></div>
-  <div class="cal-body">
-    <div class="cal-days"><span>Mon<br><b>13</b></span><span class="cal-active">Tue<br><b>14</b></span><span>Wed<br><b>15</b></span><span>Thu<br><b>16</b></span><span>Fri<br><b>17</b></span></div>
-    <div class="cal-slots"><span>09:00</span><span class="slot-active">10:30</span><span>13:00</span><span>15:30</span></div>
-    <p class="cal-note">Calendly embed loads here on the live site.</p>
-  </div>
+COGNITO_FORM_SCRIPT = '<script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>'
+
+
+def cognito_form_embed(on_green: bool = False, wide: bool = False) -> str:
+    classes = ["cognito-form-embed"]
+    if on_green:
+        classes.append("cognito-form-embed--on-green")
+    if wide:
+        classes.append("cognito-form-embed--wide")
+    return f"""<div class="{' '.join(classes)}">
+{COGNITO_FORM_SCRIPT}
 </div>"""
 
 
-def wrap_page(title: str, description: str, depth: int, body: str, schema: str = "", noindex: bool = False, minimal_header: bool = False, extra_head: str = "", plain: bool = False) -> str:
+def wrap_page(title: str, description: str, depth: int, body: str, schema: str = "", noindex: bool = False, minimal_header: bool = False, extra_head: str = "", plain: bool = False, book_page: bool = False) -> str:
     robots = '<meta name="robots" content="noindex, nofollow">' if noindex else ""
     favicon = """<link rel="icon" href="/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/images/brand/favicon.svg">"""
@@ -591,11 +594,11 @@ def wrap_page(title: str, description: str, depth: int, body: str, schema: str =
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">"""
     hdr = header_html(depth, minimal=minimal_header)
-    ftr = "" if minimal_header else footer_html(depth)
+    ftr = footer_html(depth)
     sch = f'<script type="application/ld+json">\n{schema}\n</script>' if schema else ""
     # Pages without a green hero (book, success, 404) keep a solid, readable navbar
-    is_plain = plain or minimal_header
-    body_cls = " ".join(c for c in ("book-page" if minimal_header else "", "page-plain" if is_plain else "") if c)
+    is_plain = plain or minimal_header or book_page
+    body_cls = " ".join(c for c in ("book-page" if (minimal_header or book_page) else "", "page-plain" if is_plain else "") if c)
     body_attr = f' class="{body_cls}"' if body_cls else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -1044,7 +1047,7 @@ def build_all():
 <h1>Book a 20 minute call</h1>
 <p class="hero-subhead">Tell us about your sales goals and we will show you exactly how a South African SDR would work for you. No pressure, no hard sell.</p>
 <ul class="book-ticks"><li>See real cost and pipeline numbers</li><li>Understand the process</li><li>Leave with a clear next step</li></ul>
-{calendly_placeholder()}
+{cognito_form_embed(wide=True)}
 </div>
 <div class="book-visual">
 <img src="https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Consultation call" loading="lazy" />
@@ -1052,25 +1055,26 @@ def build_all():
 </div>
 </div>
 </main>"""
-    write_page("book/index.html", wrap_page("Book a Call | South Africa SDR", "Book a 20 minute call to see exactly how a South African SDR would work for your team.", 1, book_body, minimal_header=True))
+    write_page("book/index.html", wrap_page("Book a Call | South Africa SDR", "Book a 20 minute call to see exactly how a South African SDR would work for your team.", 1, book_body, plain=True, book_page=True))
     pages.append("book/index.html")
 
     # CONTACT
     contact_body = f"""<main>
 <section class="section-cream section" style="padding-top: calc(var(--header-offset) + 48px);"><div class="container contact-layout reveal">
-<div class="card" style="padding:32px;">
-{section_head("Message", "Send a message")}
-<script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>
-</div>
 <div>
-{section_head("Book", "Or book a call")}
-{calendly_placeholder()}
-<div class="contact-info" style="margin-top:28px;">
+{section_head("Contact", "Book a call or send a message")}
+<p class="prose" style="margin-bottom:24px;">Tell us about your sales goals and we will show you how a South African SDR fits your team. We reply within one business day.</p>
+<ul class="book-ticks" style="justify-content:flex-start;margin-bottom:32px;"><li>See real cost and pipeline numbers</li><li>Understand the process</li><li>Leave with a clear next step</li></ul>
+<div class="contact-info">
 <h3>Direct contact</h3>
 <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6"/></svg><a href="mailto:hello@southafricasdr.com" style="color:inherit;">hello@southafricasdr.com</a></div>
 <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 4h3l1.2 4.2-2 1.2a13 13 0 0 0 5.1 5.1l1.2-2 4.2 1.2v3a2 2 0 0 1-2 2C10.4 18.7 5.3 13.6 5.3 6.5A2 2 0 0 1 6.5 4Z" stroke="currentColor" stroke-width="1.6"/></svg><a href="tel:+27123456789" style="color:inherit;">+27 12 345 6789</a></div>
 <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="11" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg><span>Cape Town, South Africa (GMT+2)</span></div>
 </div>
+</div>
+<div class="card contact-form-card" style="padding:32px;">
+{section_head("Book", "Get started")}
+{cognito_form_embed(wide=True)}
 </div>
 </div></section>
 {page_closing(1)}
