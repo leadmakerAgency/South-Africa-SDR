@@ -818,49 +818,38 @@ a:hover .arrow { transform: translateX(4px); }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 170px;
-  height: 72px;
-  margin: 0 28px;
+  width: 220px;
+  height: 92px;
+  margin: 0 32px;
   flex-shrink: 0;
 }
 
 .logo-slide img {
   display: block;
-  width: 100%;
-  max-width: 150px;
-  max-height: 56px;
+  width: auto;
+  height: 68px;
+  max-width: 200px;
   object-fit: contain;
+  object-position: center;
   filter: brightness(0) invert(1) sepia(0.25) saturate(0.4) hue-rotate(5deg);
-  opacity: 0.45;
+  opacity: 0.58;
   transition: opacity 0.25s ease;
 }
 
-.logo-slide img:hover { opacity: 0.72; }
+/* Per-logo visual balancing so each mark reads at the same weight */
+.logo-slide--mvp img { transform: scale(1.02); }
+.logo-slide--allstate img { transform: scale(1); }
+.logo-slide--quility img { transform: scale(1.04); }
+.logo-slide--alibaba img { transform: scale(1.02); }
+.logo-slide--semeq img { transform: scale(1.05); }
+.logo-slide--ushealth img { transform: scale(1.02); }
+.logo-slide--kw img { transform: scale(1); }
+
+.logo-slide img:hover { opacity: 0.78; }
 
 @keyframes logo-slider {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
-}
-
-.logo-slider-wrapper::before,
-.logo-slider-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  width: 100px;
-  height: 100%;
-  pointer-events: none;
-}
-
-.logo-slider-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, var(--forest) 0%, rgba(1, 43, 40, 0) 100%);
-}
-
-.logo-slider-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, var(--forest) 0%, rgba(1, 43, 40, 0) 100%);
 }
 
 /* --- Floating pipeline dashboard card --- */
@@ -2124,11 +2113,9 @@ a.footer-contact-item:hover { color: var(--gold); }
   .hero-capture { flex-direction: column; align-items: stretch; gap: 10px; }
   .hero-capture .btn { width: 100%; }
   .hero-contrib { margin-top: 48px; }
-  .logo-slide { width: 130px; height: 60px; margin: 0 16px; }
-  .logo-slide img { max-width: 120px; max-height: 48px; }
+  .logo-slide { width: 160px; height: 72px; margin: 0 20px; }
+  .logo-slide img { height: 52px; max-width: 150px; }
   .logo-slider-track { animation-duration: 28s; }
-  .logo-slider-wrapper::before,
-  .logo-slider-wrapper::after { width: 48px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2347,25 +2334,25 @@ a.footer-contact-item:hover { color: var(--gold); }
       <!-- Contributions / trusted-by row -->
       <div class="hero-contrib">
         <div class="container">
-          <p class="hero-contrib-label">Trusted by growing sales teams</p>
+          <p class="hero-contrib-label">Trusted by leading brands</p>
         </div>
         <div class="logo-slider-wrapper" aria-label="Client logos">
           <div class="logo-slider-track">
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffded1a4cbfa817ba6a86_logo%20(7).png" loading="lazy" alt="Agency MVP logo" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdec33dde14e0bcc9f2d_logo%20(12).png" loading="lazy" alt="Allstate logo" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdebfa4423e96decfabd_logo%20(2).png" loading="lazy" alt="Quility logo" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb41162d7fb579d0d8_logo%20(8).png" loading="lazy" alt="Alibaba Group logo" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb8cba24814f8743e7_logo%20(3).png" loading="lazy" alt="SEMEQ logo" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb90a9e027335c2626_logo%20(9).png" loading="lazy" alt="USHEALTH Group logo" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb735174d57a93703e_logo%20(10).png" loading="lazy" alt="Keller Williams logo" width="150" height="56"></div>
+            <div class="logo-slide logo-slide--mvp"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffded1a4cbfa817ba6a86_logo%20(7).png" loading="lazy" alt="Agency MVP logo" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--allstate"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdec33dde14e0bcc9f2d_logo%20(12).png" loading="lazy" alt="Allstate logo" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--quility"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdebfa4423e96decfabd_logo%20(2).png" loading="lazy" alt="Quility logo" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--alibaba"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb41162d7fb579d0d8_logo%20(8).png" loading="lazy" alt="Alibaba Group logo" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--semeq"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb8cba24814f8743e7_logo%20(3).png" loading="lazy" alt="SEMEQ logo" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--ushealth"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb90a9e027335c2626_logo%20(9).png" loading="lazy" alt="USHEALTH Group logo" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--kw"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb735174d57a93703e_logo%20(10).png" loading="lazy" alt="Keller Williams logo" width="200" height="68"></div>
             <!-- Duplicate set for seamless loop -->
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffded1a4cbfa817ba6a86_logo%20(7).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdec33dde14e0bcc9f2d_logo%20(12).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdebfa4423e96decfabd_logo%20(2).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb41162d7fb579d0d8_logo%20(8).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb8cba24814f8743e7_logo%20(3).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb90a9e027335c2626_logo%20(9).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
-            <div class="logo-slide"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb735174d57a93703e_logo%20(10).png" loading="lazy" alt="" aria-hidden="true" width="150" height="56"></div>
+            <div class="logo-slide logo-slide--mvp" aria-hidden="true"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffded1a4cbfa817ba6a86_logo%20(7).png" loading="lazy" alt="" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--allstate" aria-hidden="true"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdec33dde14e0bcc9f2d_logo%20(12).png" loading="lazy" alt="" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--quility" aria-hidden="true"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdebfa4423e96decfabd_logo%20(2).png" loading="lazy" alt="" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--alibaba" aria-hidden="true"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb41162d7fb579d0d8_logo%20(8).png" loading="lazy" alt="" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--semeq" aria-hidden="true"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb8cba24814f8743e7_logo%20(3).png" loading="lazy" alt="" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--ushealth" aria-hidden="true"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb90a9e027335c2626_logo%20(9).png" loading="lazy" alt="" width="200" height="68"></div>
+            <div class="logo-slide logo-slide--kw" aria-hidden="true"><img src="https://cdn.prod.website-files.com/635b136ad9dc07c8ea095fdb/67fffdeb735174d57a93703e_logo%20(10).png" loading="lazy" alt="" width="200" height="68"></div>
           </div>
         </div>
       </div>
