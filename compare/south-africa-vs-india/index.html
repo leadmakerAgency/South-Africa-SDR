@@ -1539,14 +1539,14 @@ a:hover .arrow { transform: translateX(4px); }
   position: relative;
 }
 
-.cta-form-col .cognito-form-embed {
+.cta-form-col .contact-form-embed {
   margin: 0;
   max-width: none;
   width: 100%;
   padding: 36px 40px 40px;
 }
 
-.cognito-form-embed {
+.contact-form-embed {
   margin: 40px auto 0;
   max-width: 440px;
   width: 100%;
@@ -1560,77 +1560,64 @@ a:hover .arrow { transform: translateX(4px); }
   box-sizing: border-box;
 }
 
-.cognito-form-embed .cognito,
-.cognito-form-embed .c-forms-form {
-  max-width: 100%;
-}
-
-.cognito-form-embed .c-forms-form-main {
-  padding: 0;
-}
-
-.cognito-form-embed .c-section {
-  margin-bottom: 24px;
-}
-
-.cognito-form-embed .c-field {
-  margin-bottom: 20px;
-}
-
-.cognito-form-embed .c-label {
+.contact-form-embed .form-group label {
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--green);
   font-size: 14px;
 }
 
-.cognito-form-embed .c-html {
-  margin-bottom: 6px;
+.contact-form-embed .form-optional {
+  font-weight: 400;
+  color: rgba(30, 38, 34, 0.5);
 }
 
-.cognito-form-embed input[type="text"],
-.cognito-form-embed input[type="email"],
-.cognito-form-embed input[type="tel"],
-.cognito-form-embed input[type="number"],
-.cognito-form-embed textarea,
-.cognito-form-embed select {
+.contact-form-embed input[type="text"],
+.contact-form-embed input[type="email"],
+.contact-form-embed input[type="tel"],
+.contact-form-embed textarea {
   border-radius: 9px;
   border-color: rgba(2, 64, 61, 0.18);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.cognito-form-embed input:focus,
-.cognito-form-embed textarea:focus,
-.cognito-form-embed select:focus {
+.contact-form-embed input:focus,
+.contact-form-embed textarea:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(218, 168, 102, 0.18);
   outline: none;
 }
 
-.cognito-form-embed .c-question {
-  margin-bottom: 10px;
-}
-
-.cognito-form-embed .c-choice {
-  margin-bottom: 8px;
-}
-
-.cognito-form-embed button[type="submit"],
-.cognito-form-embed .c-button {
+.contact-form-embed button[type="submit"] {
   margin-top: 8px;
   border-radius: 9px;
   font-weight: 600;
   padding: 14px 28px;
+  width: 100%;
 }
 
-.cognito-form-embed--on-green {
+.contact-form-embed--on-green {
   background: var(--cream);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
   border-color: rgba(2, 64, 61, 0.06);
 }
 
-.cognito-form-embed--wide {
+.contact-form-embed--wide {
   max-width: 100%;
+}
+
+.form-status {
+  padding: 14px 16px;
+  border-radius: 9px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.form-status--error {
+  background: rgba(184, 148, 90, 0.12);
+  color: var(--clay);
+  border: 1px solid rgba(184, 148, 90, 0.25);
 }
 
 .book-layout--form,
@@ -1639,13 +1626,13 @@ a:hover .arrow { transform: translateX(4px); }
   align-items: start;
 }
 
-.book-layout .cognito-form-embed {
+.book-layout .contact-form-embed {
   margin-top: 0;
   max-width: 100%;
   padding: 36px 40px 40px;
 }
 
-.contact-form-card .cognito-form-embed {
+.contact-form-card .contact-form-embed {
   margin-top: 0;
   max-width: 100%;
   padding: 8px 4px 4px;
@@ -1761,9 +1748,9 @@ a:hover .arrow { transform: translateX(4px); }
     position: static;
   }
 
-  .cognito-form-embed,
-  .cta-form-col .cognito-form-embed,
-  .book-layout .cognito-form-embed {
+  .contact-form-embed,
+  .cta-form-col .contact-form-embed,
+  .book-layout .contact-form-embed {
     padding: 28px 24px 32px;
   }
 }
@@ -2682,37 +2669,64 @@ document.querySelectorAll('.faq-q').forEach(function(btn) {
   });
 });
 
-/* Form validation */
-var contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+/* FormSpree contact forms */
+document.querySelectorAll('form.contact-form').forEach(function(form) {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
+    var embed = form.closest('.contact-form-embed');
+    var errorEl = embed ? embed.querySelector('[data-form-error]') : null;
     var valid = true;
-    contactForm.querySelectorAll('[required]').forEach(function(field) {
+    form.querySelectorAll('[required]').forEach(function(field) {
       var group = field.closest('.form-group');
       if (!field.value.trim()) {
-        group.classList.add('invalid');
+        if (group) group.classList.add('invalid');
         valid = false;
-      } else {
+      } else if (group) {
         group.classList.remove('invalid');
       }
     });
-    var email = contactForm.querySelector('[type="email"]');
+    var email = form.querySelector('[type="email"]');
     if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      email.closest('.form-group').classList.add('invalid');
+      var emailGroup = email.closest('.form-group');
+      if (emailGroup) emailGroup.classList.add('invalid');
       valid = false;
     }
-    if (valid) {
-      var depth = contactForm.getAttribute('data-depth') || '';
-      window.location.href = depth + 'success/contact-received/index.html';
+    if (!valid) return;
+    if (errorEl) errorEl.hidden = true;
+    var btn = form.querySelector('[type="submit"]');
+    if (btn) {
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
     }
-  });
-  contactForm.querySelectorAll('input, textarea').forEach(function(field) {
-    field.addEventListener('input', function() {
-      field.closest('.form-group').classList.remove('invalid');
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) {
+      if (res.ok) {
+        var depth = form.getAttribute('data-depth') || '';
+        var next = form.getAttribute('data-success') || 'success/contact-received/index.html';
+        window.location.href = depth + next;
+      } else {
+        return res.json().then(function(data) { throw data; });
+      }
+    })
+    .catch(function() {
+      if (errorEl) errorEl.hidden = false;
+      if (btn) {
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+      }
     });
   });
-}
+  form.querySelectorAll('input, textarea').forEach(function(field) {
+    field.addEventListener('input', function() {
+      var group = field.closest('.form-group');
+      if (group) group.classList.remove('invalid');
+    });
+  });
+});
 
 /* Newsletter */
 var subForm = document.getElementById('subscribeForm');

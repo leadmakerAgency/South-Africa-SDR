@@ -201,37 +201,64 @@ document.querySelectorAll('.faq-q').forEach(function(btn) {
   });
 });
 
-/* Form validation */
-var contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+/* FormSpree contact forms */
+document.querySelectorAll('form.contact-form').forEach(function(form) {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
+    var embed = form.closest('.contact-form-embed');
+    var errorEl = embed ? embed.querySelector('[data-form-error]') : null;
     var valid = true;
-    contactForm.querySelectorAll('[required]').forEach(function(field) {
+    form.querySelectorAll('[required]').forEach(function(field) {
       var group = field.closest('.form-group');
       if (!field.value.trim()) {
-        group.classList.add('invalid');
+        if (group) group.classList.add('invalid');
         valid = false;
-      } else {
+      } else if (group) {
         group.classList.remove('invalid');
       }
     });
-    var email = contactForm.querySelector('[type="email"]');
+    var email = form.querySelector('[type="email"]');
     if (email && email.value && !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email.value)) {
-      email.closest('.form-group').classList.add('invalid');
+      var emailGroup = email.closest('.form-group');
+      if (emailGroup) emailGroup.classList.add('invalid');
       valid = false;
     }
-    if (valid) {
-      var depth = contactForm.getAttribute('data-depth') || '';
-      window.location.href = depth + 'success/contact-received/index.html';
+    if (!valid) return;
+    if (errorEl) errorEl.hidden = true;
+    var btn = form.querySelector('[type="submit"]');
+    if (btn) {
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
     }
-  });
-  contactForm.querySelectorAll('input, textarea').forEach(function(field) {
-    field.addEventListener('input', function() {
-      field.closest('.form-group').classList.remove('invalid');
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) {
+      if (res.ok) {
+        var depth = form.getAttribute('data-depth') || '';
+        var next = form.getAttribute('data-success') || 'success/contact-received/index.html';
+        window.location.href = depth + next;
+      } else {
+        return res.json().then(function(data) { throw data; });
+      }
+    })
+    .catch(function() {
+      if (errorEl) errorEl.hidden = false;
+      if (btn) {
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+      }
     });
   });
-}
+  form.querySelectorAll('input, textarea').forEach(function(field) {
+    field.addEventListener('input', function() {
+      var group = field.closest('.form-group');
+      if (group) group.classList.remove('invalid');
+    });
+  });
+});
 
 /* Newsletter */
 var subForm = document.getElementById('subscribeForm');
@@ -572,17 +599,53 @@ def faq_schema(items: list) -> str:
     return json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": entities}, indent=2)
 
 
-COGNITO_FORM_SCRIPT = '<script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>'
+FORMSPREE_ENDPOINT = "https://formspree.io/f/xdeoddaw"
 
 
-def cognito_form_embed(on_green: bool = False, wide: bool = False) -> str:
-    classes = ["cognito-form-embed"]
+def formspree_form_embed(
+    depth: int = 0,
+    form_id: str = "contactForm",
+    on_green: bool = False,
+    wide: bool = False,
+    submit_label: str = "Send message",
+    success_path: str = "success/contact-received/index.html",
+    subject: str = "New enquiry from South Africa SDR website",
+) -> str:
+    classes = ["contact-form-embed"]
     if on_green:
-        classes.append("cognito-form-embed--on-green")
+        classes.append("contact-form-embed--on-green")
     if wide:
-        classes.append("cognito-form-embed--wide")
+        classes.append("contact-form-embed--wide")
+    depth_prefix = "../" * depth if depth else ""
     return f"""<div class="{' '.join(classes)}">
-{COGNITO_FORM_SCRIPT}
+  <div class="form-status form-status--error" data-form-error role="alert" hidden>Something went wrong. Please try again or call us at +44 7397 601087.</div>
+  <form id="{form_id}" class="contact-form" action="{FORMSPREE_ENDPOINT}" method="POST" data-depth="{depth_prefix}" data-success="{success_path}">
+    <input type="hidden" name="_subject" value="{subject}" />
+    <div class="form-group">
+      <label for="{form_id}-name">Full name</label>
+      <input type="text" id="{form_id}-name" name="name" required autocomplete="name" />
+      <span class="form-error">Please enter your name.</span>
+    </div>
+    <div class="form-group">
+      <label for="{form_id}-email">Work email</label>
+      <input type="email" id="{form_id}-email" name="email" required autocomplete="email" />
+      <span class="form-error">Please enter a valid email address.</span>
+    </div>
+    <div class="form-group">
+      <label for="{form_id}-company">Company</label>
+      <input type="text" id="{form_id}-company" name="company" autocomplete="organization" />
+    </div>
+    <div class="form-group">
+      <label for="{form_id}-phone">Phone <span class="form-optional">(optional)</span></label>
+      <input type="tel" id="{form_id}-phone" name="phone" autocomplete="tel" />
+    </div>
+    <div class="form-group">
+      <label for="{form_id}-message">How can we help?</label>
+      <textarea id="{form_id}-message" name="message" required rows="5"></textarea>
+      <span class="form-error">Please enter a message.</span>
+    </div>
+    <button type="submit" class="btn btn-primary">{submit_label}</button>
+  </form>
 </div>"""
 
 
@@ -1044,7 +1107,7 @@ def build_all():
     book_body = f"""<main>
 <div class="book-layout book-layout--form">
 <div class="book-form-col">
-{cognito_form_embed(wide=True)}
+{formspree_form_embed(depth=1, form_id="bookForm", wide=True, submit_label="Book my call", success_path="success/booking-confirmed/index.html", subject="New booking request from South Africa SDR website")}
 </div>
 <aside class="book-aside">
 <div class="form-aside-inner">
@@ -1066,7 +1129,7 @@ def build_all():
     contact_body = f"""<main>
 <section class="section-cream section" style="padding-top: calc(var(--header-offset) + 48px);"><div class="container contact-layout contact-layout--form reveal">
 <div class="contact-form-col card contact-form-card" style="padding:32px;">
-{cognito_form_embed(wide=True)}
+{formspree_form_embed(depth=1, form_id="contactForm", wide=True)}
 </div>
 <aside class="contact-aside">
 <div class="form-aside-inner">

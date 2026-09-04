@@ -1740,7 +1740,7 @@ a:hover .arrow { transform: translateX(4px); }
   position: relative;
 }
 
-.cta-form-col .cognito-form-embed {
+.cta-form-col .contact-form-embed {
   margin: 0;
   max-width: none;
   width: 100%;
@@ -1816,7 +1816,7 @@ a:hover .arrow { transform: translateX(4px); }
   color: rgba(250, 248, 242, 0.62);
 }
 
-.cognito-form-embed {
+.contact-form-embed {
   margin: 40px auto 0;
   max-width: 440px;
   width: 100%;
@@ -1830,87 +1830,106 @@ a:hover .arrow { transform: translateX(4px); }
   box-sizing: border-box;
 }
 
-.cognito-form-embed .cognito,
-.cognito-form-embed .c-forms-form {
-  max-width: 100%;
+.contact-form-embed .form-group {
+  margin-bottom: 18px;
 }
 
-.cognito-form-embed .c-forms-form-main {
-  padding: 0;
-}
-
-.cognito-form-embed .c-section {
-  margin-bottom: 24px;
-}
-
-.cognito-form-embed .c-field {
-  margin-bottom: 20px;
-}
-
-.cognito-form-embed .c-label {
+.contact-form-embed .form-group label {
+  display: block;
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--green);
   font-size: 14px;
 }
 
-.cognito-form-embed .c-html {
-  margin-bottom: 6px;
+.contact-form-embed .form-optional {
+  font-weight: 400;
+  color: rgba(30, 38, 34, 0.5);
 }
 
-.cognito-form-embed input[type="text"],
-.cognito-form-embed input[type="email"],
-.cognito-form-embed input[type="tel"],
-.cognito-form-embed input[type="number"],
-.cognito-form-embed textarea,
-.cognito-form-embed select {
+.contact-form-embed input[type="text"],
+.contact-form-embed input[type="email"],
+.contact-form-embed input[type="tel"],
+.contact-form-embed textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(2, 64, 61, 0.18);
   border-radius: 9px;
-  border-color: rgba(2, 64, 61, 0.18);
+  background: #fff;
+  color: var(--ink);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.cognito-form-embed input:focus,
-.cognito-form-embed textarea:focus,
-.cognito-form-embed select:focus {
+.contact-form-embed textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form-embed input:focus,
+.contact-form-embed textarea:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(218, 168, 102, 0.18);
   outline: none;
 }
 
-.cognito-form-embed .c-question {
-  margin-bottom: 10px;
-}
-
-.cognito-form-embed .c-choice {
-  margin-bottom: 8px;
-}
-
-.cognito-form-embed button[type="submit"],
-.cognito-form-embed .c-button {
+.contact-form-embed button[type="submit"] {
   margin-top: 8px;
   border-radius: 9px;
   font-weight: 600;
   padding: 14px 28px;
+  width: 100%;
 }
 
-.cognito-form-embed--on-green {
+.contact-form-embed .form-error {
+  font-size: 13px;
+  color: var(--clay);
+  margin-top: 4px;
+  display: none;
+}
+
+.contact-form-embed .form-group.invalid .form-error {
+  display: block;
+}
+
+.contact-form-embed .form-group.invalid input,
+.contact-form-embed .form-group.invalid textarea {
+  border-color: var(--clay);
+}
+
+.form-status {
+  padding: 14px 16px;
+  border-radius: 9px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.form-status--error {
+  background: rgba(184, 148, 90, 0.12);
+  color: var(--clay);
+  border: 1px solid rgba(184, 148, 90, 0.25);
+}
+
+.contact-form-embed--on-green {
   background: var(--cream);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
   border-color: rgba(2, 64, 61, 0.06);
 }
 
-.cognito-form-embed--wide {
+.contact-form-embed--wide {
   max-width: 100%;
 }
 
-.book-layout .cognito-form-embed,
-.contact-form-card .cognito-form-embed {
+.book-layout .contact-form-embed,
+.contact-form-card .contact-form-embed {
   margin-top: 0;
   max-width: 100%;
   padding: 36px 40px 40px;
 }
 
-.contact-form-card .cognito-form-embed {
+.contact-form-card .contact-form-embed {
   box-shadow: none;
   background: transparent;
   border: none;
@@ -1954,9 +1973,9 @@ a:hover .arrow { transform: translateX(4px); }
     position: static;
   }
 
-  .cognito-form-embed,
-  .cta-form-col .cognito-form-embed,
-  .book-layout .cognito-form-embed {
+  .contact-form-embed,
+  .cta-form-col .contact-form-embed,
+  .book-layout .contact-form-embed {
     padding: 28px 24px 32px;
   }
 }
@@ -2817,8 +2836,35 @@ a.footer-contact-item:hover { color: var(--gold); }
       <div class="cta-glow" aria-hidden="true"></div>
       <div class="container cta-split reveal">
         <div class="cta-form-col">
-          <div class="cognito-form-embed cognito-form-embed--wide">
-            <script src="https://www.cognitoforms.com/f/seamless.js" data-key="aUkYm0vkIEepZiVXFt6QrQ" data-form="184"></script>
+          <div class="contact-form-embed contact-form-embed--wide">
+            <div class="form-status form-status--error" data-form-error role="alert" hidden>Something went wrong. Please try again or call us at +44 7397 601087.</div>
+            <form id="ctaContactForm" class="contact-form" action="https://formspree.io/f/xdeoddaw" method="POST" data-success="success/contact-received/index.html">
+              <input type="hidden" name="_subject" value="New enquiry from South Africa SDR homepage" />
+              <div class="form-group">
+                <label for="ctaContactForm-name">Full name</label>
+                <input type="text" id="ctaContactForm-name" name="name" required autocomplete="name" />
+                <span class="form-error">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label for="ctaContactForm-email">Work email</label>
+                <input type="email" id="ctaContactForm-email" name="email" required autocomplete="email" />
+                <span class="form-error">Please enter a valid email address.</span>
+              </div>
+              <div class="form-group">
+                <label for="ctaContactForm-company">Company</label>
+                <input type="text" id="ctaContactForm-company" name="company" autocomplete="organization" />
+              </div>
+              <div class="form-group">
+                <label for="ctaContactForm-phone">Phone <span class="form-optional">(optional)</span></label>
+                <input type="tel" id="ctaContactForm-phone" name="phone" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="ctaContactForm-message">How can we help?</label>
+                <textarea id="ctaContactForm-message" name="message" required rows="5"></textarea>
+                <span class="form-error">Please enter a message.</span>
+              </div>
+              <button type="submit" class="btn btn-primary">Send message</button>
+            </form>
           </div>
         </div>
         <aside class="cta-aside">
@@ -3146,6 +3192,67 @@ a.footer-contact-item:hover { color: var(--gold); }
           '<p class="testimonials-attribution">Client testimonials are temporarily unavailable. Please check back soon.</p>';
       });
   }
+
+  /* ---------- FormSpree contact forms ---------- */
+  document.querySelectorAll("form.contact-form").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var embed = form.closest(".contact-form-embed");
+      var errorEl = embed ? embed.querySelector("[data-form-error]") : null;
+      var valid = true;
+      form.querySelectorAll("[required]").forEach(function (field) {
+        var group = field.closest(".form-group");
+        if (!field.value.trim()) {
+          if (group) group.classList.add("invalid");
+          valid = false;
+        } else if (group) {
+          group.classList.remove("invalid");
+        }
+      });
+      var email = form.querySelector('[type="email"]');
+      if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        var emailGroup = email.closest(".form-group");
+        if (emailGroup) emailGroup.classList.add("invalid");
+        valid = false;
+      }
+      if (!valid) return;
+      if (errorEl) errorEl.hidden = true;
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.setAttribute("aria-busy", "true");
+      }
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (res) {
+          if (res.ok) {
+            var depth = form.getAttribute("data-depth") || "";
+            var next = form.getAttribute("data-success") || "success/contact-received/index.html";
+            window.location.href = depth + next;
+          } else {
+            return res.json().then(function (data) {
+              throw data;
+            });
+          }
+        })
+        .catch(function () {
+          if (errorEl) errorEl.hidden = false;
+          if (btn) {
+            btn.disabled = false;
+            btn.removeAttribute("aria-busy");
+          }
+        });
+    });
+    form.querySelectorAll("input, textarea").forEach(function (field) {
+      field.addEventListener("input", function () {
+        var group = field.closest(".form-group");
+        if (group) group.classList.remove("invalid");
+      });
+    });
+  });
 })();
 
 </script>
