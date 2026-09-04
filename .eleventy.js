@@ -15,6 +15,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("redesign.css");
   eleventyConfig.addPassthroughCopy("script.js");
+  eleventyConfig.addPassthroughCopy("consent.js");
+  eleventyConfig.addPassthroughCopy("consent-config.js");
   eleventyConfig.addPassthroughCopy("testimonials.json");
   eleventyConfig.addPassthroughCopy("index.html");
   eleventyConfig.addPassthroughCopy("404.html");

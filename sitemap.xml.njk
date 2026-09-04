@@ -7,12 +7,14 @@ eleventyExcludeFromCollections: true
   {% for path in site.staticPaths %}
   <url>
     <loc>{{ site.url }}{{ path }}</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>{{ site.buildDate }}</lastmod>
+    <changefreq>{% if path == "/" or path == "/services/" or path == "/contact/" or path == "/book/" %}weekly{% else %}monthly{% endif %}</changefreq>
+    <priority>{{ site.sitemapPriorities[path] or "0.7" }}</priority>
   </url>
   {% endfor %}
   <url>
     <loc>{{ site.url }}/blog/</loc>
+    <lastmod>{{ site.buildDate }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

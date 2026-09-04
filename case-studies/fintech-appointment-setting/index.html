@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="describedby" href="https://southafricasdr.com/llms.txt">
   
   <style>
 /* =========================================================
@@ -2111,6 +2112,9 @@ a.footer-contact-item:hover { color: var(--gold); }
 .legal-content h3 { margin: 24px 0 10px; font-size: 19px; }
 .legal-content p, .legal-content li { font-size: 16px; line-height: 1.7; color: rgba(30,38,34,0.8); }
 .legal-content ul { margin: 0 0 18px 24px; }
+.cookie-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+.cookie-table th, .cookie-table td { border: 1px solid var(--hairline); padding: 10px 12px; text-align: left; vertical-align: top; }
+.cookie-table th { background: var(--sand); font-weight: 600; }
 .error-page { min-height: 80vh; display: flex; align-items: center; text-align: center; padding: 120px 28px 80px; }
 .error-code { font-family: var(--font-serif); font-size: clamp(80px, 15vw, 140px); font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 12px; }
 .error-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
@@ -2375,6 +2379,7 @@ a.footer-contact-item:hover { color: var(--gold); }
         <a href="../../privacy/index.html">Privacy Policy</a>
         <a href="../../terms/index.html">Terms of Service</a>
         <a href="../../cookies/index.html">Cookies</a>
+        <button type="button" class="footer-cookie-settings" data-cc-settings>Cookie settings</button>
       </nav>
     </div>
   </div>
@@ -2671,5 +2676,7 @@ if (subForm) {
 }
 
   </script>
+  <script src="/consent-config.js" defer></script>
+  <script src="/consent.js" defer></script>
 </body>
 </html>
