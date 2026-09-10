@@ -3,7 +3,7 @@
  * Paste IDs here when ready — empty strings keep third-party tags disabled.
  */
 window.__SA_SDR_CONSENT__ = {
-  gtmId: "",
+  gtmId: "GTM-KCPRRKRJ",
   ga4Id: "",
   metaPixelId: "",
   linkedinPartnerId: "",

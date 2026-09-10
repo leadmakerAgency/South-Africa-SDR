@@ -82,6 +82,7 @@
 
   function loadGtm(gtmId) {
     if (!gtmId || document.getElementById("sa-sdr-gtm")) return;
+    if (document.querySelector('script[src*="googletagmanager.com/gtm.js"]')) return;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
     var script = document.createElement("script");
