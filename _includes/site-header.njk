@@ -1,0 +1,129 @@
+<header class="site-header" id="siteHeader">
+  <div class="header-shell">
+    <div class="header-pill">
+      <a href="/" class="logo" aria-label="South Africa SDR, home">
+        <img src="/images/brand/lockup-horizontal.svg" alt="South Africa SDR — Western Sales Talent" class="logo-img" width="220" height="40" fetchpriority="high" />
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="/why-south-africa/" class="nav-link">Why South Africa</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-toggle" aria-expanded="false" aria-haspopup="true">
+              Services
+              <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="dropdown">
+              <a href="/services/sdr/">SDR Services</a>
+              <a href="/services/appointment-setting/">Appointment Setting</a>
+              <a href="/services/customer-service/">Customer Service</a>
+              <a href="/services/technical-support/">Technical Support</a>
+            </div>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-toggle" aria-expanded="false" aria-haspopup="true">
+              Industries
+              <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="dropdown dropdown-wide">
+              <div class="dropdown-cols">
+                <a href="/industries/saas/">SaaS</a>
+                <a href="/industries/financial-services/">Financial Services</a>
+                <a href="/industries/real-estate/">Real Estate</a>
+                <a href="/industries/insurance/">Insurance</a>
+                <a href="/industries/healthcare/">Healthcare</a>
+                <a href="/industries/recruitment/">Recruitment</a>
+                <a href="/industries/professional-services/">Professional Services</a>
+                <a href="/industries/technology-it/">Technology &amp; IT</a>
+                <a href="/industries/marketing-agencies/">Marketing Agencies</a>
+                <a href="/industries/logistics/">Logistics</a>
+                <a href="/industries/manufacturing/">Manufacturing</a>
+                <a href="/industries/cybersecurity/">Cybersecurity</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="/about/" class="nav-link">About</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-toggle" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="dropdown">
+              <a href="/blog/"{% if blogActive %} aria-current="page"{% endif %}>Blog / Insights</a>
+              <a href="/case-studies/">Case Studies</a>
+              <a href="/faq/">FAQ</a>
+              <div class="dropdown-group-label">Compare</div>
+              <a href="/compare/south-africa-vs-philippines/">South Africa vs Philippines</a>
+              <a href="/compare/south-africa-vs-india/">South Africa vs India</a>
+              <a href="/compare/south-africa-vs-latin-america/">South Africa vs Latin America</a>
+              <a href="/compare/south-africa-vs-eastern-europe/">South Africa vs Eastern Europe</a>
+              <a href="/compare/in-house-vs-outsourced/">In-house vs Outsourced</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="/contact/" class="btn-header-cta">
+          <svg class="btn-header-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 2v6l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          Book a call
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <nav aria-label="Mobile">
+        <a class="mm-link" href="/why-south-africa/">Why South Africa</a>
+        <button class="mm-link mm-accordion" aria-expanded="false">
+          Services
+          <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mm-panel">
+          <a href="/services/sdr/">SDR Services</a>
+          <a href="/services/appointment-setting/">Appointment Setting</a>
+          <a href="/services/customer-service/">Customer Service</a>
+          <a href="/services/technical-support/">Technical Support</a>
+        </div>
+        <button class="mm-link mm-accordion" aria-expanded="false">
+          Industries
+          <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mm-panel">
+          <a href="/industries/saas/">SaaS</a>
+          <a href="/industries/financial-services/">Financial Services</a>
+          <a href="/industries/real-estate/">Real Estate</a>
+          <a href="/industries/insurance/">Insurance</a>
+          <a href="/industries/healthcare/">Healthcare</a>
+          <a href="/industries/recruitment/">Recruitment</a>
+          <a href="/industries/professional-services/">Professional Services</a>
+          <a href="/industries/technology-it/">Technology &amp; IT</a>
+          <a href="/industries/marketing-agencies/">Marketing Agencies</a>
+          <a href="/industries/logistics/">Logistics</a>
+          <a href="/industries/manufacturing/">Manufacturing</a>
+          <a href="/industries/cybersecurity/">Cybersecurity</a>
+        </div>
+        <a class="mm-link" href="/about/">About</a>
+        <button class="mm-link mm-accordion" aria-expanded="false">
+          Resources
+          <svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mm-panel">
+          <a href="/blog/"{% if blogActive %} aria-current="page"{% endif %}>Blog / Insights</a>
+          <a href="/case-studies/">Case Studies</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/compare/south-africa-vs-philippines/">Compare locations</a>
+        </div>
+        <a href="/contact/" class="btn btn-primary mm-cta">
+          <svg class="btn-header-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 2v6l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          Book a call
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>

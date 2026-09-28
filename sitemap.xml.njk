@@ -1,0 +1,29 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for path in site.staticPaths %}
+  <url>
+    <loc>{{ site.url }}{{ path }}</loc>
+    <lastmod>{{ site.buildDate }}</lastmod>
+    <changefreq>{% if path == "/" or path == "/services/" or path == "/contact/" or path == "/book/" %}weekly{% else %}monthly{% endif %}</changefreq>
+    <priority>{{ site.sitemapPriorities[path] or "0.7" }}</priority>
+  </url>
+  {% endfor %}
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <lastmod>{{ site.buildDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% for post in collections.posts %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | isoDate }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {% endfor %}
+</urlset>
