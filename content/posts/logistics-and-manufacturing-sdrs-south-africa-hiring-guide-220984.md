@@ -1,15 +1,16 @@
 ---
-layout: "blog-post.njk"
-title: "Logistics and Manufacturing SDRs South Africa: Hiring Guide"
-slug: "logistics-and-manufacturing-sdrs-south-africa-hiring-guide"
-date: "2026-09-24T14:02:34.422Z"
-excerpt: "The wrong first hire will cost you months of wasted training, missed pipeline, and a reputation that scares off good candidates. For logistics and manufacturing companies in South Africa, a sales development representative who can talk shop"
-featured_image: "/media/image-logistics-and-manufacturing-sdrs-south-africa-hiring-guide.png"
-hero_emoji: ""
+title: 'Logistics and Manufacturing SDRs South Africa: Hiring Guide'
+slug: logistics-and-manufacturing-sdrs-south-africa-hiring-guide
+date: 2026-09-24T14:02:34.422Z
+draft: false
+excerpt: The wrong first hire will cost you months of wasted training, missed pipeline, and a reputation that scares off good candidates. For logistics and manufacturing companies in South Africa, a sales development representative who can talk shop
+featured_image: /media/image-logistics-and-manufacturing-sdrs-south-africa-hiring-guide.png
+hero_emoji: ''
 tags:
-  - "airbnb"
-  - "cambridge"
-permalink: "/blog/logistics-and-manufacturing-sdrs-south-africa-hiring-guide/"
+  - airbnb
+  - cambridge
+layout: blog-post.njk
+permalink: /blog/logistics-and-manufacturing-sdrs-south-africa-hiring-guide/
 ---
 
 The wrong first hire will cost you months of wasted training, missed pipeline, and a reputation that scares off good candidates. For logistics and manufacturing companies in South Africa, a sales development representative who can talk shop, navigate long procurement cycles, and respect local commercial customs is not optional. They are the difference between a promising lead and a stalled opportunity.
@@ -113,6 +114,3 @@ This role requires an SDR with exposure to heavy industry or mechanical engineer
 Conclusion
 
 Hiring logistics and manufacturing SDRs South Africa requires thoughtful role definition, practical assessments, local market awareness, and onboarding that connects product benefits to operational outcomes. Focus on industry fluency, structured prospecting, and realistic compensation tied to pipeline contribution. With the right process you will reduce ramp time, build credible conversations with technical buyers, and create a dependable stream of qualified opportunities that support sustained growth.
-
-
-
