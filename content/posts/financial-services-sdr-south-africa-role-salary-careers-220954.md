@@ -1,15 +1,16 @@
 ---
-layout: "blog-post.njk"
-title: "Financial Services SDR South Africa: Role, Salary & Careers"
-slug: "financial-services-sdr-south-africa-role-salary-careers"
-date: "2026-09-23T14:02:32.586Z"
-excerpt: "Hook If you can open conversations that lead to contracts, you can build a high-growth sales career in months rather than years. In South Africa, financial product complexity and strict regulation make every qualified meeting more valuable,"
-featured_image: "/media/image-financial-services-sdr-south-africa-role-salary-careers.png"
-hero_emoji: ""
+title: 'Financial Services SDR South Africa: Role, Salary & Careers'
+slug: financial-services-sdr-south-africa-role-salary-careers
+date: 2026-09-23T14:02:32.586Z
+draft: false
+excerpt: Hook If you can open conversations that lead to contracts, you can build a high-growth sales career in months rather than years. In South Africa, financial product complexity and strict regulation make every qualified meeting more valuable,
+featured_image: /media/image-financial-services-sdr-south-africa-role-salary-careers.png
+hero_emoji: ''
 tags:
-  - "airbnb"
-  - "cambridge"
-permalink: "/blog/financial-services-sdr-south-africa-role-salary-careers/"
+  - airbnb
+  - cambridge
+layout: blog-post.njk
+permalink: /blog/financial-services-sdr-south-africa-role-salary-careers/
 ---
 
 Hook
@@ -87,6 +88,3 @@ Imagine a typical week for a mid-level SDR in a Cape Town fintech. Monday mornin
 Final thoughts
 
 A career as a financial services SDR South Africa offers an uncommon mix of challenge and reward. The role demands discipline, industry awareness and strong communication, but it also pays well for performance and opens multiple routes to senior sales or product careers. Focus on measurable contributions, build sector knowledge, and treat every meeting as an opportunity to demonstrate commercial impact. With consistent execution, an SDR role in South Africa’s financial services sector can be the fastest route to a high-earning, high-responsibility position.
-
-
-
