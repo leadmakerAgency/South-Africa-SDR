@@ -1,15 +1,16 @@
 ---
-layout: "blog-post.njk"
-title: "Affordable SDR Outsourcing: Save 55–65% on Sales Development"
-slug: "affordable-sdr-outsourcing-save-5565-on-sales-development"
-date: "2026-09-04T14:02:52.504Z"
-excerpt: "Hook If your sales team is bleeding budget on recruiting, benefits, and long ramp times, you do not need to accept that as the cost of growth. Affordable SDR outsourcing (55–65 percent less) can reduce your sales development spend dramatica"
-featured_image: "/media/image-affordable-sdr-outsourcing-save-5565-on-sales-development.png"
-hero_emoji: ""
+title: 'Affordable SDR Outsourcing: Save 55–65% on Sales Development'
+slug: affordable-sdr-outsourcing-save-5565-on-sales-development
+date: 2026-09-04T14:02:52.504Z
+draft: false
+excerpt: Hook If your sales team is bleeding budget on recruiting, benefits, and long ramp times, you do not need to accept that as the cost of growth. Affordable SDR outsourcing (55–65 percent less) can reduce your sales development spend dramatica
+featured_image: /media/image-affordable-sdr-outsourcing-save-5565-on-sales-development.png
+hero_emoji: ''
 tags:
-  - "airbnb"
-  - "cambridge"
-permalink: "/blog/affordable-sdr-outsourcing-save-5565-on-sales-development/"
+  - airbnb
+  - cambridge
+layout: blog-post.njk
+permalink: /blog/affordable-sdr-outsourcing-save-5565-on-sales-development/
 ---
 
 Hook
@@ -85,6 +86,3 @@ Begin with a three-month pilot, not a long-term lock-in. Give the vendor a narro
 Final thoughts
 
 Affordable SDR outsourcing (55–65 percent less) is attainable when you compare fully loaded internal costs to vendor pricing and insist on outcome-based agreements. The savings come from scale, shared infrastructure, and lower labor costs, but they require disciplined onboarding, clear KPIs, and contract protections to preserve lead quality. Start with a focused pilot, measure cost per qualified opportunity, and expand only after the vendor proves consistent performance. When executed carefully, outsourcing your SDR function delivers both significant savings and dependable pipeline, freeing your team to focus on closing deals.
-
-
-
