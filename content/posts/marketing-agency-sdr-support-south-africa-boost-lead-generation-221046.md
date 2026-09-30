@@ -1,15 +1,16 @@
 ---
-layout: "blog-post.njk"
-title: "Marketing Agency SDR Support South Africa: Boost Lead Generation"
-slug: "marketing-agency-sdr-support-south-africa-boost-lead-generation"
-date: "2026-09-26T14:02:21.453Z"
-excerpt: "Cold outreach that feels cold is killing agency pipelines. For marketing agencies in South Africa, sending more emails or running another ad campaign will not automatically lift conversion rates. What moves the needle is disciplined, locall"
-featured_image: "/media/image-marketing-agency-sdr-support-south-africa-boost-lead-generation.png"
-hero_emoji: ""
+title: 'Marketing Agency SDR Support South Africa: Boost Lead Generation'
+slug: marketing-agency-sdr-support-south-africa-boost-lead-generation
+date: 2026-09-26T14:02:21.453Z
+draft: false
+excerpt: Cold outreach that feels cold is killing agency pipelines. For marketing agencies in South Africa, sending more emails or running another ad campaign will not automatically lift conversion rates. What moves the needle is disciplined, locall
+featured_image: /media/image-marketing-agency-sdr-support-south-africa-boost-lead-generation.png
+hero_emoji: ''
 tags:
-  - "airbnb"
-  - "cambridge"
-permalink: "/blog/marketing-agency-sdr-support-south-africa-boost-lead-generation/"
+  - airbnb
+  - cambridge
+layout: blog-post.njk
+permalink: /blog/marketing-agency-sdr-support-south-africa-boost-lead-generation/
 ---
 
 Cold outreach that feels cold is killing agency pipelines. For marketing agencies in South Africa, sending more emails or running another ad campaign will not automatically lift conversion rates. What moves the needle is disciplined, locally informed SDR support that turns cold contacts into qualified conversations and predictable pipeline.
@@ -103,6 +104,3 @@ Retention matters. SDR teams benefit from career paths that lead into account ma
 Conclusion
 
 Adding marketing agency SDR support South Africa can transform speculative outreach into a dependable pipeline machine. With the right model, local insight, and disciplined processes, agencies shorten sales cycles, improve lead quality, and free senior teams to close higher-value business. Start with a focused pilot, measure the right KPIs, and iterate rapidly. The result is predictable meetings, clearer handoffs, and a growth engine that scales with confidence.
-
-
-
