@@ -1,15 +1,16 @@
 ---
-layout: "blog-post.njk"
-title: "Africa SDR Guide: How Special Drawing Rights Can Boost Growth"
-slug: "africa-sdr-guide-how-special-drawing-rights-can-boost-growth"
-date: "2026-09-27T14:02:21.649Z"
-excerpt: "Hook: When hard currency runs out, dreams of hospitals, schools, and power plants stall. Special Drawing Rights, a quiet asset issued by the IMF, can change that picture for African countries, if policymakers use them strategically. Introdu"
-featured_image: "/media/image-africa-sdr-guide-how-special-drawing-rights-can-boost-growth.png"
-hero_emoji: ""
+title: 'Africa SDR Guide: How Special Drawing Rights Can Boost Growth'
+slug: africa-sdr-guide-how-special-drawing-rights-can-boost-growth
+date: 2026-09-27T14:02:21.649Z
+draft: false
+excerpt: 'Hook: When hard currency runs out, dreams of hospitals, schools, and power plants stall. Special Drawing Rights, a quiet asset issued by the IMF, can change that picture for African countries, if policymakers use them strategically. Introdu'
+featured_image: /media/image-africa-sdr-guide-how-special-drawing-rights-can-boost-growth.png
+hero_emoji: ''
 tags:
-  - "airbnb"
-  - "cambridge"
-permalink: "/blog/africa-sdr-guide-how-special-drawing-rights-can-boost-growth/"
+  - airbnb
+  - cambridge
+layout: blog-post.njk
+permalink: /blog/africa-sdr-guide-how-special-drawing-rights-can-boost-growth/
 ---
 
 Hook: When hard currency runs out, dreams of hospitals, schools, and power plants stall. Special Drawing Rights, a quiet asset issued by the IMF, can change that picture for African countries, if policymakers use them strategically.
@@ -82,6 +83,3 @@ First, map SDR holdings and run scenarios showing fiscal and macro impacts under
 
 Closing thoughts
 Special Drawing Rights offer African governments a flexible tool to shore up reserves, reduce costly borrowing, and finance investments that lift growth. The key is strategy: convert or rechannel SDRs where they relieve immediate pressures and support durable, high-return uses. With transparent plans, coordinated policy, and the backing of regional and international partners, africa sdr resources can do more than plug holes. They can create space to rebuild, invest, and grow.
-
-
-
