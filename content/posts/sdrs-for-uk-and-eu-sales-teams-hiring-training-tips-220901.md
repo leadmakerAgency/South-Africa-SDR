@@ -1,15 +1,16 @@
 ---
-layout: "blog-post.njk"
-title: "SDRs for UK and EU Sales Teams: Hiring, Training & Tips"
-slug: "sdrs-for-uk-and-eu-sales-teams-hiring-training-tips"
-date: "2026-09-21T14:02:45.088Z"
-excerpt: "Hook: Most companies expect a handful of SDRs to fill the top of the funnel and magically deliver steady pipeline across the UK and EU. Reality is harsher. Cultural friction, GDPR surprises, and language gaps make a small mistake in hiring"
-featured_image: "/media/image-sdrs-for-uk-and-eu-sales-teams-hiring-training-tips.png"
-hero_emoji: ""
+title: 'SDRs for UK and EU Sales Teams: Hiring, Training & Tips'
+slug: sdrs-for-uk-and-eu-sales-teams-hiring-training-tips
+date: 2026-09-21T14:02:45.088Z
+draft: false
+excerpt: 'Hook: Most companies expect a handful of SDRs to fill the top of the funnel and magically deliver steady pipeline across the UK and EU. Reality is harsher. Cultural friction, GDPR surprises, and language gaps make a small mistake in hiring'
+featured_image: /media/image-sdrs-for-uk-and-eu-sales-teams-hiring-training-tips.png
+hero_emoji: ''
 tags:
-  - "airbnb"
-  - "cambridge"
-permalink: "/blog/sdrs-for-uk-and-eu-sales-teams-hiring-training-tips/"
+  - airbnb
+  - cambridge
+layout: blog-post.njk
+permalink: /blog/sdrs-for-uk-and-eu-sales-teams-hiring-training-tips/
 ---
 
 Hook: Most companies expect a handful of SDRs to fill the top of the funnel and magically deliver steady pipeline across the UK and EU. Reality is harsher. Cultural friction, GDPR surprises, and language gaps make a small mistake in hiring or training costlier than many teams predict.
@@ -81,6 +82,3 @@ Do not assume English-only outreach will scale across Europe. Invest in native-l
 
 Closing paragraph
 Building effective sdrs for uk and eu sales teams requires deliberate choices: how to segment coverage, the legal guardrails you follow, the language skills you prioritize, and the coaching rhythm you sustain. When hiring and onboarding are done deliberately, SDRs become reliable engines of qualified pipeline rather than unpredictable cost centers. Start with a clear scorecard, a localized playbook, and a training plan that turns curiosity into repeatable skill.
-
-
-
