@@ -4,7 +4,7 @@ slug: affordable-sdr-outsourcing-save-5565-on-sales-development
 date: 2026-09-04T14:02:52.504Z
 draft: false
 excerpt: Hook If your sales team is bleeding budget on recruiting, benefits, and long ramp times, you do not need to accept that as the cost of growth. Affordable SDR outsourcing (55–65 percent less) can reduce your sales development spend dramatica
-featured_image: /media/image-affordable-sdr-outsourcing-save-5565-on-sales-development.png
+featured_image: /media/image-affordable-sdr-outsourcing-save-55-65-on-sales-development-220596.png
 hero_emoji: ''
 tags:
   - airbnb
