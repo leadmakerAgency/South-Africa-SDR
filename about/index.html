@@ -1992,7 +1992,7 @@ a.footer-contact-item:hover { color: var(--gold); }
 .photo-frame { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-float); border: 3px solid rgba(250,248,242,0.12); }
 .photo-frame img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
 .photo-accent { position: absolute; bottom: -16px; left: -16px; width: 80px; height: 80px; border-radius: 16px; background: var(--gold); opacity: 0.35; z-index: -1; }
-.photo-frame-offset { transform: rotate(-1.5deg); }
+.photo-frame-offset { transform: none; }
 .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .split-section.reverse .split-media { order: 2; }
 .split-section.reverse .split-copy { order: 1; }
@@ -2409,7 +2409,7 @@ a.footer-contact-item:hover { color: var(--gold); }
     <div class="footer-bottom">
       <div class="footer-meta">
         <p class="footer-copy">© 2026 South Africa SDR. All rights reserved.</p>
-        <a href="https://leadmaker.agency" class="footer-credit" target="_blank" rel="noopener noreferrer">Website designed by LeadMaker</a>
+        
       </div>
       <nav class="footer-legal" aria-label="Legal">
         <a href="../privacy/index.html">Privacy Policy</a>
@@ -2418,6 +2418,7 @@ a.footer-contact-item:hover { color: var(--gold); }
         <button type="button" class="footer-cookie-settings" data-cc-settings>Cookie settings</button>
       </nav>
     </div>
+    <div class="footer-credit-row" style="display:flex;justify-content:center;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.08);"><a href="https://leadmaker.agency" class="footer-credit" target="_blank" rel="noopener noreferrer" style="display:flex;width:100%;flex-direction:row;justify-content:space-between;align-items:center;gap:12px;white-space:nowrap;">Website designed by LeadMaker<img src="/images/brand/leadmaker-logo.png" alt="LeadMaker" class="footer-credit-logo" width="105" height="26" loading="lazy" style="height:26px;width:auto;display:block;" /></a></div>
   </div>
 </footer>
 

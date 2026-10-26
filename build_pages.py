@@ -28,7 +28,7 @@ EXTRA_CSS = """
 .photo-frame { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-float); border: 3px solid rgba(250,248,242,0.12); }
 .photo-frame img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
 .photo-accent { position: absolute; bottom: -16px; left: -16px; width: 80px; height: 80px; border-radius: 16px; background: var(--gold); opacity: 0.35; z-index: -1; }
-.photo-frame-offset { transform: rotate(-1.5deg); }
+.photo-frame-offset { transform: none; }
 .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .split-section.reverse .split-media { order: 2; }
 .split-section.reverse .split-copy { order: 1; }
@@ -449,7 +449,7 @@ def footer_html(depth: int) -> str:
     <div class="footer-bottom">
       <div class="footer-meta">
         <p class="footer-copy">© 2026 South Africa SDR. All rights reserved.</p>
-        <a href="https://leadmaker.agency" class="footer-credit" target="_blank" rel="noopener noreferrer">Website designed by LeadMaker</a>
+        
       </div>
       <nav class="footer-legal" aria-label="Legal">
         <a href="{rel(depth, '/privacy/')}">Privacy Policy</a>
@@ -458,6 +458,7 @@ def footer_html(depth: int) -> str:
         <button type="button" class="footer-cookie-settings" data-cc-settings>Cookie settings</button>
       </nav>
     </div>
+    <div class="footer-credit-row" style="display:flex;justify-content:center;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.08);"><a href="https://leadmaker.agency" class="footer-credit" target="_blank" rel="noopener noreferrer" style="display:flex;width:100%;flex-direction:row;justify-content:space-between;align-items:center;gap:12px;white-space:nowrap;">Website designed by LeadMaker<img src="/images/brand/leadmaker-logo.png" alt="LeadMaker" class="footer-credit-logo" width="105" height="26" loading="lazy" style="height:26px;width:auto;display:block;" /></a></div>
   </div>
 </footer>"""
 
@@ -558,10 +559,10 @@ def deliverable_grid(items: list) -> str:
 
 
 SERVICE_IMAGES = {
-    "sdr": ("https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop", "Sales development team reviewing outbound pipeline"),
-    "appointment-setting": ("https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop", "Professional scheduling a client meeting"),
-    "customer-service": ("https://images.pexels.com/photos/8867442/pexels-photo-8867442.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop", "Customer service representative assisting a client"),
-    "technical-support": ("https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop", "Technical support specialist at a workstation"),
+    "sdr": ("/images/photos/service-sdr.jpg", "Sales development team reviewing outbound pipeline"),
+    "appointment-setting": ("/images/photos/service-appointment-setting.jpg", "Professional scheduling a client meeting"),
+    "customer-service": ("/images/photos/service-customer-service.jpg", "Customer service representative assisting a client"),
+    "technical-support": ("/images/photos/service-technical-support.jpg", "Technical support specialist at a workstation"),
 }
 
 SERVICE_DELIVERABLES = {
@@ -956,16 +957,16 @@ def build_all():
         ("How do you vet reps?", "We source, assess communication skills, run role-play exercises, and train each rep on your playbook before they go live."),
         ("Is South Africa right for every company?", "It is a strong fit for UK, EU, and US outbound. If you need 24/7 coverage at the lowest possible cost, another region may suit better."),
     ]
-    why_img = "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop"
+    why_img = "/images/photos/why-hero.jpg"
     body = f"""<main>
 {page_hero("The case for South Africa", "Why South Africa is the smartest place to build your SDR team", "Lower cost than the West, first language English, a timezone that overlaps your working day, and a business culture your prospects recognise. Here is the full picture.", f'<a href="{CONTACT_CTA}" class="btn btn-primary">Book a call</a>', why_img, "Professional team collaborating in a modern office")}
 <section class="section-cream section"><div class="container"><div class="split-section reveal">
 <div class="split-copy">{section_head("Cost", "The cost case")}<div class="prose"><p>A South African SDR typically costs 55 to 65 percent less than an equivalent hire in the US, UK or Australia. That is not a quality trade off, it is a currency and cost of living gap. The same money buys you more reps, more coverage and more pipeline.</p></div></div>
-<div class="split-media"><img src="https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="Financial planning and cost analysis" loading="lazy" /></div>
+<div class="split-media"><img src="/images/photos/why-cost.jpg" alt="Financial planning and cost analysis" loading="lazy" /></div>
 </div></div></section>
 <section class="section-green section"><div class="container"><div class="split-section reverse reveal">
 <div class="split-copy">{section_head("English", "The English case", on_green=True)}<div class="prose prose-green"><p>South Africa ranks first in Africa for English proficiency and sits high on the global index. English is a first language for a large, educated professional workforce. The accent reads as clear and neutral to UK and US ears, closer to home than most offshore options.</p></div></div>
-<div class="split-media"><img src="https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="Professional on a client call" loading="lazy" style="border:3px solid rgba(250,248,242,0.1);" /></div>
+<div class="split-media"><img src="/images/photos/why-english.jpg" alt="Professional on a client call" loading="lazy" style="border:3px solid rgba(250,248,242,0.1);" /></div>
 </div></div></section>
 <section class="section-cream section"><div class="container"><div class="split-section reveal">
 <div class="split-copy">{section_head("Timezone", "The timezone case")}<div class="prose"><p>At GMT+2, South Africa overlaps the entire UK and European working day and covers US East Coast mornings. Your rep works when your prospects work. No overnight shifts, no next day lag on replies.</p></div></div>
@@ -1035,10 +1036,10 @@ def build_all():
 <section class="section-cream section"><div class="container">
 {section_head("Our services", "Sales first, support behind it", "Each service is scoped to your playbook, tools, and market.")}
 <div class="services-grid reveal">
-<a href="{rel(d, '/services/sdr/')}" class="service-feature"><span class="service-feature-media"><img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="SDR team" loading="lazy" /></span><span class="service-feature-body"><span class="service-tag">Sales</span><h3>SDR Services</h3><p class="service-outcome">Outbound reps who research, reach out, and build qualified pipeline.</p><span class="card-link">Explore <span class="arrow">→</span></span></span></a>
-<a href="{rel(d, '/services/appointment-setting/')}" class="service-feature"><span class="service-feature-media"><img src="https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="Appointment setting" loading="lazy" /></span><span class="service-feature-body"><span class="service-tag">Sales</span><h3>Appointment Setting</h3><p class="service-outcome">Qualified meetings booked directly to your calendar.</p><span class="card-link">Explore <span class="arrow">→</span></span></span></a>
-<a href="{rel(d, '/services/customer-service/')}" class="service-feature"><span class="service-feature-media"><img src="https://images.pexels.com/photos/8867442/pexels-photo-8867442.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="Customer service" loading="lazy" /></span><span class="service-feature-body"><span class="service-tag service-tag-support">Support</span><h3>Customer Service</h3><p class="service-outcome">Keep customers happy and revenue retained.</p><span class="card-link">Explore <span class="arrow">→</span></span></span></a>
-<a href="{rel(d, '/services/technical-support/')}" class="service-feature"><span class="service-feature-media"><img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800&h=520&fit=crop" alt="Technical support" loading="lazy" /></span><span class="service-feature-body"><span class="service-tag service-tag-support">Support</span><h3>Technical Support</h3><p class="service-outcome">Product support that protects the relationship.</p><span class="card-link">Explore <span class="arrow">→</span></span></span></a>
+<a href="{rel(d, '/services/sdr/')}" class="service-feature"><span class="service-feature-media"><img src="/images/photos/service-sdr.jpg" alt="SDR team" loading="lazy" /></span><span class="service-feature-body"><span class="service-tag">Sales</span><h3>SDR Services</h3><p class="service-outcome">Outbound reps who research, reach out, and build qualified pipeline.</p><span class="card-link">Explore <span class="arrow">→</span></span></span></a>
+<a href="{rel(d, '/services/appointment-setting/')}" class="service-feature"><span class="service-feature-media"><img src="/images/photos/service-appointment-setting.jpg" alt="Appointment setting" loading="lazy" /></span><span class="service-feature-body"><span class="service-tag">Sales</span><h3>Appointment Setting</h3><p class="service-outcome">Qualified meetings booked directly to your calendar.</p><span class="card-link">Explore <span class="arrow">→</span></span></span></a>
+<a href="{rel(d, '/services/customer-service/')}" class="service-feature"><span class="service-feature-media"><img src="/images/photos/service-customer-service.jpg" alt="Customer service" loading="lazy" /></span><span class="service-feature-body"><span class="service-tag service-tag-support">Support</span><h3>Customer Service</h3><p class="service-outcome">Keep customers happy and revenue retained.</p><span class="card-link">Explore <span class="arrow">→</span></span></span></a>
+<a href="{rel(d, '/services/technical-support/')}" class="service-feature"><span class="service-feature-media"><img src="/images/photos/service-technical-support.jpg" alt="Technical support" loading="lazy" /></span><span class="service-feature-body"><span class="service-tag service-tag-support">Support</span><h3>Technical Support</h3><p class="service-outcome">Product support that protects the relationship.</p><span class="card-link">Explore <span class="arrow">→</span></span></span></a>
 </div></div></section>
 {cta_band(d, "Not sure which service fits? Book a fit call.")}
 </main>"""
