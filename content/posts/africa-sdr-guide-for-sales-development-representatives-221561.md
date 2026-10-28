@@ -3,7 +3,7 @@ layout: "blog-post.njk"
 title: "Africa SDR Guide for Sales Development Representatives"
 slug: "africa-sdr-guide-for-sales-development-representatives"
 date: "2026-10-06T14:02:29.697Z"
-excerpt: "Hook Most SDR playbooks were written for Silicon Valley phone banks and boardrooms. When you try to transpose those scripts directly into Lagos, Nairobi, Cape Town, or Accra, the response will often be awkward, slow, or completely absent. A"
+excerpt: "Most SDR playbooks were written for Silicon Valley phone banks and boardrooms. When you try to transpose those scripts directly into Lagos, Nairobi, Cape Town, or Accra, the response will often be awkward, slow, or completely absent. A"
 featured_image: "/media/image-africa-sdr-guide-for-sales-development-representatives.png"
 hero_emoji: ""
 tags:
@@ -12,11 +12,7 @@ tags:
 permalink: "/blog/africa-sdr-guide-for-sales-development-representatives/"
 ---
 
-Hook
-
 Most SDR playbooks were written for Silicon Valley phone banks and boardrooms. When you try to transpose those scripts directly into Lagos, Nairobi, Cape Town, or Accra, the response will often be awkward, slow, or completely absent. Africa offers some of the fastest growing markets and most receptive buyers for many tech and services categories, but only when sales development representatives adapt to local realities.
-
-Introduction
 
 This guide is for Africa SDR sales development representatives who need practical, field-tested techniques to build pipeline, qualify opportunities, and hand off deals that close. It covers the market differences that matter, the skills that produce predictable results, messaging and outreach strategies that work across different regions, and the operational set-up that scales. You will find examples and short templates you can adapt, plus tips on measuring progress and avoiding common mistakes. Read this as a playbook designed for real conversations, not theoretical frameworks.
 

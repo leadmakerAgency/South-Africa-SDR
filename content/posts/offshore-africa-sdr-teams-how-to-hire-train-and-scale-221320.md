@@ -3,7 +3,7 @@ layout: "blog-post.njk"
 title: "Offshore Africa SDR Teams: How to Hire, Train, and Scale"
 slug: "offshore-africa-sdr-teams-how-to-hire-train-and-scale"
 date: "2026-10-01T14:02:30.689Z"
-excerpt: "Hook A single dependable SDR team can turn sporadic inbound interest into a steady pipeline. For many B2B companies that need scale without spiraling costs, offshore Africa SDR teams deliver that balance. They combine growing tech talent po"
+excerpt: "A single dependable SDR team can turn sporadic inbound interest into a steady pipeline. For many B2B companies that need scale without spiraling costs, offshore Africa SDR teams deliver that balance. They combine growing tech talent po"
 featured_image: "/media/image-offshore-africa-sdr-teams-how-to-hire-train-and-scale.png"
 hero_emoji: ""
 tags:
@@ -12,11 +12,7 @@ tags:
 permalink: "/blog/offshore-africa-sdr-teams-how-to-hire-train-and-scale/"
 ---
 
-Hook
-
 A single dependable SDR team can turn sporadic inbound interest into a steady pipeline. For many B2B companies that need scale without spiraling costs, offshore Africa SDR teams deliver that balance. They combine growing tech talent pools, English fluency in key markets, and competitive labor costs, while offering time zone alignment for U.S. and European buyers. The trick lies in hiring the right people, training them to your process, and scaling without breaking quality or culture.
-
-Introduction
 
 This article explains how to hire, train, and scale offshore Africa SDR teams so they become predictable drivers of meetings and qualified pipeline. You will find practical steps for sourcing talent, structuring onboarding, designing training and metrics that matter, and the operational choices that influence retention and performance. The guidance assumes you run a B2B sales organization that wants to extend or relocate SDR capacity to Africa, and it focuses on approaches that work in real operations rather than abstract theory.
 

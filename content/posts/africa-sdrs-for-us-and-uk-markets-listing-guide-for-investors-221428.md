@@ -3,7 +3,7 @@ layout: "blog-post.njk"
 title: "Africa SDRs for US and UK Markets: Listing Guide for Investors"
 slug: "africa-sdrs-for-us-and-uk-markets-listing-guide-for-investors"
 date: "2026-10-03T14:02:22.346Z"
-excerpt: "Hook Many investors assume buying African equities means navigating unfamiliar exchanges, local custody rules, and currency controls. That is no longer always true. Africa SDRs for US and UK markets offer a practical bridge, giving internat"
+excerpt: "Many investors assume buying African equities means navigating unfamiliar exchanges, local custody rules, and currency controls. That is no longer always true. Africa SDRs for US and UK markets offer a practical bridge, giving internat"
 featured_image: "/media/image-africa-sdrs-for-us-and-uk-markets-listing-guide-for-investors.png"
 hero_emoji: ""
 tags:
@@ -12,11 +12,7 @@ tags:
 permalink: "/blog/africa-sdrs-for-us-and-uk-markets-listing-guide-for-investors/"
 ---
 
-Hook
-
 Many investors assume buying African equities means navigating unfamiliar exchanges, local custody rules, and currency controls. That is no longer always true. Africa SDRs for US and UK markets offer a practical bridge, giving international investors tradable exposure to African companies through familiar venues and settlement systems.
-
-Introduction
 
 This article explains what Africa SDRs are, why African issuers use them, and what investors must check before allocating capital. You will learn how depositary receipts work in the US and the UK, how to assess the quality of a listing, and how to measure the real economic exposure you get when you buy an African depositary receipt. Practical examples and a clear checklist will help you separate useful opportunities from paper that looks attractive but has hidden costs or risk.
 

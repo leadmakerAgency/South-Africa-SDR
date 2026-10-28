@@ -3,7 +3,7 @@ layout: "blog-post.njk"
 title: "South Africa SDR vs India: Salaries, Hiring Costs & ROI"
 slug: "south-africa-sdr-vs-india-salaries-hiring-costs-roi"
 date: "2026-10-10T14:02:18.480Z"
-excerpt: "Hook: Choosing an offshore sales development team by salary alone is a false economy. The cheapest hire can generate weak pipeline, cost more in churn and training, and slow your go-to-market. When you compare South Africa SDR vs India, the"
+excerpt: "Choosing an offshore sales development team by salary alone is a false economy. The cheapest hire can generate weak pipeline, cost more in churn and training, and slow your go-to-market. When you compare South Africa SDR vs India, the"
 featured_image: "/media/image-south-africa-sdr-vs-india-salaries-hiring-costs-roi.png"
 hero_emoji: ""
 tags:
@@ -12,9 +12,8 @@ tags:
 permalink: "/blog/south-africa-sdr-vs-india-salaries-hiring-costs-roi/"
 ---
 
-Hook: Choosing an offshore sales development team by salary alone is a false economy. The cheapest hire can generate weak pipeline, cost more in churn and training, and slow your go-to-market. When you compare South Africa SDR vs India, the numbers that really matter are total hiring cost, ramp time, meeting quality, and how quickly those meetings convert into revenue.
+Choosing an offshore sales development team by salary alone is a false economy. The cheapest hire can generate weak pipeline, cost more in churn and training, and slow your go-to-market. When you compare South Africa SDR vs India, the numbers that really matter are total hiring cost, ramp time, meeting quality, and how quickly those meetings convert into revenue.
 
-Introduction
 If you are deciding where to source SDR talent, this comparison will help you weigh the trade-offs between South Africa and India for SDR roles. Many leaders start by looking at salary differences and then stop there. A thorough choice needs salary context, hiring overhead, local employment realities, performance expectations, and expected return on investment. Below I break down those elements and show practical examples so you can project real ROI for each option.
 
 Why location matters for SDR performance

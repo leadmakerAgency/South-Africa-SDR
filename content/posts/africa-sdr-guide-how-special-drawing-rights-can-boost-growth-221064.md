@@ -13,9 +13,8 @@ layout: blog-post.njk
 permalink: /blog/africa-sdr-guide-how-special-drawing-rights-can-boost-growth/
 ---
 
-Hook: When hard currency runs out, dreams of hospitals, schools, and power plants stall. Special Drawing Rights, a quiet asset issued by the IMF, can change that picture for African countries, if policymakers use them strategically.
+When hard currency runs out, dreams of hospitals, schools, and power plants stall. Special Drawing Rights, a quiet asset issued by the IMF, can change that picture for African countries, if policymakers use them strategically.
 
-Introduction
 For many African finance ministers the term africa sdr still feels abstract. Special Drawing Rights are not cash you can put in a vault. They are a reserve asset that can be converted into usable currency, a liquidity buffer that does not add to domestic debt, and a tool for smoothing shocks. The recent global SDR allocation and subsequent proposals to rechannel allocations have created a fresh window of opportunity. This guide explains what africa sdr means in practice, how allocations reach governments, realistic ways SDRs can boost growth, and the policy and institutional steps needed to turn potential into durable results.
 
 What are Special Drawing Rights and why africa sdr allocations matter

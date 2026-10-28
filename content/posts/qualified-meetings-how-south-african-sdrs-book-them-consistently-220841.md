@@ -3,7 +3,7 @@ layout: "blog-post.njk"
 title: "Qualified meetings: How South African SDRs book them consistently"
 slug: "qualified-meetings-how-south-african-sdrs-book-them-consistently"
 date: "2026-09-17T14:03:02.704Z"
-excerpt: "Hook Sales quotas do not care about enthusiasm. They care about meetings that actually move deals forward. For South African SDRs, the difference between a calendar full of phantom calls and a steady stream of pipeline comes down to one rep"
+excerpt: "Sales quotas do not care about enthusiasm. They care about meetings that actually move deals forward. For South African SDRs, the difference between a calendar full of phantom calls and a steady stream of pipeline comes down to one rep"
 featured_image: "/media/image-qualified-meetings-how-south-african-sdrs-book-them-consistently.png"
 hero_emoji: ""
 tags:
@@ -12,11 +12,7 @@ tags:
 permalink: "/blog/qualified-meetings-how-south-african-sdrs-book-them-consistently/"
 ---
 
-Hook
-
 Sales quotas do not care about enthusiasm. They care about meetings that actually move deals forward. For South African SDRs, the difference between a calendar full of phantom calls and a steady stream of pipeline comes down to one repeatable outcome, booked reliably and predictably: qualified meetings.
-
-Introduction
 
 This article examines how South African SDRs consistently book qualified meetings, with practical methods that reflect local buyer behaviour, market structure, and common constraints on time and resources. I will describe what qualifies as a meeting in this market, explain the daily routines and outreach sequences that produce reliable results, and outline the data, tools, and coaching practices that scale those gains across a team. Throughout, examples and short scripts show how to adapt approaches for different sectors, from tech startups to corporates and public sector prospects.
 

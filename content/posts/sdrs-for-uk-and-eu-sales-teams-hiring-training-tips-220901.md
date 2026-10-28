@@ -13,9 +13,8 @@ layout: blog-post.njk
 permalink: /blog/sdrs-for-uk-and-eu-sales-teams-hiring-training-tips/
 ---
 
-Hook: Most companies expect a handful of SDRs to fill the top of the funnel and magically deliver steady pipeline across the UK and EU. Reality is harsher. Cultural friction, GDPR surprises, and language gaps make a small mistake in hiring or training costlier than many teams predict.
+Most companies expect a handful of SDRs to fill the top of the funnel and magically deliver steady pipeline across the UK and EU. Reality is harsher. Cultural friction, GDPR surprises, and language gaps make a small mistake in hiring or training costlier than many teams predict.
 
-Introduction
 Hiring SDRs for UK and EU sales teams means more than recruiting people who can book meetings. It requires designing a playbook that accounts for regulatory differences, language clusters, local buying habits, and handoffs to account executives. The goal is not only activity, but predictability: reliable outreach that converts into qualified pipeline, with measured ramp time and low churn. This article walks through how to hire, train, and manage SDRs who can perform across the UK and multiple EU markets, with practical examples and ready-to-use approaches.
 
 H2: Hiring SDRs for UK and EU sales teams, the right way

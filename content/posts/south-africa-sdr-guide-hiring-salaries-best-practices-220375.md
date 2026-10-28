@@ -3,15 +3,14 @@ layout: "blog-post.njk"
 title: "South Africa SDR Guide: Hiring, Salaries & Best Practices"
 slug: "south-africa-sdr-guide-hiring-salaries-best-practices"
 date: "2026-08-23T20:13:54.737Z"
-excerpt: "Hook: When your pipeline stalls, hiring the right sales development representatives can feel like flipping a switch that turns cold leads into predictable meetings and real revenue. Done poorly, an SDR hire becomes costly churn. Done right,"
+excerpt: "When your pipeline stalls, hiring the right sales development representatives can feel like flipping a switch that turns cold leads into predictable meetings and real revenue. Done poorly, an SDR hire becomes costly churn. Done right,"
 featured_image: "/media/image-south-africa-sdr-guide-hiring-salaries-best-practices.png"
 hero_emoji: ""
 permalink: "/blog/south-africa-sdr-guide-hiring-salaries-best-practices/"
 ---
 
-Hook: When your pipeline stalls, hiring the right sales development representatives can feel like flipping a switch that turns cold leads into predictable meetings and real revenue. Done poorly, an SDR hire becomes costly churn. Done right, a South Africa SDR team can deliver strong results at a fraction of the cost of equivalent teams in the US or Europe.
+When your pipeline stalls, hiring the right sales development representatives can feel like flipping a switch that turns cold leads into predictable meetings and real revenue. Done poorly, an SDR hire becomes costly churn. Done right, a South Africa SDR team can deliver strong results at a fraction of the cost of equivalent teams in the US or Europe.
 
-Introduction
 This guide walks hiring managers, founders, and sales leaders through everything they need to recruit, pay, train, and scale SDRs in South Africa. You will find realistic salary ranges, hiring frameworks, onboarding templates, compensation structures that motivate performance, and practical advice for managing remote and hybrid teams. The goal is to give you a clear blueprint so you can build an SDR function that ramps quickly and contributes measurable pipeline.
 
 Why hire SDRs in South Africa

@@ -3,7 +3,7 @@ layout: "blog-post.njk"
 title: "Africa SDRs for Global B2B Companies: Hiring & Scaling Tips"
 slug: "africa-sdrs-for-global-b2b-companies-hiring-scaling-tips"
 date: "2026-10-02T14:02:31.027Z"
-excerpt: "Hook Hiring sales development representatives across Africa can lower acquisition costs, expand your talent pool, and give your outbound motion authentic regional knowledge, but only when the hire is more than a low-cost substitute. The com"
+excerpt: "Hiring sales development representatives across Africa can lower acquisition costs, expand your talent pool, and give your outbound motion authentic regional knowledge, but only when the hire is more than a low-cost substitute. The com"
 featured_image: "/media/image-africa-sdrs-for-global-b2b-companies-hiring-scaling-tips.png"
 hero_emoji: ""
 tags:
@@ -12,11 +12,7 @@ tags:
 permalink: "/blog/africa-sdrs-for-global-b2b-companies-hiring-scaling-tips/"
 ---
 
-Hook
-
 Hiring sales development representatives across Africa can lower acquisition costs, expand your talent pool, and give your outbound motion authentic regional knowledge, but only when the hire is more than a low-cost substitute. The companies that extract consistent pipeline from remote SDR teams treat hiring, onboarding, compensation, and operations as productized systems, not occasional experiments.
-
-Introduction
 
 For global B2B companies exploring offshore SDR models, Africa represents a collection of fast-growing talent hubs with strong English and French language skills, entrepreneurial mindsets, and favorable time zone overlap with Europe. Yet scaling an SDR operation there requires deliberate design. This article explains why africa sdrs for global b2b companies work well, which markets to prioritize, how to recruit, onboard, measure, and scale, and the operational and legal realities you will face. Read on for practical, tested advice you can apply whether you plan a two-person pilot or a regional SDR hub.
 

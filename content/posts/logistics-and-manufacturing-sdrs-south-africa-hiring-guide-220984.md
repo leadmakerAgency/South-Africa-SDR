@@ -15,8 +15,6 @@ permalink: /blog/logistics-and-manufacturing-sdrs-south-africa-hiring-guide/
 
 The wrong first hire will cost you months of wasted training, missed pipeline, and a reputation that scares off good candidates. For logistics and manufacturing companies in South Africa, a sales development representative who can talk shop, navigate long procurement cycles, and respect local commercial customs is not optional. They are the difference between a promising lead and a stalled opportunity.
 
-Introduction
-
 Finding sales development talent that understands freight lanes, production timelines, and the procurement culture of South African industry requires a deliberate approach. This guide explains what to look for when hiring logistics and manufacturing SDRs South Africa, how to evaluate candidates, what to pay, and how to onboard and retain people who can generate qualified meetings and build a repeatable pipeline for complex industrial sales.
 
 Logistics and Manufacturing SDRs South Africa: Specialized Hiring Needs

@@ -3,7 +3,7 @@ layout: "blog-post.njk"
 title: "South Africa SDR vs Lead Gen Agency: Cost, ROI & Fit"
 slug: "south-africa-sdr-vs-lead-gen-agency-cost-roi-fit"
 date: "2026-10-08T14:02:25.963Z"
-excerpt: "Hook Choosing how to generate qualified sales opportunities will shape your sales engine for months or years. The decision between hiring a local SDR or contracting a lead generation agency changes costs, ramp speed, lead quality, and how y"
+excerpt: "Choosing how to generate qualified sales opportunities will shape your sales engine for months or years. The decision between hiring a local SDR or contracting a lead generation agency changes costs, ramp speed, lead quality, and how y"
 featured_image: "/media/image-south-africa-sdr-vs-lead-gen-agency-cost-roi-fit.png"
 hero_emoji: ""
 tags:
@@ -12,11 +12,7 @@ tags:
 permalink: "/blog/south-africa-sdr-vs-lead-gen-agency-cost-roi-fit/"
 ---
 
-Hook
-
 Choosing how to generate qualified sales opportunities will shape your sales engine for months or years. The decision between hiring a local SDR or contracting a lead generation agency changes costs, ramp speed, lead quality, and how your brand is represented. For many South African companies, the right choice is not obvious until you break down the numbers and the non-financial tradeoffs.
-
-Introduction
 
 This article compares a South Africa SDR vs lead gen agency across three practical dimensions: cost, return on investment, and organizational fit. You will get real cost models, ROI scenarios tailored to common B2B use cases, compliance and quality considerations specific to South Africa, and a decision framework that matches business stage, sales cycle, and growth goals to the right approach.
 
