@@ -23,12 +23,6 @@
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>{{ post.date | postDate }}</span>
-            {% set visibleTags = post.data.tags | displayTags %}
-            {% if visibleTags and visibleTags | length %}
-              {% for tag in visibleTags %}
-                <span class="tag">{{ tag }}</span>
-              {% endfor %}
-            {% endif %}
           </div>
           <h2>{{ post.data.title }}</h2>
           <p>{{ post.data.excerpt or post.templateContent | striptags | truncate(140) }}</p>
