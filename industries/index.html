@@ -2671,6 +2671,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn) {
 });
 
 /* FormSpree contact forms */
+var CALENDLY_URL = 'https://calendly.com/agencyleadmaker/sasdr';
 document.querySelectorAll('form.contact-form').forEach(function(form) {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -2706,9 +2707,13 @@ document.querySelectorAll('form.contact-form').forEach(function(form) {
     })
     .then(function(res) {
       if (res.ok) {
-        var depth = form.getAttribute('data-depth') || '';
-        var next = form.getAttribute('data-success') || 'success/contact-received/index.html';
-        window.location.href = depth + next;
+        /* After a successful submit, send the visitor to Calendly (name + email prefilled) */
+        var params = [];
+        var nameField = form.querySelector('[name="name"]');
+        var emailField = form.querySelector('[name="email"]');
+        if (nameField && nameField.value.trim()) params.push('name=' + encodeURIComponent(nameField.value.trim()));
+        if (emailField && emailField.value.trim()) params.push('email=' + encodeURIComponent(emailField.value.trim()));
+        window.location.href = CALENDLY_URL + (params.length ? '?' + params.join('&') : '');
       } else {
         return res.json().then(function(data) { throw data; });
       }

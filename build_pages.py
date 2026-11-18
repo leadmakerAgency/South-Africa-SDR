@@ -208,6 +208,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn) {
 });
 
 /* FormSpree contact forms */
+var CALENDLY_URL = 'https://calendly.com/agencyleadmaker/sasdr';
 document.querySelectorAll('form.contact-form').forEach(function(form) {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -243,9 +244,13 @@ document.querySelectorAll('form.contact-form').forEach(function(form) {
     })
     .then(function(res) {
       if (res.ok) {
-        var depth = form.getAttribute('data-depth') || '';
-        var next = form.getAttribute('data-success') || 'success/contact-received/index.html';
-        window.location.href = depth + next;
+        /* After a successful submit, send the visitor to Calendly (name + email prefilled) */
+        var params = [];
+        var nameField = form.querySelector('[name="name"]');
+        var emailField = form.querySelector('[name="email"]');
+        if (nameField && nameField.value.trim()) params.push('name=' + encodeURIComponent(nameField.value.trim()));
+        if (emailField && emailField.value.trim()) params.push('email=' + encodeURIComponent(emailField.value.trim()));
+        window.location.href = CALENDLY_URL + (params.length ? '?' + params.join('&') : '');
       } else {
         return res.json().then(function(data) { throw data; });
       }
@@ -1243,6 +1248,21 @@ def build_all():
 </main>"""
         write_page(path, wrap_page(f"{title} | South Africa SDR", msg, depth, sbody, noindex=True, plain=True))
         pages.append(path)
+
+    # BOOKING SUCCESS (Calendly redirects here after a call is booked)
+    path = "booking-success/index.html"
+    depth = 1
+    bs_body = f"""<main class="success-page"><div class="success-inner reveal">
+<div class="success-icon" aria-hidden="true">✓</div>
+<h1>You're all booked!</h1>
+<p>Thanks for scheduling a call with South Africa SDR. A calendar invite with the meeting details is on its way to your inbox.</p>
+<p>Before we speak, have a think about your ideal customer, the markets you sell into, and how many meetings you'd like booked each month. We'll show you exactly how a South African SDR would fit your team.</p>
+<a href="{rel(depth, '/')}" class="btn btn-primary">Back to home</a>
+<a href="{rel(depth, '/why-south-africa/')}" class="btn btn-outline-green" style="margin-left:12px;">Why South Africa?</a>
+</div>
+</main>"""
+    write_page(path, wrap_page("You're All Booked | South Africa SDR", "Your call with South Africa SDR is booked. Check your inbox for the calendar invite.", depth, bs_body, noindex=True, plain=True))
+    pages.append(path)
 
     # LEGAL PAGES
     legal_template = """<main>
