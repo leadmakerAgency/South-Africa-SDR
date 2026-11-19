@@ -2441,6 +2441,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <form id="hero-email-form" class="hero-capture">
           <input type="hidden" name="source" value="hero" />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
           <input
             type="email"
             id="hero-email"
@@ -3304,6 +3305,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </script>
   <script>
+    /* Hero email -> n8n (via our own /api/hero-lead relay, which keeps the webhook URL private).
+       Runs alongside Formspree and never blocks or breaks the Formspree submit / Calendly redirect. */
+    (function () {
+      var heroForm = document.getElementById("hero-email-form");
+      if (!heroForm) return;
+      var lastSent = "";
+      heroForm.addEventListener("submit", function () {
+        var emailInput = document.getElementById("hero-email");
+        var trap = heroForm.querySelector('[name="_gotcha"]');
+        var email = emailInput ? emailInput.value.trim() : "";
+        if (!email || !emailInput.checkValidity() || (trap && trap.value) || email === lastSent) return;
+        lastSent = email;
+        try {
+          fetch("/api/hero-lead", {
+            method: "POST",
+            keepalive: true, /* survives the redirect to Calendly */
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: email, page_url: window.location.href })
+          }).catch(function () {});
+        } catch (err) {}
+      });
+    })();
+
     window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
     formspree("initForm", {
       formElement: "#hero-email-form",
