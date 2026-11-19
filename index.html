@@ -3318,7 +3318,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (!email || !emailInput.checkValidity() || (trap && trap.value) || email === lastSent) return;
         lastSent = email;
         try {
-          fetch("/api/hero-lead", {
+          fetch("/api/hero-lead/", { /* trailing slash: vercel.json uses trailingSlash: true */
             method: "POST",
             keepalive: true, /* survives the redirect to Calendly */
             headers: { "Content-Type": "application/json" },
