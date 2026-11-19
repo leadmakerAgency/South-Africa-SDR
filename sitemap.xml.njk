@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
   <url>
     <loc>{{ site.url }}{{ path }}</loc>
     <lastmod>{{ site.buildDate }}</lastmod>
-    <changefreq>{% if path == "/" or path == "/services/" or path == "/book/" %}weekly{% else %}monthly{% endif %}</changefreq>
+    <changefreq>{% if path == "/" or path == "/services/" %}weekly{% else %}monthly{% endif %}</changefreq>
     <priority>{{ site.sitemapPriorities[path] or "0.7" }}</priority>
   </url>
   {% endfor %}

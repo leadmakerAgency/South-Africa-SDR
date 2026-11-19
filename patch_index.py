@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-CONTACT = "http://www.southafricasdr.com/book/"
+CONTACT = "https://calendly.com/agencyleadmaker/sasdr"
 css = (ROOT / "styles.css").read_text(encoding="utf-8")
 js = (ROOT / "script.js").read_text(encoding="utf-8")
 extra_css = """

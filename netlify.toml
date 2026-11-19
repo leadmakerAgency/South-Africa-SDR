@@ -7,13 +7,25 @@
   NODE_VERSION = "22"
 
 [[redirects]]
+  from = "/book/*"
+  to = "https://calendly.com/agencyleadmaker/sasdr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/book"
+  to = "https://calendly.com/agencyleadmaker/sasdr"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/contact/*"
-  to = "/book/"
+  to = "https://calendly.com/agencyleadmaker/sasdr"
   status = 301
   force = true
 
 [[redirects]]
   from = "/contact"
-  to = "/book/"
+  to = "https://calendly.com/agencyleadmaker/sasdr"
   status = 301
   force = true

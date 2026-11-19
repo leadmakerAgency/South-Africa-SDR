@@ -23,7 +23,6 @@ module.exports = function (eleventyConfig) {
 
   const staticDirs = [
     "about",
-    "book",
     "booking-success",
     "case-studies",
     "compare",

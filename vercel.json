@@ -4,9 +4,36 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/contact", "destination": "/book/", "permanent": true },
-    { "source": "/contact/", "destination": "/book/", "permanent": true },
-    { "source": "/contact/index.html", "destination": "/book/", "permanent": true }
+    {
+      "source": "/book",
+      "destination": "https://calendly.com/agencyleadmaker/sasdr",
+      "permanent": true
+    },
+    {
+      "source": "/book/",
+      "destination": "https://calendly.com/agencyleadmaker/sasdr",
+      "permanent": true
+    },
+    {
+      "source": "/book/index.html",
+      "destination": "https://calendly.com/agencyleadmaker/sasdr",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "https://calendly.com/agencyleadmaker/sasdr",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "https://calendly.com/agencyleadmaker/sasdr",
+      "permanent": true
+    },
+    {
+      "source": "/contact/index.html",
+      "destination": "https://calendly.com/agencyleadmaker/sasdr",
+      "permanent": true
+    }
   ],
   "headers": [
     {

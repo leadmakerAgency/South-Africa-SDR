@@ -31,4 +31,4 @@ Unlike many offshore destinations, South Africa combines:
 
 Match your offshore strategy to your buyer market, ramp timeline, and budget. South Africa works best for UK, EU, and US outbound where English fluency and cultural fit matter.
 
-If you want a tailored recommendation for your team, [book a call](/book/) and we will walk you through the options honestly.
+If you want a tailored recommendation for your team, [book a call](https://calendly.com/agencyleadmaker/sasdr) and we will walk you through the options honestly.
