@@ -696,6 +696,7 @@ def wrap_page(title: str, description: str, depth: int, body: str, schema: str =
 {EXTRA_CSS}
   </style>
   <link rel="stylesheet" href="/redesign.css">
+  <link rel="stylesheet" href="/consent.css">
 </head>
 <body{body_attr}>
 {hdr}
