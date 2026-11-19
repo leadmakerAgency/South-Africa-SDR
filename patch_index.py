@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-CONTACT = "http://www.southafricasdr.com/contact"
+CONTACT = "http://www.southafricasdr.com/book/"
 css = (ROOT / "styles.css").read_text(encoding="utf-8")
 js = (ROOT / "script.js").read_text(encoding="utf-8")
 extra_css = """
@@ -15,7 +15,6 @@ replacements = {
     'href="/"': 'href="index.html"',
     'href="/why-south-africa/"': 'href="why-south-africa/index.html"',
     'href="/about/"': 'href="about/index.html"',
-    'href="/contact/"': 'href="contact/index.html"',
     'href="/book/"': f'href="{CONTACT}"',
     'href="/services/"': 'href="services/index.html"',
     'href="/services/sdr/"': 'href="services/sdr/index.html"',

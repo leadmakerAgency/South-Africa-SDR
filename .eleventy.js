@@ -27,7 +27,6 @@ module.exports = function (eleventyConfig) {
     "booking-success",
     "case-studies",
     "compare",
-    "contact",
     "cookies",
     "faq",
     "industries",

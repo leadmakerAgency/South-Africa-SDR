@@ -39,4 +39,4 @@ A managed South African SDR service typically covers:
 
 The cheapest option is not always the best value. A dedicated South African rep who ramps in three weeks and books qualified meetings will outperform a cheaper shared pool every time.
 
-Want a cost comparison tailored to your team size and market? [Book a call](/contact/) and we will run the numbers with you.
+Want a cost comparison tailored to your team size and market? [Book a call](/book/) and we will run the numbers with you.

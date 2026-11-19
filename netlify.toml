@@ -5,3 +5,15 @@
 [build.environment]
   NODE_ENV = "production"
   NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/contact/*"
+  to = "/book/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/book/"
+  status = 301
+  force = true

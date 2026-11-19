@@ -47,4 +47,4 @@ The most common delays are not on the rep's side:
 
 Three weeks is achievable with the right setup. If your current offshore hire took three months, the problem is usually process — not the rep.
 
-Ready to see what a fast ramp looks like for your team? [Book a call](/contact/).
+Ready to see what a fast ramp looks like for your team? [Book a call](/book/).

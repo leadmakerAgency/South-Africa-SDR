@@ -3,6 +3,11 @@
   "outputDirectory": "_site",
   "cleanUrls": true,
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/contact", "destination": "/book/", "permanent": true },
+    { "source": "/contact/", "destination": "/book/", "permanent": true },
+    { "source": "/contact/index.html", "destination": "/book/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/robots.txt",
