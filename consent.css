@@ -8,7 +8,10 @@
   pointer-events: none;
 }
 
-.cc-root:not([hidden]) {
+/* Only the banner/panel take clicks; the rest of the page stays usable while the
+   banner is open (the banner is non-modal: aria-modal="false"). */
+.cc-banner,
+.cc-panel {
   pointer-events: auto;
 }
 

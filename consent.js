@@ -207,32 +207,42 @@
     if (root) root.hidden = true;
   }
 
-  function acceptAll() {
-    var consent = saveConsent({ analytics: hasAnalyticsConfig, marketing: hasMarketingConfig });
-    applyConsent(consent);
+  // Close the banner first, then apply the choice. If loading a tag ever throws,
+  // the visitor's choice is still saved and the banner still closes.
+  function commitConsent(choice) {
+    var consent = saveConsent(choice);
     hideAll();
+    try {
+      applyConsent(consent);
+    } catch (err) {
+      if (window.console) console.error("[consent] failed to apply consent", err);
+    }
+  }
+
+  function acceptAll() {
+    commitConsent({ analytics: hasAnalyticsConfig, marketing: hasMarketingConfig });
   }
 
   function rejectAll() {
-    var consent = saveConsent({ analytics: false, marketing: false });
-    applyConsent(consent);
-    hideAll();
+    commitConsent({ analytics: false, marketing: false });
   }
 
   function saveCustom() {
     var analyticsEl = document.getElementById("cc-analytics");
     var marketingEl = document.getElementById("cc-marketing");
-    var consent = saveConsent({
+    commitConsent({
       analytics: analyticsEl ? analyticsEl.checked : false,
       marketing: marketingEl ? marketingEl.checked : false,
     });
-    applyConsent(consent);
-    hideAll();
   }
 
   function bindEvents(root) {
     root.addEventListener("click", function (e) {
-      var action = e.target && e.target.getAttribute("data-cc");
+      // Use closest(): browser translation and extensions often wrap button text in
+      // extra elements (e.g. <font>), so e.target may be a child of the button.
+      var el = e.target && e.target.nodeType === 1 ? e.target : e.target && e.target.parentElement;
+      var btn = el && el.closest ? el.closest("[data-cc]") : null;
+      var action = btn && root.contains(btn) ? btn.getAttribute("data-cc") : null;
       if (!action) return;
       if (action === "accept") acceptAll();
       if (action === "reject") rejectAll();
