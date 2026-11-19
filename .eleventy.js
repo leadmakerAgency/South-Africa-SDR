@@ -30,6 +30,7 @@ module.exports = function (eleventyConfig) {
     "faq",
     "industries",
     "privacy",
+    "rfp",
     "services",
     "success",
     "terms",

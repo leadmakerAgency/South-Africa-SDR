@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request for Proposal | South Africa SDR</title>
+<meta name="description" content="Tell us about your sales team and targets and we'll send a tailored proposal for your South African SDR team.">
+<meta name="theme-color" content="#02403D">
+<link rel="icon" href="/images/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#02403D; --teal-2:#03524E; --teal-3:#012F2D;
+    --gold:#DAA866; --gold-soft:#F4E6D0;
+    --cream:#FAF8F2; --cream-2:#F3EFE4; --line:#E3DDCE;
+    --ink:#1E2622; --muted:#6B7168; --error:#B4462F;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:"Hanken Grotesk",Arial,sans-serif;font-size:16px;line-height:1.55}
+  a{color:var(--teal)}
+  h1,h2,h3{font-family:Montserrat,Arial,sans-serif;font-weight:600;margin:0}
+
+  /* Header */
+  .top{background:var(--teal);background-image:linear-gradient(160deg,var(--teal-2) 0%,var(--teal) 55%,var(--teal-3) 100%);color:var(--cream)}
+  .nav{max-width:1100px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav img{height:34px;display:block}
+  .nav .wordmark{font-family:Montserrat,Arial,sans-serif;font-weight:600;color:var(--cream);text-decoration:none;font-size:18px}
+  .pill{display:inline-block;border-radius:999px;padding:10px 20px;font-weight:600;font-size:14px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .pill.gold{background:var(--gold);color:var(--teal)}
+  .pill.gold:hover{filter:brightness(1.05)}
+  .pill.ghost{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+  .pill.ghost:hover{background:var(--teal);color:var(--cream)}
+  .hero{max-width:820px;margin:0 auto;padding:40px 24px 64px;text-align:center}
+  .eyebrow{display:inline-block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;color:var(--gold);background:rgba(218,168,102,.12);border:1px solid rgba(218,168,102,.35);padding:6px 14px;border-radius:999px}
+  .hero h1{font-size:46px;line-height:1.12;margin:18px 0 14px}
+  .hero h1 em{color:var(--gold)}
+  .hero p{color:rgba(250,248,242,.86);font-size:18px;margin:0 auto;max-width:640px}
+  .hero .meta{margin-top:22px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font-size:14px;color:rgba(250,248,242,.75)}
+  .hero .meta span::before{content:"\2713";color:var(--gold);margin-right:6px;font-weight:600}
+
+  /* Layout */
+  .wrap{max-width:1100px;margin:-36px auto 64px;padding:0 24px;display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:start}
+  .wrap > *{min-width:0} /* let the step list scroll inside its box instead of widening the page on phones */
+  .side{position:sticky;top:20px;background:#fff;border-radius:var(--radius);padding:22px;box-shadow:0 6px 24px rgba(2,64,61,.07)}
+  .side h3{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-family:"Hanken Grotesk",Arial,sans-serif}
+  .steps{list-style:none;margin:0;padding:0}
+  .steps li{display:flex;align-items:center;gap:12px;padding:9px 0;font-size:15px;color:var(--muted);cursor:pointer}
+  .steps li .n{width:28px;height:28px;flex:0 0 28px;border-radius:999px;display:grid;place-items:center;font-family:Montserrat,Arial,sans-serif;font-weight:600;font-size:13px;background:var(--cream-2);color:var(--muted)}
+  .steps li.active{color:var(--teal);font-weight:600}
+  .steps li.active .n{background:var(--teal);color:var(--gold)}
+  .steps li.done .n{background:var(--gold);color:var(--teal)}
+  .steps li.done .n::after{content:"\2713"}
+  .steps li.done .n span{display:none}
+  .side .note{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+
+  .card{background:#fff;border-radius:var(--radius);padding:36px 40px;box-shadow:0 6px 24px rgba(2,64,61,.07)}
+  .progress{height:6px;background:var(--cream-2);border-radius:999px;overflow:hidden;margin-bottom:28px}
+  .progress div{height:100%;width:0;background:var(--gold);transition:width .3s ease}
+  .step{display:none}
+  .step.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .step-head{margin-bottom:26px}
+  .step-head .count{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--gold)}
+  .step-head h2{font-size:28px;color:var(--teal);margin:6px 0 6px}
+  .step-head p{margin:0;color:var(--muted)}
+  fieldset{border:0;padding:0;margin:0 0 26px}
+  legend,.label{display:block;font-weight:600;font-size:15px;margin-bottom:8px;color:var(--ink);padding:0}
+  .req{color:var(--gold)}
+  .hint{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:2px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+  .grid .full{grid-column:1/-1}
+  .field{margin-bottom:0}
+  fieldset.field{margin-bottom:26px}
+  input[type=text],input[type=email],input[type=tel],input[type=url],input[type=number],input[type=date],select,textarea{
+    width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--cream);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;transition:border-color .15s,box-shadow .15s;appearance:none}
+  select{background-image:linear-gradient(45deg,transparent 50%,var(--teal) 50%),linear-gradient(135deg,var(--teal) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
+  textarea{min-height:110px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(2,64,61,.12);background:#fff}
+  .invalid input,.invalid select,.invalid textarea{border-color:var(--error)}
+  .err{display:none;color:var(--error);font-size:13px;margin-top:6px}
+  .invalid .err{display:block}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{position:relative}
+  .chip input{position:absolute;opacity:0;pointer-events:none}
+  .chip span{display:inline-block;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--cream);font-size:14px;cursor:pointer;transition:all .15s;user-select:none}
+  .chip span:hover{border-color:var(--teal)}
+  .chip input:checked + span{background:var(--teal);border-color:var(--teal);color:var(--cream)}
+  .chip input:focus-visible + span{box-shadow:0 0 0 3px rgba(2,64,61,.2)}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+  .tile{position:relative}
+  .tile input{position:absolute;opacity:0;pointer-events:none}
+  .tile span{display:block;height:100%;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--cream);cursor:pointer;transition:all .15s;font-size:14px;color:var(--muted)}
+  .tile span strong{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+  .tile span:hover{border-color:var(--teal)}
+  .tile input:checked + span{border-color:var(--teal);background:#fff;box-shadow:inset 0 0 0 1.5px var(--teal)}
+  .tile input:checked + span strong{color:var(--teal)}
+  .scale{display:flex;gap:8px;flex-wrap:wrap}
+
+  .divider{height:1px;background:var(--line);margin:8px 0 26px}
+  .sub{font-family:Montserrat,Arial,sans-serif;font-size:17px;color:var(--teal);margin:0 0 16px}
+
+  .actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;padding-top:24px;border-top:1px solid var(--line)}
+  .actions .saved{font-size:13px;color:var(--muted)}
+  .btn{font:inherit;font-weight:600;font-size:15px;border-radius:999px;padding:13px 28px;cursor:pointer;border:2px solid var(--teal)}
+  .btn.primary{background:var(--teal);color:var(--cream)}
+  .btn.primary:hover{background:var(--teal-2)}
+  .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--teal)}
+  .btn.back{background:transparent;color:var(--teal)}
+  .btn[disabled]{opacity:.6;cursor:wait}
+
+  .review{background:var(--cream);border-radius:12px;padding:6px 20px;margin-bottom:24px}
+  .review dl{margin:0}
+  .review .grp{padding:14px 0;border-bottom:1px solid var(--line)}
+  .review .grp:last-child{border-bottom:0}
+  .review .grp h4{margin:0 0 8px;font-family:Montserrat,Arial,sans-serif;font-size:14px;color:var(--teal);display:flex;justify-content:space-between}
+  .review .grp h4 a{font-family:"Hanken Grotesk",Arial,sans-serif;font-weight:500;font-size:13px;cursor:pointer}
+  .review .row{display:grid;grid-template-columns:200px 1fr;gap:12px;font-size:14px;padding:3px 0}
+  .review dt{color:var(--muted)}
+  .review dd{margin:0;white-space:pre-wrap}
+  .consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted)}
+  .consent input{margin-top:4px;accent-color:var(--teal);width:18px;height:18px}
+
+  .thanks{display:none;text-align:center;padding:30px 10px}
+  .thanks .tick{width:64px;height:64px;border-radius:999px;background:var(--teal);color:var(--gold);display:grid;place-items:center;font-size:30px;margin:0 auto 18px}
+  .thanks h2{color:var(--teal);font-size:30px;margin-bottom:10px}
+  .thanks h2 em{color:var(--gold)}
+  .thanks p{color:var(--muted);max-width:520px;margin:0 auto 22px}
+
+  footer{background:var(--teal);color:rgba(250,248,242,.75);text-align:center;padding:30px 24px;font-size:13px}
+  footer a{color:var(--gold);text-decoration:none;font-family:Montserrat,Arial,sans-serif;font-weight:600}
+
+  @media (max-width:900px){
+    .wrap{grid-template-columns:1fr;margin-top:-28px}
+    .side{position:static}
+    .steps{display:flex;gap:6px;overflow-x:auto}
+    .steps li{flex-direction:column;gap:4px;font-size:11px;text-align:center;min-width:72px}
+    .side h3,.side .note{display:none}
+  }
+  @media (max-width:620px){
+    .hero h1{font-size:32px}
+    .card{padding:26px 20px}
+    .grid{grid-template-columns:1fr}
+    .review .row{grid-template-columns:1fr;gap:0}
+    .actions{flex-wrap:wrap}
+  }
+  @media (max-width:380px){
+    .nav{padding:16px 16px;gap:10px}
+    .nav img{height:24px}
+    .nav .pill{padding:8px 14px;font-size:13px;white-space:nowrap}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="nav">
+    <a href="/" aria-label="South Africa SDR home">
+      <img src="/images/brand/lockup-horizontal-rev.svg" alt="South Africa SDR" onerror="this.outerHTML='<span class=&quot;wordmark&quot;>South Africa SDR</span>'">
+    </a>
+    <a class="pill gold" href="https://calendly.com/agencyleadmaker/sasdr" target="_blank" rel="noopener">Book a call</a>
+  </div>
+  <div class="hero">
+    <span class="eyebrow">Request for proposal</span>
+    <h1>Tell us what you need from your <em>SDR team</em></h1>
+    <p>Answer a few questions about your business, targets and goals. We'll come back with a tailored proposal covering team size, structure, pricing and timeline.</p>
+    <div class="meta"><span>About 8 minutes</span><span>Progress saves as you go</span><span>Proposal sent by email</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <aside class="side">
+    <h3>Your proposal</h3>
+    <ol class="steps" id="stepNav"></ol>
+    <div class="note">Fields marked <span class="req">*</span> are required. The more detail you give us, the more accurate your proposal will be.</div>
+  </aside>
+
+  <section class="card">
+    <div class="progress"><div id="bar"></div></div>
+
+    <form id="rfp" novalidate>
+
+      <!-- STEP 1 -->
+      <div class="step" data-title="You and your company">
+        <div class="step-head"><span class="count"></span><h2>You and your company</h2><p>Who we'll be preparing the proposal for.</p></div>
+        <div class="grid">
+          <div class="field"><label class="label" for="first_name">First name <span class="req">*</span></label><input type="text" id="first_name" name="first_name" autocomplete="given-name" required><div class="err">Please enter your first name.</div></div>
+          <div class="field"><label class="label" for="last_name">Last name <span class="req">*</span></label><input type="text" id="last_name" name="last_name" autocomplete="family-name" required><div class="err">Please enter your last name.</div></div>
+          <div class="field"><label class="label" for="job_title">Job title <span class="req">*</span></label><input type="text" id="job_title" name="job_title" autocomplete="organization-title" required><div class="err">Please enter your job title.</div></div>
+          <div class="field"><label class="label" for="email">Work email <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" required><div class="err">Please enter a valid work email.</div></div>
+          <div class="field"><label class="label" for="phone">Phone <span class="hint" style="display:inline">(optional)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+          <div class="field"><label class="label" for="linkedin">Your LinkedIn profile <span class="hint" style="display:inline">(optional)</span></label><input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/"></div>
+        </div>
+        <div class="divider" style="margin-top:26px"></div>
+        <h3 class="sub">Company</h3>
+        <div class="grid">
+          <div class="field"><label class="label" for="company">Company name <span class="req">*</span></label><input type="text" id="company" name="company" autocomplete="organization" required><div class="err">Please enter your company name.</div></div>
+          <div class="field"><label class="label" for="website">Website <span class="req">*</span></label><input type="text" id="website" name="website" placeholder="yourcompany.com" required><div class="err">Please enter your website.</div></div>
+          <div class="field"><label class="label" for="hq_country">Headquarters country <span class="req">*</span></label>
+            <select id="hq_country" name="hq_country" required><option value="">Select</option><option>United States</option><option>United Kingdom</option><option>Ireland</option><option>Canada</option><option>Australia</option><option>New Zealand</option><option>Germany</option><option>Netherlands</option><option>France</option><option>Nordics</option><option>Rest of Europe</option><option>Middle East</option><option>Other</option></select><div class="err">Please choose a country.</div></div>
+          <div class="field"><label class="label" for="industry">Industry <span class="req">*</span></label>
+            <select id="industry" name="industry" required><option value="">Select</option><option>SaaS / Software</option><option>IT and Managed Services</option><option>Cybersecurity</option><option>Marketing / Agency</option><option>Recruitment and Staffing</option><option>Financial Services</option><option>Insurance</option><option>Mortgage / Lending</option><option>Real Estate / PropTech</option><option>Healthcare / MedTech</option><option>Manufacturing / Industrial</option><option>Logistics and Supply Chain</option><option>Energy and Utilities</option><option>Professional Services</option><option>Education / EdTech</option><option>Other</option></select><div class="err">Please choose an industry.</div></div>
+          <div class="field"><label class="label" for="company_size">Number of employees <span class="req">*</span></label>
+            <select id="company_size" name="company_size" required><option value="">Select</option><option>1 to 10</option><option>11 to 50</option><option>51 to 200</option><option>201 to 500</option><option>501 to 1,000</option><option>1,000+</option></select><div class="err">Please choose a size.</div></div>
+          <div class="field"><label class="label" for="revenue">Annual revenue <span class="hint" style="display:inline">(optional)</span></label>
+            <select id="revenue" name="revenue"><option value="">Prefer not to say</option><option>Under $1M</option><option>$1M to $5M</option><option>$5M to $20M</option><option>$20M to $100M</option><option>$100M+</option></select></div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step" data-title="What you sell">
+        <div class="step-head"><span class="count"></span><h2>What you sell</h2><p>Helps us match SDRs with the right experience for your offer.</p></div>
+        <fieldset class="field"><label class="label" for="offer">Describe your product or service <span class="req">*</span><span class="hint">What it does, who it's for and the problem it solves.</span></label><textarea id="offer" name="offer" required></textarea><div class="err">Please tell us what you sell.</div></fieldset>
+        <fieldset class="field" data-group="sale_type" data-required>
+          <legend>Who do you sell to? <span class="req">*</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="sale_type" value="B2B"><span>B2B</span></label>
+            <label class="chip"><input type="radio" name="sale_type" value="B2C"><span>B2C</span></label>
+            <label class="chip"><input type="radio" name="sale_type" value="Both"><span>Both</span></label>
+          </div><div class="err">Please choose one.</div>
+        </fieldset>
+        <div class="grid">
+          <div class="field"><label class="label" for="deal_size">Average deal size (first year) <span class="req">*</span></label>
+            <select id="deal_size" name="deal_size" required><option value="">Select</option><option>Under $1,000</option><option>$1,000 to $5,000</option><option>$5,000 to $15,000</option><option>$15,000 to $50,000</option><option>$50,000 to $100,000</option><option>$100,000+</option></select><div class="err">Please choose a range.</div></div>
+          <div class="field"><label class="label" for="sales_cycle">Typical sales cycle <span class="req">*</span></label>
+            <select id="sales_cycle" name="sales_cycle" required><option value="">Select</option><option>Under 2 weeks</option><option>2 to 4 weeks</option><option>1 to 3 months</option><option>3 to 6 months</option><option>6 months+</option></select><div class="err">Please choose a range.</div></div>
+          <div class="field"><label class="label" for="pricing_model">Pricing model</label>
+            <select id="pricing_model" name="pricing_model"><option value="">Select</option><option>Monthly / annual subscription</option><option>One-off project or purchase</option><option>Retainer</option><option>Commission / usage based</option><option>Mixed</option></select></div>
+          <div class="field"><label class="label" for="win_rate">Meeting to close rate (if known)</label>
+            <select id="win_rate" name="win_rate"><option value="">Not sure</option><option>Under 10%</option><option>10% to 20%</option><option>20% to 30%</option><option>30%+</option></select></div>
+          <div class="field full"><label class="label" for="differentiators">What makes you different from competitors?<span class="hint">Your strongest proof points, results or case studies.</span></label><textarea id="differentiators" name="differentiators"></textarea></div>
+          <div class="field full"><label class="label" for="competitors">Main competitors</label><input type="text" id="competitors" name="competitors" placeholder="Company names, separated by commas"></div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step" data-title="Your current sales setup">
+        <div class="step-head"><span class="count"></span><h2>Your current sales setup</h2><p>Where you are today, so the team plugs straight into your process.</p></div>
+        <div class="grid">
+          <div class="field"><label class="label" for="current_sdrs">SDRs / BDRs on your team today <span class="req">*</span></label>
+            <select id="current_sdrs" name="current_sdrs" required><option value="">Select</option><option>None</option><option>1</option><option>2 to 3</option><option>4 to 10</option><option>10+</option></select><div class="err">Please choose one.</div></div>
+          <div class="field"><label class="label" for="current_aes">Account executives / closers today <span class="req">*</span></label>
+            <select id="current_aes" name="current_aes" required><option value="">Select</option><option>None, the founder closes</option><option>1</option><option>2 to 3</option><option>4 to 10</option><option>10+</option></select><div class="err">Please choose one.</div></div>
+        </div>
+        <div style="height:22px"></div>
+        <fieldset class="field" data-group="outbound_status" data-required>
+          <legend>Are you doing outbound today? <span class="req">*</span></legend>
+          <div class="tiles">
+            <label class="tile"><input type="radio" name="outbound_status" value="No outbound yet"><span><strong>Not yet</strong>Starting from scratch</span></label>
+            <label class="tile"><input type="radio" name="outbound_status" value="In-house, not working well"><span><strong>In-house</strong>But it isn't working well</span></label>
+            <label class="tile"><input type="radio" name="outbound_status" value="In-house, need to scale"><span><strong>In-house</strong>Working, need to scale</span></label>
+            <label class="tile"><input type="radio" name="outbound_status" value="Outsourced, looking to switch"><span><strong>Outsourced</strong>Looking to switch</span></label>
+          </div><div class="err">Please choose one.</div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Tools you use <span class="hint">Select all that apply. We'll work inside your stack.</span></legend>
+          <div class="label" style="font-weight:500;font-size:14px;color:var(--muted);margin-top:4px">CRM</div>
+          <div class="chips" style="margin-bottom:14px">
+            <label class="chip"><input type="checkbox" name="crm" value="HubSpot"><span>HubSpot</span></label>
+            <label class="chip"><input type="checkbox" name="crm" value="Salesforce"><span>Salesforce</span></label>
+            <label class="chip"><input type="checkbox" name="crm" value="Pipedrive"><span>Pipedrive</span></label>
+            <label class="chip"><input type="checkbox" name="crm" value="Zoho"><span>Zoho</span></label>
+            <label class="chip"><input type="checkbox" name="crm" value="Close"><span>Close</span></label>
+            <label class="chip"><input type="checkbox" name="crm" value="GoHighLevel"><span>GoHighLevel</span></label>
+            <label class="chip"><input type="checkbox" name="crm" value="No CRM"><span>No CRM yet</span></label>
+          </div>
+          <div class="label" style="font-weight:500;font-size:14px;color:var(--muted)">Outreach, dialer and data</div>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="tools" value="Apollo"><span>Apollo</span></label>
+            <label class="chip"><input type="checkbox" name="tools" value="Outreach"><span>Outreach</span></label>
+            <label class="chip"><input type="checkbox" name="tools" value="Salesloft"><span>Salesloft</span></label>
+            <label class="chip"><input type="checkbox" name="tools" value="Instantly / Smartlead"><span>Instantly / Smartlead</span></label>
+            <label class="chip"><input type="checkbox" name="tools" value="LinkedIn Sales Navigator"><span>Sales Navigator</span></label>
+            <label class="chip"><input type="checkbox" name="tools" value="ZoomInfo"><span>ZoomInfo</span></label>
+            <label class="chip"><input type="checkbox" name="tools" value="Aircall"><span>Aircall</span></label>
+            <label class="chip"><input type="checkbox" name="tools" value="Orum / Nooks"><span>Orum / Nooks</span></label>
+            <label class="chip"><input type="checkbox" name="tools" value="Gong"><span>Gong</span></label>
+          </div>
+        </fieldset>
+        <div class="field"><label class="label" for="other_tools">Other tools</label><input type="text" id="other_tools" name="other_tools"></div>
+        <div style="height:22px"></div>
+        <div class="field"><label class="label" for="current_results">What results are you getting from outbound today?<span class="hint">For example meetings per month, reply rates, or what's not working.</span></label><textarea id="current_results" name="current_results"></textarea></div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step" data-title="Who we'll target">
+        <div class="step-head"><span class="count"></span><h2>Who we'll target</h2><p>Your ideal customer, so we can plan list building and messaging.</p></div>
+        <fieldset class="field" data-group="regions" data-required>
+          <legend>Target regions <span class="req">*</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="regions" value="United States"><span>United States</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="Canada"><span>Canada</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="United Kingdom"><span>United Kingdom</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="Ireland"><span>Ireland</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="Europe (English speaking)"><span>Europe (English)</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="DACH"><span>DACH</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="Nordics"><span>Nordics</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="Australia / NZ"><span>Australia / NZ</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="Middle East"><span>Middle East</span></label>
+            <label class="chip"><input type="checkbox" name="regions" value="South Africa"><span>South Africa</span></label>
+          </div><div class="err">Please choose at least one region.</div>
+        </fieldset>
+        <div class="grid">
+          <div class="field full"><label class="label" for="target_titles">Job titles you want to reach <span class="req">*</span></label><input type="text" id="target_titles" name="target_titles" placeholder="e.g. VP Sales, Head of Operations, CFO" required><div class="err">Please list the titles you target.</div></div>
+          <div class="field full"><label class="label" for="target_industries">Industries you target <span class="req">*</span></label><input type="text" id="target_industries" name="target_industries" placeholder="e.g. Logistics, manufacturing, B2B SaaS" required><div class="err">Please list the industries you target.</div></div>
+        </div>
+        <div style="height:22px"></div>
+        <fieldset class="field">
+          <legend>Target company size</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="target_size" value="1-10"><span>1 to 10</span></label>
+            <label class="chip"><input type="checkbox" name="target_size" value="11-50"><span>11 to 50</span></label>
+            <label class="chip"><input type="checkbox" name="target_size" value="51-200"><span>51 to 200</span></label>
+            <label class="chip"><input type="checkbox" name="target_size" value="201-1000"><span>201 to 1,000</span></label>
+            <label class="chip"><input type="checkbox" name="target_size" value="1000+"><span>1,000+</span></label>
+            <label class="chip"><input type="checkbox" name="target_size" value="Consumers"><span>Consumers</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="field" data-group="lead_source" data-required>
+          <legend>Lead lists and data <span class="req">*</span></legend>
+          <div class="tiles">
+            <label class="tile"><input type="radio" name="lead_source" value="We build the lists"><span><strong>You build them</strong>We need lists built for us</span></label>
+            <label class="tile"><input type="radio" name="lead_source" value="Client provides lists"><span><strong>We supply them</strong>We have our own data</span></label>
+            <label class="tile"><input type="radio" name="lead_source" value="Mix"><span><strong>A mix</strong>Some data, need more</span></label>
+            <label class="tile"><input type="radio" name="lead_source" value="Inbound leads only"><span><strong>Inbound only</strong>Follow up our inbound leads</span></label>
+          </div><div class="err">Please choose one.</div>
+        </fieldset>
+        <div class="field"><label class="label" for="best_customers">Describe two or three of your best customers<span class="hint">Company names or types, and why they're a great fit.</span></label><textarea id="best_customers" name="best_customers"></textarea></div>
+        <div style="height:22px"></div>
+        <div class="field"><label class="label" for="exclusions">Anyone we should not contact?<span class="hint">Existing customers, competitors, regulated sectors, do-not-call lists.</span></label><textarea id="exclusions" name="exclusions" style="min-height:80px"></textarea></div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="step" data-title="Your SDR team">
+        <div class="step-head"><span class="count"></span><h2>Your SDR team</h2><p>How many people, what they'll do, and how they'll work with you.</p></div>
+        <fieldset class="field" data-group="team_size" data-required>
+          <legend>How many SDRs do you need? <span class="req">*</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="team_size" value="1"><span>1</span></label>
+            <label class="chip"><input type="radio" name="team_size" value="2-3"><span>2 to 3</span></label>
+            <label class="chip"><input type="radio" name="team_size" value="4-5"><span>4 to 5</span></label>
+            <label class="chip"><input type="radio" name="team_size" value="6-10"><span>6 to 10</span></label>
+            <label class="chip"><input type="radio" name="team_size" value="10+"><span>10+</span></label>
+            <label class="chip"><input type="radio" name="team_size" value="Advise me"><span>Not sure, advise me</span></label>
+          </div><div class="err">Please choose one.</div>
+        </fieldset>
+        <fieldset class="field" data-group="channels" data-required>
+          <legend>What should the team do? <span class="req">*</span><span class="hint">Select all that apply.</span></legend>
+          <div class="tiles">
+            <label class="tile"><input type="checkbox" name="channels" value="Cold calling"><span><strong>Cold calling</strong>Outbound dials to book meetings</span></label>
+            <label class="tile"><input type="checkbox" name="channels" value="Cold email"><span><strong>Cold email</strong>Personalised sequences</span></label>
+            <label class="tile"><input type="checkbox" name="channels" value="LinkedIn outreach"><span><strong>LinkedIn outreach</strong>Connections and messaging</span></label>
+            <label class="tile"><input type="checkbox" name="channels" value="Appointment setting"><span><strong>Appointment setting</strong>Meetings on your calendar</span></label>
+            <label class="tile"><input type="checkbox" name="channels" value="Live transfers"><span><strong>Live transfers</strong>Hot calls to your closers</span></label>
+            <label class="tile"><input type="checkbox" name="channels" value="Inbound qualification"><span><strong>Inbound qualification</strong>Fast follow up on leads</span></label>
+            <label class="tile"><input type="checkbox" name="channels" value="Lead research"><span><strong>Lead research</strong>List building and enrichment</span></label>
+            <label class="tile"><input type="checkbox" name="channels" value="Re-engagement"><span><strong>Re-engagement</strong>Old leads and lost deals</span></label>
+          </div><div class="err">Please choose at least one.</div>
+        </fieldset>
+        <div class="grid">
+          <div class="field"><label class="label" for="hours">Working hours to cover <span class="req">*</span></label>
+            <select id="hours" name="hours" required><option value="">Select</option><option>UK / EU business hours</option><option>US Eastern business hours</option><option>US Central / Pacific business hours</option><option>Australia / NZ business hours</option><option>Split across time zones</option><option>Flexible</option></select><div class="err">Please choose one.</div></div>
+          <div class="field"><label class="label" for="experience">SDR experience level</label>
+            <select id="experience" name="experience"><option value="">Select</option><option>Junior, trained by you</option><option>2+ years outbound experience</option><option>Senior, industry experience</option><option>Advise me</option></select></div>
+          <div class="field"><label class="label" for="management">Who manages the team day to day? <span class="req">*</span></label>
+            <select id="management" name="management" required><option value="">Select</option><option>You manage them fully</option><option>We manage, you oversee</option><option>Shared</option></select><div class="err">Please choose one.</div></div>
+          <div class="field"><label class="label" for="meeting_target">Target meetings per month (whole team)</label>
+            <select id="meeting_target" name="meeting_target"><option value="">Not sure yet</option><option>Under 10</option><option>10 to 25</option><option>25 to 50</option><option>50 to 100</option><option>100+</option></select></div>
+          <div class="field full"><label class="label" for="qualified_meeting">What counts as a qualified meeting for you?<span class="hint">Budget, authority, need, timing, or anything else that must be true.</span></label><textarea id="qualified_meeting" name="qualified_meeting" style="min-height:90px"></textarea></div>
+          <div class="field full"><label class="label" for="other_reqs">Other requirements<span class="hint">Languages, licensing, compliance, security, equipment or anything else.</span></label><textarea id="other_reqs" name="other_reqs" style="min-height:80px"></textarea></div>
+        </div>
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="step" data-title="Goals, budget and timing">
+        <div class="step-head"><span class="count"></span><h2>Goals, budget and timing</h2><p>So the proposal matches what you need to achieve.</p></div>
+        <fieldset class="field" data-group="primary_goal" data-required>
+          <legend>Main goal <span class="req">*</span></legend>
+          <div class="tiles">
+            <label class="tile"><input type="radio" name="primary_goal" value="More pipeline"><span><strong>More pipeline</strong>Fill the calendar</span></label>
+            <label class="tile"><input type="radio" name="primary_goal" value="Lower cost per meeting"><span><strong>Lower cost</strong>Cheaper than hiring locally</span></label>
+            <label class="tile"><input type="radio" name="primary_goal" value="Enter a new market"><span><strong>New market</strong>Break into a new region</span></label>
+            <label class="tile"><input type="radio" name="primary_goal" value="Launch a new product"><span><strong>New product</strong>Validate and launch</span></label>
+            <label class="tile"><input type="radio" name="primary_goal" value="Free up AEs"><span><strong>Free up closers</strong>AEs focus on selling</span></label>
+          </div><div class="err">Please choose one.</div>
+        </fieldset>
+        <div class="field"><label class="label" for="success_90">What would success look like after 90 days? <span class="req">*</span></label><textarea id="success_90" name="success_90" required></textarea><div class="err">Please tell us what success looks like.</div></div>
+        <div style="height:22px"></div>
+        <div class="grid">
+          <div class="field"><label class="label" for="budget">Monthly budget <span class="req">*</span></label>
+            <select id="budget" name="budget" required><option value="">Select</option><option>Under $2,500</option><option>$2,500 to $5,000</option><option>$5,000 to $10,000</option><option>$10,000 to $25,000</option><option>$25,000+</option><option>Not set yet</option></select><div class="err">Please choose a range.</div></div>
+          <div class="field"><label class="label" for="currency">Preferred currency</label>
+            <select id="currency" name="currency"><option>USD</option><option>GBP</option><option>EUR</option><option>AUD</option><option>CAD</option><option>ZAR</option></select></div>
+          <div class="field"><label class="label" for="start">Ideal start date <span class="req">*</span></label>
+            <select id="start" name="start" required><option value="">Select</option><option>As soon as possible</option><option>Within 30 days</option><option>1 to 3 months</option><option>3+ months</option><option>Just exploring</option></select><div class="err">Please choose one.</div></div>
+          <div class="field"><label class="label" for="term">Engagement length</label>
+            <select id="term" name="term"><option value="">Select</option><option>Month to month</option><option>3 month pilot</option><option>6 months</option><option>12 months+</option></select></div>
+          <div class="field"><label class="label" for="decision_timeline">When will you decide? <span class="req">*</span></label>
+            <select id="decision_timeline" name="decision_timeline" required><option value="">Select</option><option>This week</option><option>Within 2 weeks</option><option>Within a month</option><option>1 to 3 months</option><option>No fixed date</option></select><div class="err">Please choose one.</div></div>
+          <div class="field"><label class="label" for="decision_makers">Who else is involved in the decision?</label><input type="text" id="decision_makers" name="decision_makers" placeholder="Names or roles"></div>
+          <div class="field full"><label class="label" for="evaluating">Are you comparing other options?<span class="hint">Other providers, hiring locally, or building in-house.</span></label><input type="text" id="evaluating" name="evaluating"></div>
+          <div class="field full"><label class="label" for="past_outsourcing">Have you outsourced sales before? What worked and what didn't?</label><textarea id="past_outsourcing" name="past_outsourcing" style="min-height:90px"></textarea></div>
+        </div>
+      </div>
+
+      <!-- STEP 7 -->
+      <div class="step" data-title="Review and submit">
+        <div class="step-head"><span class="count"></span><h2>Review and submit</h2><p>Check your answers, add anything we've missed, then send.</p></div>
+        <div class="review" id="review"></div>
+        <div class="grid">
+          <div class="field full"><label class="label" for="anything_else">Anything else we should know?</label><textarea id="anything_else" name="anything_else" style="min-height:90px"></textarea></div>
+          <div class="field full"><label class="label" for="materials">Links to sales materials <span class="hint" style="display:inline">(optional)</span><span class="hint">Pitch deck, case studies, scripts or a shared folder.</span></label><input type="text" id="materials" name="materials" placeholder="https://"></div>
+          <div class="field"><label class="label" for="heard_from">How did you hear about us?</label>
+            <select id="heard_from" name="heard_from"><option value="">Select</option><option>Google search</option><option>LinkedIn</option><option>Referral</option><option>AI assistant (ChatGPT, Claude etc.)</option><option>Event or webinar</option><option>Email from us</option><option>Other</option></select></div>
+          <div class="field"><label class="label" for="referrer">Referred by</label><input type="text" id="referrer" name="referrer"></div>
+        </div>
+        <div style="height:24px"></div>
+        <fieldset class="field" data-group="consent" data-required>
+          <label class="consent"><input type="checkbox" name="consent" value="yes"><span>I agree to South Africa SDR storing my details to prepare this proposal and contacting me about it. See our <a href="/privacy/" target="_blank">Privacy Policy</a>. <span class="req">*</span></span></label>
+          <div class="err">Please tick to continue.</div>
+        </fieldset>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      </div>
+
+      <div class="actions" id="actions">
+        <button type="button" class="btn back" id="prev">&larr; Back</button>
+        <span class="saved" id="saved"></span>
+        <button type="button" class="btn primary" id="next">Continue &rarr;</button>
+      </div>
+    </form>
+
+    <div class="thanks" id="thanks">
+      <div class="tick">&#10003;</div>
+      <h2>Thanks, <em>we're on it.</em></h2>
+      <p>We've received your request. We'll review your answers and email your tailored proposal, usually within two business days.</p>
+      <a class="pill gold" href="https://calendly.com/agencyleadmaker/sasdr" target="_blank" rel="noopener">Want to speed things up? Book a meeting</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="/">South Africa SDR</a><br>
+  Western sales talent that actually delivers.<br>
+  <span style="opacity:.7">&copy; 2026 South Africa SDR. All rights reserved.</span>
+</footer>
+
+<script>
+/* ===== Submissions go to the site's Formspree form (same inbox as the other site forms). ===== */
+const FORM_ENDPOINT = 'https://formspree.io/f/xdeoddaw';
+
+const form = document.getElementById('rfp');
+const steps = [...form.querySelectorAll('.step')];
+const nav = document.getElementById('stepNav');
+const bar = document.getElementById('bar');
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
+const saved = document.getElementById('saved');
+const KEY = 'sasdr_rfp_v1';
+let cur = 0, maxReached = 0;
+
+steps.forEach((s, i) => {
+  s.querySelector('.count').textContent = 'Step ' + (i + 1) + ' of ' + steps.length;
+  const li = document.createElement('li');
+  li.innerHTML = '<span class="n"><span>' + (i + 1) + '</span></span>' + s.dataset.title;
+  li.onclick = () => { if (i <= maxReached) go(i); };
+  nav.appendChild(li);
+});
+
+function go(i){
+  cur = i; maxReached = Math.max(maxReached, i);
+  steps.forEach((s, j) => s.classList.toggle('active', j === i));
+  [...nav.children].forEach((li, j) => { li.classList.toggle('active', j === i); li.classList.toggle('done', j < maxReached && j !== i); });
+  bar.style.width = ((i + 1) / steps.length * 100) + '%';
+  prev.style.visibility = i === 0 ? 'hidden' : 'visible';
+  next.innerHTML = i === steps.length - 1 ? 'Submit request' : 'Continue &rarr;';
+  next.classList.toggle('gold', i === steps.length - 1);
+  next.classList.toggle('primary', i !== steps.length - 1);
+  if (i === steps.length - 1) buildReview();
+  const top = document.querySelector('.card').getBoundingClientRect().top + window.scrollY - 20;
+  if (window.scrollY > top) window.scrollTo({ top, behavior: 'smooth' });
+  save();
+}
+
+function validate(step){
+  let ok = true, first = null;
+  step.querySelectorAll('input[required],select[required],textarea[required]').forEach(el => {
+    const f = el.closest('.field');
+    let valid = el.value.trim() !== '';
+    if (valid && el.type === 'email') valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+    f.classList.toggle('invalid', !valid);
+    if (!valid) { ok = false; first = first || el; }
+  });
+  step.querySelectorAll('[data-group][data-required]').forEach(fs => {
+    const valid = !!fs.querySelector('input:checked');
+    fs.classList.toggle('invalid', !valid);
+    if (!valid) { ok = false; first = first || fs; }
+  });
+  if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); if (first.focus) first.focus({ preventScroll: true }); }
+  return ok;
+}
+
+form.addEventListener('input', e => {
+  const f = e.target.closest('.field');
+  if (f && f.classList.contains('invalid')) f.classList.remove('invalid');
+  save();
+});
+form.addEventListener('change', save);
+
+function data(){
+  const out = {};
+  new FormData(form).forEach((v, k) => {
+    if (k === '_gotcha') return;
+    if (out[k] !== undefined) out[k] = [].concat(out[k], v); else out[k] = v;
+  });
+  return out;
+}
+
+function save(){
+  try { localStorage.setItem(KEY, JSON.stringify({ d: data(), step: cur, max: maxReached })); saved.textContent = 'Progress saved'; } catch (e) {}
+}
+function restore(){
+  try {
+    const raw = localStorage.getItem(KEY); if (!raw) return;
+    const { d, step, max } = JSON.parse(raw);
+    Object.entries(d).forEach(([k, v]) => {
+      const vals = [].concat(v);
+      form.querySelectorAll('[name="' + k + '"]').forEach(el => {
+        if (el.type === 'checkbox' || el.type === 'radio') el.checked = vals.includes(el.value);
+        else el.value = vals[0];
+      });
+    });
+    maxReached = max || 0; cur = step || 0;
+  } catch (e) {}
+}
+
+function labelFor(el){
+  const f = el.closest('fieldset[data-group], fieldset.field, .field');
+  const l = f && (f.querySelector('legend') || f.querySelector('.label'));
+  return l ? l.childNodes[0].textContent.trim().replace(/\s*\*$/, '') : el.name;
+}
+
+function buildReview(){
+  const d = data(), wrap = document.getElementById('review');
+  wrap.innerHTML = '';
+  steps.slice(0, -1).forEach((s, i) => {
+    const seen = new Set(); let rows = '';
+    s.querySelectorAll('input,select,textarea').forEach(el => {
+      if (seen.has(el.name)) return; seen.add(el.name);
+      const v = d[el.name]; if (!v || (Array.isArray(v) && !v.length)) return;
+      rows += '<div class="row"><dt>' + esc(labelFor(el)) + '</dt><dd>' + esc([].concat(v).join(', ')) + '</dd></div>';
+    });
+    const g = document.createElement('div'); g.className = 'grp';
+    g.innerHTML = '<h4>' + esc(s.dataset.title) + '<a data-i="' + i + '">Edit</a></h4><dl>' + (rows || '<div class="row"><dd style="color:var(--muted)">Nothing entered</dd></div>') + '</dl>';
+    g.querySelector('a').onclick = () => go(i);
+    wrap.appendChild(g);
+  });
+}
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c])); }
+
+prev.onclick = () => go(Math.max(0, cur - 1));
+next.onclick = async () => {
+  if (!validate(steps[cur])) return;
+  if (cur < steps.length - 1) return go(cur + 1);
+  if (form._gotcha && form._gotcha.value) return;
+  const d = data();
+  const payload = Object.assign(d, { _subject: 'New RFP: ' + (d.company || 'website') + ' (South Africa SDR)', submitted_at: new Date().toISOString(), page: location.href });
+  next.disabled = true; next.textContent = 'Sending...';
+  try {
+    if (FORM_ENDPOINT) {
+      const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) });
+      if (!r.ok) throw new Error('Bad response');
+    } else { console.log('RFP submission', payload); }
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    form.style.display = 'none';
+    document.querySelector('.progress div').style.width = '100%';
+    [...nav.children].forEach(li => { li.classList.remove('active'); li.classList.add('done'); });
+    document.getElementById('thanks').style.display = 'block';
+    window.scrollTo({ top: document.querySelector('.card').offsetTop - 20, behavior: 'smooth' });
+  } catch (e) {
+    next.disabled = false; next.textContent = 'Submit request';
+    saved.textContent = 'Something went wrong. Please try again.';
+    saved.style.color = 'var(--error)';
+  }
+};
+
+restore();
+go(cur);
+</script>
+<script src="/consent-config.js" defer></script>
+<script src="/consent.js" defer></script>
+</body>
+</html>
